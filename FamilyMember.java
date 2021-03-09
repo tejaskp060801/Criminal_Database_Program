@@ -9,10 +9,10 @@ public class FamilyMember extends Person{
     }
 
     public void addToDataBase(Person p) {
-
+        return;
     }
 
     public String toString() {
-        
+        return "";
     }
 }

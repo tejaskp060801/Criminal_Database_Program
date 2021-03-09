@@ -11,39 +11,39 @@ public class Gun extends Evidence {
     }
 
     public String getGunType() {
-
+        return this.gunType;
     }
 
     public String getModel() {
-
+        return this.model;
     }
 
     public Bullet getBulletType() {
-
+        return this.bulletType;
     }
 
     public int getYearMade() {
-
+        return this.yearMade;
     }
 
     public void setGunType(String type) {
-
+        this.gunType = type;
     }
 
     public void setModel(String model) {
-
+        this.model = model;
     }
 
     public void setBulletType(Bullet b) {
-
+        this.bulletType = b;
     }
 
     public void setYearMade(int year) {
-
-    }
+        this.yearMade = year;
+    }   
 
     public String toString() {
-        
+        return "";
     }
 
 
