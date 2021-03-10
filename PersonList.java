@@ -1,5 +1,7 @@
 
 
+import java.util.ArrayList;
+
 public class PersonList {
     private PersonList personlist;
     private ArrayList<Person> people;
