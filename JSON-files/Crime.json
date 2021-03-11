@@ -1,0 +1,33 @@
+[
+    {
+        "caseNumber": 1,
+        "title": "Jerome Anderson car accident",
+        "isSolved": true,
+        "People": {
+            "PersonID": [1, 2, 18, 36]
+        },
+        "typeOfCrime": ["class C felony", "class E felony"],
+        "location": "Intersection of Assembly and Blossom",
+        "date": "February 19th, 2021 at 15:21",
+        "evidence": [
+            {
+                "description": "This is a counterfeit cigarette, clearly made without the proper licensing",
+                "evidenceId": 12,
+                "evidenceType": null
+            }, {
+                "description": "Jerome Anderson blood sample found at the site of the accident",
+                "evidenceId": 13,
+                "evidenceType": {
+                    "BloodSample": {
+                        "bloodType": "AB+",
+                        "bloodVolume": "10.0"
+                    }
+                }
+            }
+        ],
+        "workingOnCase": {
+            "LawEnforcementID": [ 123, 456 ]
+        },
+        "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
+    }
+]
