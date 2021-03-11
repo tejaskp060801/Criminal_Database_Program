@@ -2,7 +2,7 @@
 
 import java.util.UUID;
 
-public class LawEnforcementUser implements Comparable{
+public class LawEnforcementUser <T extends Comparable<T>> {
     protected String username;
     protected String password;
     public String firstName;
