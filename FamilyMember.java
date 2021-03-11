@@ -16,4 +16,8 @@ public class FamilyMember extends Person{
     public String toString() {
         return "";
     }
+
+    public void addPerson(Person person) {
+        
+    }
 }

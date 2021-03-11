@@ -8,5 +8,9 @@ public class PersonOfInterest extends Person{
     public String toString(){
         return "";
     }
+
+    public void addPerson(Person person) {
+        
+    }
      
 }

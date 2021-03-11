@@ -1,4 +1,4 @@
-giimport java.util.UUID;
+import java.util.UUID;
 
 public class Associate extends Person{
     private String relationship;
@@ -15,6 +15,10 @@ public class Associate extends Person{
 
     public String toString(){
         return "";
+    }
+
+    public void addPerson(Person person) {
+        
     }
 
 

@@ -1,5 +1,7 @@
 
 
+import java.util.UUID;
+
 public class DataBaseManager {
     private UserSearchTree policeBST;
     private CrimeList crimeList;

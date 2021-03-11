@@ -1,5 +1,7 @@
 
 
+import java.util.UUID;
+
 public class LawEnforcementUser implements Comparable{
     protected String username;
     protected String password;
