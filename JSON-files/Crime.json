@@ -4,7 +4,7 @@
         "title": "Jerome Anderson car accident",
         "isSolved": true,
         "People": {
-            "PersonID": [1, 2, 18, 36]
+            "PersonID": [ 2 ]
         },
         "typeOfCrime": ["class C felony", "class E felony"],
         "location": "Intersection of Assembly and Blossom",
@@ -23,6 +23,27 @@
                         "bloodVolume": "10.0"
                     }
                 }
+            }
+        ],
+        "workingOnCase": {
+            "LawEnforcementID": [ 1, 2 ]
+        },
+        "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
+    }, {
+        "caseNumber": 2,
+        "title": "Watermelon murder",
+        "isSolved": true,
+        "People": {
+            "PersonID": [ 3 ]
+        },
+        "typeOfCrime": [ "class A felony" ],
+        "location": "Corner of Fredrickson and Main",
+        "date": "February 2nd, 2020 at 4:02",
+        "evidence": [
+            {
+                "description": "A written confession from Ms. Windower indicating that she murdered her watermelon",
+                "evidenceId": 45,
+                "evidenceType": null
             }
         ],
         "workingOnCase": {

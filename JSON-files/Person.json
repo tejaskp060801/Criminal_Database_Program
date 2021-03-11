@@ -25,8 +25,7 @@
                 "Deceased": false,
                 "crimes": [ 504 ],
                 "family": [ 678, 910 ],
-                "associates": [ null ]
-
+                "associates": [ ]
             }
         }
     }, {
@@ -40,7 +39,7 @@
         "profession": null,
         "height": 5.9,
         "weight": 148.0,
-        "skinColor": "Light brown",
+        "skinColor": "light brown",
         "hairColorNatural": "dark brown",
         "hairColorUnnatural": "dark brown",
         "clothing": "black shirt with red pants; wearing a navy blue beanie",
@@ -54,5 +53,34 @@
                 "willTestify": true
             }
         }
+    }, {
+        "PersonID": 3,
+        "firstName": "Vicki",
+        "lastName": "Windower",
+        "age": 44,
+        "gender": "female",
+        "race": "Hispanic",
+        "address": "994 Blossom Street, Columbia, SC",
+        "profession": "window painter",
+        "height": 4.7,
+        "skinColor": "light brown",
+        "hairColorNatural": "grey",
+        "hairColorUnnatural": "blonde",
+        "clothing": "typically wears a grey hoodie with a red baseball hat",
+        "tattoo": true,
+        "tattooDescription": "yellow dove with a cross",
+        "shoeSize": 11.0,
+        "isUScitizen": true,
+        "crimeOrganization": null,
+        "personType": {
+            "Criminal": {
+                "isInJail": false,
+                "Deceased": false,
+                "crimes": [ 2 ],
+                "family": [ ],
+                "associates": [ ]
+            }
+        }
+
     }
 ]

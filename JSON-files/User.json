@@ -13,5 +13,12 @@
         "firstName": "Rex",
         "lastName": "Varley",
         "clearanceLevel": 2
+    }, {
+        "LawEnforcemnetID": 3,
+        "username": "You Pick",
+        "password": "special",
+        "firstName": "John",
+        "lastName": "Cena",
+        "clearancelevel": 2
     }
 ]
