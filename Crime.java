@@ -39,9 +39,10 @@ public class Crime {
         return People; 
     }
     public ArrayList<Criminal> getCriminalArray() {
-         return 
+         ArrayList<Criminal> criminalswoo = new ArrayList<Criminal>();
+         return criminalswoo;
     }
-    public ArrayList<UUID> getWorkingOnCaseArrayList() {
+    public ArrayList<LawEnforcementUser> getWorkingOnCaseArrayList() {
         return workingOnCase; 
     }
     public String getCrimeDescription() {
