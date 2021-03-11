@@ -1,4 +1,4 @@
-import java.util.UUID;
+giimport java.util.UUID;
 
 public class Associate extends Person{
     private String relationship;

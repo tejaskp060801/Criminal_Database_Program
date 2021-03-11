@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class DataBaseUI {
-    private DatabaseManager databaseManager;
+    private DataBaseManager databaseManager;
     private Scanner scanner;
 
     public void run() {
