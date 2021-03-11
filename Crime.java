@@ -33,16 +33,16 @@ public class Crime {
         
     }
     public String getTitle() {
-
+        return title; 
     }
     public ArrayList<Person> getPOIArray() {
         return People; 
     }
     public ArrayList<Criminal> getCriminalArray() {
-         
+         return 
     }
     public ArrayList<UUID> getWorkingOnCaseArrayList() {
-
+        return workingOnCase; 
     }
     public String getCrimeDescription() {
         return crimeDescription; 
