@@ -5,6 +5,10 @@ public class DataBaseUI {
     private DataBaseManager databaseManager;
     private Scanner scanner;
 
+    public static void main(String [] args) {
+        
+    }
+
     public void run() {
         return;
     }

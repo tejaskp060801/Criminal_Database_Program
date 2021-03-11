@@ -5,7 +5,7 @@ public class userSearchTree {
     private BinarySearchTree<LawEnforcementUser> users;
 
     private UserSearchTree() {
-
+        
     }
 
     public UserSearchTree getUserSearchTree() {
