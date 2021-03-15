@@ -1,0 +1,7 @@
+public enum TypeOfCrime {
+    CLASSAFELONY,
+    CLASSBFELONY,
+    CLASSCFELONY,
+    CLASSDFELONY,
+    CLASSEFELONY
+}

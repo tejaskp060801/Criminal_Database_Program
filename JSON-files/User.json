@@ -1,0 +1,24 @@
+[
+    {
+        "LawEnforcementID": 1,
+        "username": "asnelling",
+        "password": "ilikebeingpolice123",
+        "firstName": "Alanna",
+        "lastName": "Snelling",
+        "clearanceLevel": 1
+    }, {
+        "LawEnforcementID": 2,
+        "username": "bigRex31",
+        "password": "wherethecriminals",
+        "firstName": "Rex",
+        "lastName": "Varley",
+        "clearanceLevel": 2
+    }, {
+        "LawEnforcemnetID": 3,
+        "username": "You Pick",
+        "password": "special",
+        "firstName": "John",
+        "lastName": "Cena",
+        "clearancelevel": 2
+    }
+]

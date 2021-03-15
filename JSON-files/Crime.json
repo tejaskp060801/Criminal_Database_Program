@@ -1,0 +1,54 @@
+[
+    {
+        "caseNumber": 1,
+        "title": "Jerome Anderson car accident",
+        "isSolved": true,
+        "People": {
+            "PersonID": [ 2 ]
+        },
+        "typeOfCrime": ["class C felony", "class E felony"],
+        "location": "Intersection of Assembly and Blossom",
+        "date": "February 19th, 2021 at 15:21",
+        "evidence": [
+            {
+                "description": "This is a counterfeit cigarette, clearly made without the proper licensing",
+                "evidenceId": 12,
+                "evidenceType": null
+            }, {
+                "description": "Jerome Anderson blood sample found at the site of the accident",
+                "evidenceId": 13,
+                "evidenceType": {
+                    "BloodSample": {
+                        "bloodType": "AB+",
+                        "bloodVolume": "10.0"
+                    }
+                }
+            }
+        ],
+        "workingOnCase": {
+            "LawEnforcementID": [ 1, 2 ]
+        },
+        "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
+    }, {
+        "caseNumber": 2,
+        "title": "Watermelon murder",
+        "isSolved": true,
+        "People": {
+            "PersonID": [ 3 ]
+        },
+        "typeOfCrime": [ "class A felony" ],
+        "location": "Corner of Fredrickson and Main",
+        "date": "February 2nd, 2020 at 4:02",
+        "evidence": [
+            {
+                "description": "A written confession from Ms. Windower indicating that she murdered her watermelon",
+                "evidenceId": 45,
+                "evidenceType": null
+            }
+        ],
+        "workingOnCase": {
+            "LawEnforcementID": [ 123, 456 ]
+        },
+        "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
+    }
+]

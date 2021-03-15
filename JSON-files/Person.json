@@ -1,0 +1,86 @@
+[
+    {
+        "PersonID": 1,
+        "firstName": "Michael",
+        "lastName": "Mitchell",
+        "age": 24,
+        "gender": "male",
+        "race": "caucasian",
+        "address": "300 Main Columbia, SC",
+        "profession": "Janitor",
+        "height": 6.2,
+        "weight": 164.0,
+        "skinColor": "white",
+        "hairColorNatural": "brown",
+        "hairColorUnnatural": "yellow",
+        "clothing": "black hoodie with blue jeans",
+        "tattoo": false,
+        "tattooDescription": null,
+        "shoeSize": 10.5,
+        "isUSCitizen": true,
+        "crimeOrganization": null,
+        "personType": {
+            "Criminal": {
+                "isInJail": false,
+                "Deceased": false,
+                "crimes": [ 504 ],
+                "family": [ 678, 910 ],
+                "associates": [ ]
+            }
+        }
+    }, {
+        "PersonID": 2,
+        "firstName": "Jerome",
+        "lastName": "Anderson",
+        "age": 27,
+        "gender": "male",
+        "race": "African-American",
+        "address": "300 Main Columbia, SC",
+        "profession": null,
+        "height": 5.9,
+        "weight": 148.0,
+        "skinColor": "light brown",
+        "hairColorNatural": "dark brown",
+        "hairColorUnnatural": "dark brown",
+        "clothing": "black shirt with red pants; wearing a navy blue beanie",
+        "tattoo": true,
+        "tattooDescription": "left forearm has red and green dragon tattoo",
+        "shoeSize": 10.0,
+        "isUScitizen": true,
+        "crimeOrganization": null,
+        "personType": {
+            "Witness": {
+                "willTestify": true
+            }
+        }
+    }, {
+        "PersonID": 3,
+        "firstName": "Vicki",
+        "lastName": "Windower",
+        "age": 44,
+        "gender": "female",
+        "race": "Hispanic",
+        "address": "994 Blossom Street, Columbia, SC",
+        "profession": "window painter",
+        "height": 4.7,
+        "skinColor": "light brown",
+        "hairColorNatural": "grey",
+        "hairColorUnnatural": "blonde",
+        "clothing": "typically wears a grey hoodie with a red baseball hat",
+        "tattoo": true,
+        "tattooDescription": "yellow dove with a cross",
+        "shoeSize": 11.0,
+        "isUScitizen": true,
+        "crimeOrganization": null,
+        "personType": {
+            "Criminal": {
+                "isInJail": false,
+                "Deceased": false,
+                "crimes": [ 2 ],
+                "family": [ ],
+                "associates": [ ]
+            }
+        }
+
+    }
+]
