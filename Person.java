@@ -27,61 +27,66 @@ public abstract class Person {
 
     public abstract void addPerson(Person p); 
     public String getName() {
-        return ""; 
+        return this.firstName + " " + this.lastName; 
     }
     public int getAge() {
-        return 5; 
+        return this.age; 
     }
     public String getRace() {
-        return ""; 
+        return this.race; 
     }
     public UUID getPersonID() {
-        UUID uuid = UUID.randomUUID();
-        return uuid;          
+        //UUID personIUuid= UUID.randomUUID();
+        //PersonID = personIUuid; 
+        return PersonID;          
     }
     public String getAddress() {
-        return ""; 
+        return this.address; 
     }
     public String getProfession() {
-        return ""; 
+        return this.profession; 
     }
     public double getHeight() {
-        return 0.0; 
+        return this.height; 
     }
     public double getWeight() {
-        return 0.0; 
+        return this.weight; 
     }
-    public String getHairColor() {
-        return "";
+    public String getSkinColor() {
+        return this.skinColor;
     }
     public String getHairColorNatural() {
-        return ""; 
+        return this.hairColorNatural;  
     }
     public String getHairColorUnNatural () {
-        return ""; 
+        return this.hairColorUnNatural; 
     }
     public String getClothing() {
-        return ""; 
+        return this.clothing; 
     }
     public boolean getTattoo() {
-        return true; 
+        return this.tattoo; 
     }
     public String getTattooDescription() {
-        return ""; 
+        return this.tattooDescription; 
     }
     public double getShoeSize() {
-        return 0.0; 
+        return this.shoeSize; 
     }
     public boolean getIsUSCitizen() {
         return true;
     }
     public String getOrganization() {
-        return "";
+        return this.crimeOrganization;
     }
-    public void setName() {
-        
+    public void setName(String firstName, String lastName) {
+        this.firstName = firstName; 
+        this.lastName = lastName; 
     }
     public void setAge(int age) {
+        if(age <= 0) {
+            System.out.println("please print a valid age"); 
+        }
         this.age = age; 
     }
     public void setGender(String gender) {
