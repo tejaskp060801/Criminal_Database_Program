@@ -5,12 +5,12 @@ public class Crime {
     protected UUID caseNumber; 
     protected String title; 
     protected boolean isSolved; 
-    protected ArrayList<Person> People; 
-    protected ArrayList<TypeOfCrime> typeOfCrime; 
+    protected ArrayList<Person> People; //array
+    protected ArrayList<TypeOfCrime> typeOfCrime;  //array
     protected String location; 
     protected String date;
-    protected ArrayList<Evidence> evidence; 
-    protected ArrayList<LawEnforcementUser> workingOnCase; 
+    protected ArrayList<Evidence> evidence; //array
+    protected ArrayList<LawEnforcementUser> workingOnCase; //array
     protected String crimeDescription; 
 
     public Crime() {
@@ -26,23 +26,26 @@ public class Crime {
         this.workingOnCase = workingOnCase; 
     }
     
-    public void deleteCrime() {
-
+    public void deleteCrime(Crime crime) {
+        
     }
     public void crimeSolved() {
         
     }
-    public String getTitle() {
+    public String getTitle(String title) {
         return title; 
     }
     public ArrayList<Person> getPOIArray() {
+         ArrayList<Person> people = new ArrayList<Person>();
         return People; 
+
     }
-    public ArrayList<Criminal> getCriminalArray() {
+    public static ArrayList<Criminal> getCriminalArray() {
          ArrayList<Criminal> criminalswoo = new ArrayList<Criminal>();
          return criminalswoo;
     }
-    public ArrayList<LawEnforcementUser> getWorkingOnCaseArrayList() {
+    public ArrayList<UUID> getWorkingOnCaseArrayList() {
+        ArrayList<UUID> workingOnCase= new ArrayList<UUID>();
         return workingOnCase; 
     }
     public String getCrimeDescription() {
@@ -52,15 +55,25 @@ public class Crime {
         return date; 
     }
     public ArrayList<TypeOfCrime> getTypeOfCrime() {
+        ArrayList<TypeOfCrime> typeOfCrimes = new ArrayList<TypeOfCrime>();
         return typeOfCrime; 
     }
-    public void addInformation() {
+    /* do these bottom methods mean add information into like which specific attribute
+    *
+    *
+    */
+    public void addInformation() { //i dont understand this method 
 
     }
-    public void editInformation(){
+    public void editInformation(){ //i dont understand this one either
         
     }
-    public String toString() {
-        return ""; 
+    public String toString() { //this one
+        return "\n----------\n" + "Case Number: " + this.caseNumber +"\nTitle "
+        + this.title  + "\nSolved or Unsolved: " + this.isSolved +
+        "\nPeople" + this.People + " \nType of Crime" + this.typeOfCrime+ " Location\n" +
+        this.location + "\nDate: " + this.date + "\nEvidence: " + this.evidence + 
+        "\nLaw Enforcement User Working On Case: " + this.workingOnCase +
+        "\nDescription of Crime: " + this.crimeDescription + "\n----------\n"; 
     }
 }

@@ -41,8 +41,9 @@ public class BinarySearchTree <T extends Comparable<T>> {
     }
 
     public Node remove(Node node, T data) {
-        if(node == null)
+        if(node == null){
 			return null;	//value wasn't found
+        }
 		if(data.compareTo(node.data) < 0)
 			node.leftChild = remove(node.leftChild, data);	//go left
 		else if(data.compareTo(node.data) > 0)

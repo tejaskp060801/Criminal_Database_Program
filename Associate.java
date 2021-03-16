@@ -17,12 +17,9 @@ public class Associate extends Person{
         return "";
     }
 
-<<<<<<< HEAD
-=======
     public void addPerson(Person person) {
         
     }
 
->>>>>>> f98cef9583c7c53594e65999b89bf26314942013
 
 }

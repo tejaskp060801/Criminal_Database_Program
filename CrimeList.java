@@ -6,21 +6,22 @@ public class CrimeList {
     private CrimeList crimelist;
     private ArrayList<Crime> crimes;
 
-    private CrimeList() {
-
+    private CrimeList(Object crimes) {
+        crimes = Crime.getCriminalArray();
     }
 
     public CrimeList getCrimeList() {
-        return crimelist;
+        return this.crimelist;
     }
 
-    public boolean removeCrime() {
-        return true;
+    public boolean removeCrime(Crime crime ) {
+        return crimelist.removeCrime(crime);
     }
 
-    public void addCrime() {
-
+    public Object addCrime(Crime crime) {
+        return crimelist.addCrime(crime);
     }
+
 
     public void editCrime(Crime crime) {
 

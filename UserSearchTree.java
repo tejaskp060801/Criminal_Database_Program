@@ -2,11 +2,10 @@ import java.util.ArrayList;
 
 public class UserSearchTree {
     private UserSearchTree userSearchTree;
-    private BinarySearchTree<LawEnforcementUser> users;
+    //private BinarySearchTree <LawEnforcementUser> users;
 
     private UserSearchTree() {
-        this.users= users; 
-        this.userSearchTree = userSearchTree; 
+        
     }
 
     public UserSearchTree getUserSearchTree() {
@@ -14,13 +13,7 @@ public class UserSearchTree {
     }
 
     public boolean Login (String username, String pw) {
-        if(users.username == username) {
-            System.out.println("please type in your password"); 
-            if(users.password == pw){
-                return true; 
-            }
-            return false; 
-        }
+        return true;
     }
 
     public LawEnforcementUser addUser(String username, String pw, int clearance) {
