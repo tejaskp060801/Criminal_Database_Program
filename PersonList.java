@@ -7,7 +7,8 @@ public class PersonList {
     private ArrayList<Person> people;
 
     private PersonList() {
-
+        this.personlist = personlist; 
+        this.people = people; 
     }
 
     public PersonList getPersonList() {

@@ -134,11 +134,8 @@ public abstract class Person {
     public void setIsUSCitizen(boolean isUsCitizen) {
         this.isUSCitizen = isUsCitizen; 
     }
-    public void addToDataBase() {
-
-    }
     public void editPerson() {
-
+        
     }
     public String toString() {
         return ""; 
