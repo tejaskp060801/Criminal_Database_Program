@@ -5,7 +5,8 @@ public class UserSearchTree {
     private BinarySearchTree<LawEnforcementUser> users;
 
     private UserSearchTree() {
-        
+        this.users= users; 
+        this.userSearchTree = userSearchTree; 
     }
 
     public UserSearchTree getUserSearchTree() {
@@ -13,7 +14,13 @@ public class UserSearchTree {
     }
 
     public boolean Login (String username, String pw) {
-        return true;
+        if(users.username == username) {
+            System.out.println("please type in your password"); 
+            if(users.password == pw){
+                return true; 
+            }
+            return false; 
+        }
     }
 
     public LawEnforcementUser addUser(String username, String pw, int clearance) {

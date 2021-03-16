@@ -29,7 +29,7 @@ public class BinarySearchTree <T extends Comparable<T>> {
     public Node add (Node node, T data) {
         if(node == null)
             node = new Node(data);
-        else if(data.compareTo(ndoe.data) < 0)
+        else if(data.compareTo(node.data) < 0)
             node.leftChild = add(node.leftChild, data);
         else if(data.compareTo(node.data) > 0)
             node.rightChild = add(node, data);
