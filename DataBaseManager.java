@@ -18,22 +18,26 @@ public class DataBaseManager {
     }
 
     public void AddCrime(Crime crime) {
+        crimeList.addCrime(crime);
         return;
     }
 
     public void AddPerson(Person person) {
+        personList.addPerson(person);
         return;
     }
 
-    public void createUser(String username, String pw) {
+    public void createUser(String username, String pw, int clearanceLevel) {
+        LawEnforcementUser newUser = new LawEnforcementUser(username, pw, clearanceLevel);
         return;
     }
 
-    public void search() {
+    public void search(int option) {  
         return;
     }
 
     public boolean loginUser() {
+        //check if user exists first, if they do, login, if not create user
         return true;
     }
 
@@ -41,7 +45,7 @@ public class DataBaseManager {
         return;
     }
 
-    public void export(UUID id) {
+    public void export(int option, UUID id) {
         return;
     }
 
@@ -55,6 +59,14 @@ public class DataBaseManager {
 
     public void exit() {
         return;
+    }
+
+    public void editCrime(Crime crime) {
+
+    }
+
+    public void editPerson(Person person) {
+        
     }
 
 }

@@ -13,7 +13,7 @@ public class Crime {
     protected ArrayList<LawEnforcementUser> workingOnCase; 
     protected String crimeDescription; 
 
-    public Crime() {
+    public Crime(UUID caseNumber, String title, boolean isSolved, String location, String date, UUID user, String crimeDescription) {
         this.caseNumber = caseNumber; 
         this.title = title; 
         this.People = People; 
@@ -23,7 +23,7 @@ public class Crime {
         this.isSolved = isSolved; 
         this.location = location; 
         this.typeOfCrime = typeOfCrime; 
-        this.workingOnCase = workingOnCase; 
+        this.workingOnCase = user; 
     }
     
     public void deleteCrime() {

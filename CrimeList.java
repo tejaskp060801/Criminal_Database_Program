@@ -18,7 +18,7 @@ public class CrimeList {
         return true;
     }
 
-    public void addCrime() {
+    public void addCrime(Crime crime) {
 
     }
 

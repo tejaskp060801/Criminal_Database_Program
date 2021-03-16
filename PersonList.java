@@ -14,7 +14,7 @@ public class PersonList {
         return personlist;
     }
 
-    public void addPerson() {
+    public void addPerson(Person person) {
 
     }
 
