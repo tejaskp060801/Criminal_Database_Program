@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class UserSearchTree {
     private UserSearchTree userSearchTree;
-    //private BinarySearchTree <LawEnforcementUser> users;
+    private BinarySearchTree <LawEnforcementUser> users;
 
     private UserSearchTree() {
         

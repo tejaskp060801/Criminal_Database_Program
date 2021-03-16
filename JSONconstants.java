@@ -48,6 +48,9 @@ public abstract class JSONconstants {
     public static final String PERSON_STATEMENT = "statement";
     public static final String PERSON_OF_INTEREST_CRIMES = "crimes";
     public static final String PERSON_OF_INTEREST_RELATIONS = "relations";
+    //  FamilyMember/Associate Data
+    public static final String FAMILY_RELATIONSHIP = "relationship";
+    public static final String FAMILY_RELATIONSHIP_ID = "relationshipID";
 
     public static final String CRIME_ID = "caseNumber";
     public static final String CRIME_TITLE = "title";

@@ -12,11 +12,11 @@
         "evidence": [
             {
                 "eviddescription": "This is a counterfeit cigarette, clearly made without the proper licensing",
-                "evidenceId": 12,
+                "evidenceId": "ead6e722-8675-11eb-8dcd-0242ac130003",
                 "evidenceType": null
             }, {
                 "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
-                "evidenceId": 13,
+                "evidenceId": "f302aeea-8675-11eb-8dcd-0242ac130003",
                 "evidenceType": {
                     "BloodSample": {
                         "bloodType": "AB+",
@@ -42,7 +42,7 @@
         "evidence": [
             {
                 "eviddescription": "A written confession from Ms. Windower indicating that she murdered her watermelon",
-                "evidenceId": 45,
+                "evidenceId": "f91a8316-8675-11eb-8dcd-0242ac130003",
                 "evidenceType": null
             }
         ],

@@ -109,7 +109,8 @@ public class JSONReader extends JSONconstants {
                     }
                     Witness temp = new Witness(); //  insert parameterized constructor
                     ret.add(temp);
-                } else if (persontype.equalsIgnoreCase("Suspect")) {                    String statement = (String) object.get(PERSON_STATEMENT);
+                } else if (persontype.equalsIgnoreCase("Suspect")) {                    
+                    String statement = (String) object.get(PERSON_STATEMENT);
                     JSONArray crimes = (JSONArray) object.get(PERSON_OF_INTEREST_CRIMES);
                     Iterator<String> iterator = crimes.iterator();
                     ArrayList<UUID> ids = new ArrayList<UUID>();
@@ -125,14 +126,40 @@ public class JSONReader extends JSONconstants {
                     Suspect temp = new Suspect(); //  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Criminal")) {
+                    boolean injail = (boolean) object.get(PERSON_IN_JAIL);
+                    boolean deceased = (boolean) object.get(PERSON_DECEASED);
+                    JSONArray crimes = (JSONArray) object.get(PERSON_CRIMES);
+                    Iterator<String> iterator = crimes.iterator();
+                    ArrayList<UUID> ids = new ArrayList<UUID>();
+                    while (iterator.hasNext()) {
+                        ids.add(UUID.fromString(iterator.next()));
+                    }
+                    JSONArray jsonfamily = (JSONArray) object.get(PERSON_FAMILY);
+                    Iterator<String> iteratorfamily = jsonfamily.iterator();
+                    ArrayList<UUID> family = new ArrayList<UUID>();
+                    while (iteratorfamily.hasNext()) {
+                        family.add(UUID.fromString(iterator.next()));
+                    }
+                    JSONArray jsonassociates = (JSONArray) object.get(PERSON_ASSOCIATES);
+                    Iterator<String> iteratorassociates = jsonassociates.iterator();
+                    ArrayList<UUID> associates =new ArrayList<UUID>();
+                    while (iteratorassociates.hasNext()) {
+                        associates.add(UUID.fromString(iteratorassociates.next()));
+                    }
 
                     Criminal temp = new Criminal(); //  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("FamilyMember")) {
-
+                    String relationship = (String) object.get(FAMILY_RELATIONSHIP);
+                    String relationshipid = (String) object.get(FAMILY_RELATIONSHIP_ID);
+                    UUID familyid = UUID.fromString(relationshipid);
+                
                     FamilyMember temp = new FamilyMember(); //  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Associate")) {
+                    String relationship = (String) object.get(FAMILY_RELATIONSHIP);
+                    String relationshipid = (String) object.get(FAMILY_RELATIONSHIP_ID);
+                    UUID familyid = UUID.fromString(relationshipid);
 
                     Associate temp = new Associate(); // insert parameterized constructor
                     ret.add(temp);
