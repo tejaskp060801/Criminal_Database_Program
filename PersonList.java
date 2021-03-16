@@ -16,30 +16,17 @@ public class PersonList {
     }
 
     public void addPerson(Person p) {
-        for(int i = 0; i<1; i++) {
-            people.add(people.size()+1, p);
-        }
-        personlist.addPerson(p);
+        people.add(p);
     }
 
-    public boolean removePerson(Person p) {
-        boolean checker; 
+    public boolean removePerson(Person p) { 
         for(int i = 0; i< people.size(); i++) {
             if(people.get(i) == p){
-                checker = true; 
-            }
-        }
-        checker = false; 
-
-        if(checker == true) {
-            removePerson(p); 
-            for(int i = 0; i<people.size(); i++)
-            {
                 people.remove(i); 
+                return true;
             }
         }
-
-        return checker; 
+        return false; 
     }
 
     public Person editPerson(Person person) {
