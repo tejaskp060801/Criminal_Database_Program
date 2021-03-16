@@ -22,7 +22,10 @@ public class DataBaseUI {
 
     public void run() {
         System.out.println(WELCOME_MSG);
-        loginUser();
+        System.out.println("Please enter your username followed by ENTER and then your password");
+        String uname = scanner.nextLine();
+        String pw = scanner.nextLine();
+        loginUser(uname, pw);
 
         while(true) {
             DisplayMenu();
@@ -71,8 +74,36 @@ public class DataBaseUI {
     }
 
     private void search() {
+        System.out.println("What would you like to search for?\n 1. Person\n2. Crime");
+        int choice = scanner.nextInt();
+        if(choice == 1) {
+            System.out.println("Searching for person:\nHow would you like to search for this person?");
+            searchPerson();
+            
+        }
+        if(choice == 2) {
+            System.out.println("Searching for crime\nHow would you like to search for this crime?");
+            searchCrime();
+           }
+        else  
+            System.out.println("Invalid input");
         return;
-        //need to find what they want to search for
+        
+    }
+
+    private void searchCrime() {
+        System.out.println("\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Type of crime\n5. Location of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma");
+        /*
+            need to be able to take multiple parameters at a time and search for them
+        */
+    }
+
+    private void searchPerson() {
+        System.out.println("\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Shoe size\n16. US Citizenship\n17. Crime Organization\n18. Associate\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma");
+        /*
+            need to be able to take multiple parameters at a time and search for them
+        */
+
     }
 
     private void add() {
@@ -313,7 +344,7 @@ public class DataBaseUI {
     }
 
     private void export() {
-        System.out.println("What would you like to search for?\n1. Person\n2. Crime?");
+        System.out.println("What would you like to export?\n1. Person\n2. Crime?");
         int choice = scanner.nextInt();
         System.out.println("Please enter the UUID corresponding to what you would like to export");
         UUID id = scanner.nextLine();
@@ -321,14 +352,26 @@ public class DataBaseUI {
         return;
     }
 
-    private void loginUser() {
-        databaseManager.loginUser();
+    private void loginUser(String username, String password) {
+        if (databaseManager.loginUser(username, password) == false) {
+            System.out.println("There is no user with that username and password.\nWould you like to create a user? (Y/N)");
+            String c = scanner.nextLine();
+            if(c == "Y" || c == "y") {
+                System.out.println("The same username and password you previously entered will be used to create your user account.\nWhat is your clearance level?");
+                int level = scanner.nextInt();
+                databaseManager.createUser(username, password, level);
+            }
+            else if(c == "N" || c == "n") {
+                databaseManager.exit();
+            }
+        }
         return;
     }
 
     private void logoutUser() {
         System.out.println("- - - Logging you out of the Criminal Database - - -\nSee you next time!");
         databaseManager.logoutUser();
+        databaseManager.exit();
         return;
     }
   
@@ -355,10 +398,18 @@ public class DataBaseUI {
     private void editPerson() {
         System.out.println("Enter the UUID of the person you would like to edit");
         UUID personIDEdit = scanner.nextLine();
+        /*do a search person with the UUID parameter... return the person and then allow them to edit
+        Construct new Person with new attributes
+        Edit the person; will be swapping out old person for new person
+        databaseManager.editPerson(old, newPerson);
+        */
     }
 
     private void editCrime() {
         System.out.println("Enter the UUID of the crime you would oike to edit");
         UUID crimeIDEdit = scanner.nextLine();
+        /*
+            search for crime with UUID parameter... return crime and allow user to edit
+        */
     }
 }

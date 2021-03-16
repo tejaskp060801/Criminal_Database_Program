@@ -36,17 +36,25 @@ public class DataBaseManager {
         return;
     }
 
-    public boolean loginUser() {
-        //check if user exists first, if they do, login, if not create user
-        return true;
+    public boolean loginUser(String username, String password) {
+        //check if user with that username and pw exists first, if they do, login, if not create user
+        return policeBST.Login(username, password);       
     }
 
     public void logoutUser() {
-        return;
+        exit();
     }
 
     public void export(int option, UUID id) {
-        return;
+        /*
+            Maybe should export to text file instead of just println
+        */
+        if(option == 1) {
+            System.out.println(personList.searchPerson(id));
+        }
+        else if(option == 2) {
+            System.out.println(crimeList.searchCrime(id));
+        }
     }
 
     public void save() {
@@ -58,15 +66,15 @@ public class DataBaseManager {
     }
 
     public void exit() {
-        return;
+        System.exit(0);
     }
 
-    public void editCrime(Crime crime) {
-
+    public void editCrime(Crime old, Crime newCrime) {
+        crimeList.editCrime(old, newCrime);
     }
 
-    public void editPerson(Person person) {
-        
+    public void editPerson(Person old, Person newPerson) {
+        personList.editPerson(old, newPerson);
     }
 
 }
