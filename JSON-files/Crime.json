@@ -1,6 +1,6 @@
 [
     {
-        "caseNumber": 1,
+        "caseNumber": "ab4639e8-8664-11eb-8dcd-0242ac130003",
         "title": "Jerome Anderson car accident",
         "isSolved": true,
         "People": {
@@ -11,11 +11,11 @@
         "date": "February 19th, 2021 at 15:21",
         "evidence": [
             {
-                "description": "This is a counterfeit cigarette, clearly made without the proper licensing",
+                "eviddescription": "This is a counterfeit cigarette, clearly made without the proper licensing",
                 "evidenceId": 12,
                 "evidenceType": null
             }, {
-                "description": "Jerome Anderson blood sample found at the site of the accident",
+                "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
                 "evidenceId": 13,
                 "evidenceType": {
                     "BloodSample": {
@@ -30,7 +30,7 @@
         },
         "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
     }, {
-        "caseNumber": 2,
+        "caseNumber": "c0a98718-8664-11eb-8dcd-0242ac130003",
         "title": "Watermelon murder",
         "isSolved": true,
         "People": {
@@ -41,13 +41,13 @@
         "date": "February 2nd, 2020 at 4:02",
         "evidence": [
             {
-                "description": "A written confession from Ms. Windower indicating that she murdered her watermelon",
+                "eviddescription": "A written confession from Ms. Windower indicating that she murdered her watermelon",
                 "evidenceId": 45,
                 "evidenceType": null
             }
         ],
         "workingOnCase": {
-            "LawEnforcementID": [ 123, 456 ]
+            "LawEnforcementID": [ 1, 2 ]
         },
         "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
     }

@@ -1,6 +1,6 @@
 [
     {
-        "PersonID": 1,
+        "PersonID": "16027eb8-8660-11eb-8dcd-0242ac130003",
         "firstName": "Michael",
         "lastName": "Mitchell",
         "age": 24,
@@ -19,17 +19,14 @@
         "shoeSize": 10.5,
         "isUSCitizen": true,
         "crimeOrganization": null,
-        "personType": {
-            "Criminal": {
-                "isInJail": false,
-                "Deceased": false,
-                "crimes": [ 504 ],
-                "family": [ 678, 910 ],
-                "associates": [ ]
-            }
-        }
+        "personType": "Criminal",
+        "isInJail": false,
+        "Deceased": false,
+        "crimes": [ "ab4639e8-8664-11eb-8dcd-0242ac130003" ],
+        "family": [ ],
+        "associates": [ ]
     }, {
-        "PersonID": 2,
+        "PersonID": "1a61cd38-8660-11eb-8dcd-0242ac130003",
         "firstName": "Jerome",
         "lastName": "Anderson",
         "age": 27,
@@ -46,15 +43,15 @@
         "tattoo": true,
         "tattooDescription": "left forearm has red and green dragon tattoo",
         "shoeSize": 10.0,
-        "isUScitizen": true,
+        "isUSCitizen": true,
         "crimeOrganization": null,
-        "personType": {
-            "Witness": {
-                "willTestify": true
-            }
-        }
+        "personType": "Witness",
+        "crimes": [ "ab4639e8-8664-11eb-8dcd-0242ac130003" ],
+        "relations": [ ],
+        "willTestify": true,
+        "statement": "I'm a witness to a crime! wow!"
     }, {
-        "PersonID": 3,
+        "PersonID": "1f6f069c-8660-11eb-8dcd-0242ac130003",
         "firstName": "Vicki",
         "lastName": "Windower",
         "age": 44,
@@ -63,6 +60,7 @@
         "address": "994 Blossom Street, Columbia, SC",
         "profession": "window painter",
         "height": 4.7,
+        "weight": 140.2,
         "skinColor": "light brown",
         "hairColorNatural": "grey",
         "hairColorUnnatural": "blonde",
@@ -70,16 +68,13 @@
         "tattoo": true,
         "tattooDescription": "yellow dove with a cross",
         "shoeSize": 11.0,
-        "isUScitizen": true,
+        "isUSCitizen": true,
         "crimeOrganization": null,
-        "personType": {
-            "Criminal": {
-                "isInJail": false,
-                "Deceased": false,
-                "crimes": [ 2 ],
-                "family": [ ],
-                "associates": [ ]
-            }
-        }
+        "personType": "Criminal",
+        "isInJail": false,
+        "Deceased": false,
+        "crimes": [ "c0a98718-8664-11eb-8dcd-0242ac130003" ],
+        "family": [ ],
+        "associates": [ ]
     }
 ]

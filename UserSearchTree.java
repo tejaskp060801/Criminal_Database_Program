@@ -17,15 +17,17 @@ public class UserSearchTree {
     }
 
     public LawEnforcementUser addUser(String username, String pw, int clearance) {
-        return new LawEnforcementUser(username, pw, clearance);
+        LawEnforcementUser user = new LawEnforcementUser<>(username, pw, clearance);
+        users.addElement(user); 
     }
 
     public LawEnforcementUser search(String username) {
-        return new LawEnforcementUser("", "", 1);
+        LawEnforcementUser user = new LawEnforcementUser(username,"",1); 
+        users.search(user); 
     }
 
     public void printUserNamesInOrder() {
-        return;
+        users.print(); 
     }
 
 
