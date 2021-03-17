@@ -90,7 +90,7 @@ public class JSONReader extends JSONconstants {
                    while (iteratorassociate.hasNext()) {
                     relations.add(UUID.fromString(iteratorassociate.next()));
                 }
-                    Victim temp = new Victim(); // insert parameterized constructor
+                    Victim temp = new Victim(); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Witness")) {
                     boolean willtestify = (boolean) object.get(PERSON_TESTIFY);
@@ -107,7 +107,7 @@ public class JSONReader extends JSONconstants {
                     while (iteratorassociate.hasNext()) {
                         relations.add(UUID.fromString(iteratorassociate.next()));
                     }
-                    Witness temp = new Witness(); //  insert parameterized constructor
+                    Witness temp = new Witness(); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Suspect")) {                    
                     String statement = (String) object.get(PERSON_STATEMENT);
@@ -123,7 +123,7 @@ public class JSONReader extends JSONconstants {
                     while (iteratorassociate.hasNext()) {
                         relations.add(UUID.fromString(iteratorassociate.next()));
                     }
-                    Suspect temp = new Suspect(); //  insert parameterized constructor
+                    Suspect temp = new Suspect(); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Criminal")) {
                     boolean injail = (boolean) object.get(PERSON_IN_JAIL);
@@ -147,21 +147,21 @@ public class JSONReader extends JSONconstants {
                         associates.add(UUID.fromString(iteratorassociates.next()));
                     }
 
-                    Criminal temp = new Criminal(); //  insert parameterized constructor
+                    Criminal temp = new Criminal(); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("FamilyMember")) {
                     String relationship = (String) object.get(FAMILY_RELATIONSHIP);
                     String relationshipid = (String) object.get(FAMILY_RELATIONSHIP_ID);
                     UUID familyid = UUID.fromString(relationshipid);
                 
-                    FamilyMember temp = new FamilyMember(); //  insert parameterized constructor
+                    FamilyMember temp = new FamilyMember(); // TODO insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Associate")) {
                     String relationship = (String) object.get(FAMILY_RELATIONSHIP);
                     String relationshipid = (String) object.get(FAMILY_RELATIONSHIP_ID);
                     UUID familyid = UUID.fromString(relationshipid);
 
-                    Associate temp = new Associate(); // insert parameterized constructor
+                    Associate temp = new Associate(); // TODO insert parameterized constructor
                     ret.add(temp);
                 } else {
                     System.out.println("JSON file invalid, not a valid type of person included");
@@ -184,8 +184,76 @@ public class JSONReader extends JSONconstants {
             JSONArray crimes = (JSONArray)new JSONParser().parse(filereader);
 
             for (int i = 0; i < crimes.size(); i++) {
-                
-            }
+                JSONObject object = (JSONObject) crimes.get(i);
+                String caseid = (String) object.get(CRIME_ID);
+                UUID crimeid = UUID.fromString(caseid);
+                String title = (String) object.get(CRIME_TITLE);
+                boolean issolved = (boolean) object.get(CRIME_SOLVED_FLAG);
+                JSONArray peopleinvolved = (JSONArray) object.get(CRIME_PEOPLE_INVOLVED);
+                Iterator<String> peopleiterator = peopleinvolved.iterator();
+                ArrayList<UUID> people = new ArrayList<UUID>();
+                while (peopleiterator.hasNext()) {
+                    people.add(UUID.fromString(peopleiterator.next()));
+                }
+                JSONArray typesofcrime = (JSONArray) object.get(CRIME_TYPE_OF_CRIME);
+                Iterator<String> typeiterator = typesofcrime.iterator();
+                ArrayList<String> crimetype = new ArrayList<String>();
+                while (typeiterator.hasNext()) {
+                    crimetype.add(typeiterator.next());
+                }
+                String location = (String) object.get(CRIME_LOCATION);
+                String date  = (String) object.get(CRIME_DATE);
+                JSONArray jsonevidence = (JSONArray) object.get(CRIME_EVIDENCE);
+                ArrayList<Evidence> evidence = new ArrayList<Evidence>();
+
+                for (int j = 0; j < jsonevidence.size(); j++) {
+                    JSONObject current = (JSONObject) jsonevidence.get(j);
+                    String evidencedesc = (String) current.get(EVIDENCE_DESCRIPTION);
+                    String evidenceidstr = (String) current.get(EVIDENCE_ID);
+                    UUID evidenceid = UUID.fromString(evidenceidstr);
+                    String evidencetype = (String) current.get(EVIDENCE_TYPE);
+
+                    if (evidencetype == null) {
+                        Evidence eret = new Evidence();  // TODO add parameterized constructor
+                        evidence.add(eret);
+                    } else if (evidencetype.equalsIgnoreCase("BloodSample")) {
+                        String bloodtype = (String) current.get(BLOOD_TYPE);
+                        String bloodvolume = (String) current.get(BLOOD_VOLUME);
+                        BloodSample eret = new BloodSample();  //  TODO add parameterized constructor
+                        evidence.add(eret);
+                    } else if (evidencetype.equalsIgnoreCase("HairSample")) {
+                        String haircolor = (String) current.get(HAIR_COLOR);
+                        double hairlength = (double) current.get(HAIR_LENGTH);
+                        double hairthickness = (double) current.get(HAIR_THICKNESS);
+                        HairSample eret = new HairSample();  //  TODO add parameterizeed constructor
+                        evidence.add(eret);
+                    } else if (evidencetype.equalsIgnoreCase("Gun")) {
+                        String guntype = (String) current.get(GUN_TYPE);
+                        String gunmodel = (String) current.get(GUN_MODEL);
+                        String gunbullet = (String) current.get(GUN_BULLET_TYPE);
+                        int gunyearmade = ((Long) current.get(GUN_YEAR_MADE)).intValue();
+                        Gun eret = new Gun();  //  TODO add parameterized constructor
+                        evidence.add(eret);
+                    } else if (evidencetype.equalsIgnoreCase("Bullet")) {
+                        String bullettype = (String) current.get(BULLET_TYPE);
+                        Bullet eret = new Bullet();  //  TODO add parameteried constructor
+                        evidence.add(eret);
+                    } else {
+                        System.out.println("JSON format invalid, seek assistance from a technical expert");
+                        return null;
+                    }
+                }
+
+                JSONArray jsonworkingoncase = (JSONArray) object.get(CRIME_WORKING_ON_CASE);
+                Iterator<String> caseiterator = jsonworkingoncase.iterator();
+                ArrayList<UUID> workingoncase = new ArrayList<UUID>();
+                while (caseiterator.hasNext()) {
+                    workingoncase.add(UUID.fromString(caseiterator.next()));
+                }
+                String crimedesc = (String) object.get(CRIME_DESCRIPTION);
+                Crime temp = new Crime();  //  TODO add parameterized constructor
+                ret.add(temp);
+            }            
 
         } catch(Exception e) {
             e.printStackTrace();
