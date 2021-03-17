@@ -1,6 +1,5 @@
 
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
 
 import javax.lang.model.util.ElementScanner6;
 
@@ -88,22 +87,181 @@ public class DataBaseUI {
         else  
             System.out.println("Invalid input");
         return;
-        
     }
 
     private void searchCrime() {
-        System.out.println("\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Type of crime\n5. Location of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma");
-        /*
-            need to be able to take multiple parameters at a time and search for them
-        */
+        System.out.println("\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Type of crime\n5. Location of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma(no space).\n");
+        String input = scanner.nextLine();
+        String[] paramChoices = new String[7];
+        paramChoices = input.split(",");
+        List<String> paramChoiceList = Arrays.asList(paramChoices);
+        ArrayList<String> paramChoiceArrayList = new ArrayList<String>(paramChoiceList);
+        
+        ArrayList<Object> searchParams = new ArrayList<Object>();
+        for(int i=0; i<7; i++) {
+            if(paramChoices[i] == "1") {
+                System.out.println("\nEnter the CaseID of the crime you would like to search");
+                UUID caseID = scanner.nextLine();
+                searchParams.add(caseID);
+            }
+
+            if(paramChoices[i] == "2") {
+                System.out.println("\nEnter the case title of the crime you would like to search");
+                String title = scanner.nextLine();
+                searchParams.add(title);
+            }
+
+            if(paramChoices[i] == "3") {
+                System.out.println("\nEnter the UUIDs of the people involved separated by a comma (no spaces)");
+                input = scanner.nextLine();
+                UUID[] people = inpus.split(",");
+                List<String> peopleList = Arrays.asList(people);
+                ArrayList<UUID> peopleInvolved = new ArrayList<UUID>(peopleList);
+                searchParams.add(peopleInvolved);
+            }
+
+            if(paramChoices[i] == "4") {
+                System.out.println("\nEnter the type of crime");
+                String crimeType = scanner.nextLine();
+                searchParams.add(crimeType);
+            }
+
+            if(paramChoices[i] == "5") {
+                System.out.println("\nEnter the location of the crime");
+                String location = scanner.nextLine();
+                searchParams.add(location);
+            }
+
+            if(paramChoices[i] == "6") {
+                System.out.println("\nEnter the date that the crime took place");
+                String date = scanner.nextLine();
+                searchParams.add(date);
+            }
+
+            if(paramChoices[i] == "7") {
+                System.out.println("Enter the UUIDs of the evidence related to the crime separated by a comma (no spaces)");
+                input = scanner.nextLine();
+                UUID[] evidence = inpus.split(",");
+                List<String> evidenceList = Arrays.asList(evidence);
+                ArrayList<UUID> evidenceArrayList = new ArrayList<UUID>(evidenceList);
+                searchParams.add(evidenceArrayList);
+            }
+        }
+        databaseManager.searchCrime(paramChoiceArrayList, searchParams);
     }
 
     private void searchPerson() {
-        System.out.println("\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Shoe size\n16. US Citizenship\n17. Crime Organization\n18. Associate\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma");
-        /*
-            need to be able to take multiple parameters at a time and search for them
-        */
+        System.out.println("\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Tattoo Description\n16. ShoeSize\n17. crimeOrganization\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma (no space).\n");
+        String input = scanner.nextLine();
+        String[] paramChoices = new String[7];
+        paramChoices = input.split(",");
+        List<String> paramChoiceList = Arrays.asList(paramChoices);
+        ArrayList<String> paramChoiceArrayList = new ArrayList<String>(paramChoiceList);
+        
+        ArrayList<Object> searchParams = new ArrayList<Object>();
+        for(int i=0; i<18; i++) {
+            if(paramChoices[i] == "1") {
+                System.out.println("\nEnter the first name of the person you would like to search");
+                String firstName = scanner.nextLine();
+                searchParams.add(firstName);
+            }
 
+            if(paramChoices[i] == "2") {
+                System.out.println("\nEnter the last name of the person you would like to search");
+                String lastName = scanner.nextLine();
+                searchParams.add(lastName);
+            }
+
+            if(paramChoices[i] == "3") {
+                System.out.println("\nEnter the age of the person you would like to search");
+                int age = scanner.nextInt();
+                searchParams.add(age);
+            }
+
+            if(paramChoices[i] == "4") {
+                System.out.println("\nEnter the gender of the person you would like to search");
+                String gender = scanner.nextLine();
+                searchParams.add(gender);
+            }
+
+            if(paramChoices[i] == "5") {
+                System.out.println("\nEnter the race or ethnicity of the person you would like to search");
+                String race = scanner.nextLine();
+                searchParams.add(race);
+            }
+
+            if(paramChoices[i] == "6") {
+                System.out.println("\nEnter the UUID of the person you would like to search");
+                UUID personID = scanner.nextLine();
+                searchParams.add(personID);
+            }
+
+            if(paramChoices[i] == "7") {
+                System.out.println("\nEnter the address of the person you would like to search");
+                String address = scanner.nextLine();
+                searchParams.add(address);
+            }
+
+            if(paramChoices[i] == "8") {
+                System.out.println("\nEnter the profession of the person you would like to search");
+                String profession = scanner.nextLine();
+                searchParams.add(profession);
+            }
+
+            if(paramChoices[i] == "9") {
+                System.out.println("\nEnter the height of the person you would like to search");
+                double height = scanner.nextLine();
+                searchParams.add(height);
+            }
+
+            if(paramChoices[i] == "10") {
+                System.out.println("\nEnter the weight of the person you would like to search");
+                double weight = scanner.nextLine();
+                searchParams.add(weight);
+            }
+
+            if(paramChoices[i] == "11") {
+                System.out.println("\nEnter the skin color of the person you would like to search");
+                String skinColor = scanner.nextLine();
+                searchParams.add(skinColor);
+            }
+
+            if(paramChoices[i] == "12") {
+                System.out.println("\nEnter the natural hair color of the person you would like to search");
+                String naturalHairColor = scanner.nextLine();
+                searchParams.add(naturalHairColor);
+            }
+
+            if(paramChoices[i] == "13") {
+                System.out.println("\nEnter the un-natural hair color of the person you would like to search");
+                String unNaturalHairColor = scanner.nextLine();
+                searchParams.add(unNaturalHairColor);
+            }
+
+            if(paramChoices[i] == "14") {
+                System.out.println("\nEnter the clothing of the person you would like to search");
+                String clothing = scanner.nextLine();
+                searchParams.add(clothing);
+            }
+
+            if(paramChoices[i] == "15") {
+                System.out.println("\nEnter the tattoo description of the person you would like to search");
+                String tattooDescription = scanner.nextLine();
+                searchParams.add(tattooDescription);
+            }
+
+            if(paramChoices[i] == "16") {
+                System.out.println("\nEnter the shoe size of the person you would like to search");
+                double shoeSize = scanner.nextLine();
+                searchParams.add(shoeSize);
+            }
+
+            if(paramChoices[i] == "17") {
+                System.out.println("\nEnter the criminal organization of the person you would like to search");
+                String crimeOrganization = scanner.nextLine();
+                searchParams.add(crimeOrganization);
+            }
+        }
     }
 
     private void add() {

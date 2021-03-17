@@ -1,6 +1,6 @@
 
 
-import java.util.UUID;
+import java.util.*;
 
 public class DataBaseManager {
     private UserSearchTree policeBST;
@@ -32,8 +32,12 @@ public class DataBaseManager {
         return;
     }
 
-    public void search(int option) {  
-        return;
+    public void searchCrime(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {  
+        crimeList.searchCrime(parameterChoices, searchParameters);
+    }
+
+    public void searchPerson(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {
+        personList.searchPerson(parameterChoices, searchParameters);
     }
 
     public boolean loginUser(String username, String password) {
