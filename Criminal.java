@@ -20,13 +20,13 @@ public class Criminal extends Person {
         
     }
     public void addFamilyMember(FamilyMember fm) {
-        
+        family.add(fm);  
     }
     public void addAssociate(Associate assoc) {
-        
+        associates.add(assoc); 
     }
     public void addCrime(Crime crime) {
-        
+        crimes.add(crime); 
     }
     public ArrayList<Crime> getCrimes() {
         return crimes; 
@@ -38,7 +38,7 @@ public class Criminal extends Person {
         return associates; 
     }
     public String toString() {
-        return ""; 
+        return super.toString() + this.Deceased + this.associates + this.crimes + this.family + this.isInJail; 
     }
     
 }
