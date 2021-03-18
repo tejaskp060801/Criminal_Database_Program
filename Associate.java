@@ -6,19 +6,11 @@ public class Associate extends Person{
 
 
     public Associate() {
-        return;
+        this.relationship = relationship;
+        this.relationshipID = relationshipID; 
     }
-
-    public void addToDataBase(Person p) {
-        return;
-    }
-
     public String toString(){
-        return "";
-    }
-
-    public void addPerson(Person person) {
-        
+        return super.toString() + this.relationship + this.relationshipID;
     }
 
 
