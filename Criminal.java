@@ -7,11 +7,16 @@ public class Criminal extends Person {
     private ArrayList<FamilyMember> family; 
     private ArrayList<Associate> associates; 
     @Override
-    public void addPerson(Person p) {
-        // TODO Auto-generated method stub
+    public void addToDataBase(Person p) {
         
     }
     public Criminal() {
+        super(); 
+        this.isInJail = isInJail; 
+        this.Deceased = Deceased; 
+        this.crimes = crimes; 
+        this.family = family; 
+        this.associates = associates; 
         
     }
     public void addFamilyMember(FamilyMember fm) {
