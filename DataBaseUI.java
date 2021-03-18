@@ -46,9 +46,8 @@ public class DataBaseUI {
                     edit();
                     break;
 
-                case 5: //save and update files
+                case 5: //save and files
                     save();
-                    update();
                     break;
 
                 case 6: //logout

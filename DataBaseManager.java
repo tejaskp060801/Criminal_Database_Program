@@ -13,9 +13,6 @@ public class DataBaseManager {
         
     }
 */
-    public void CheckUpdateTime() {
-        return;
-    }
 
     public void AddCrime(Crime crime) {
         crimeList.addCrime(crime);
@@ -46,6 +43,7 @@ public class DataBaseManager {
     }
 
     public void logoutUser() {
+        save();
         exit();
     }
 
@@ -62,11 +60,7 @@ public class DataBaseManager {
     }
 
     public void save() {
-        return;
-    }
-
-    public void update() {
-        return;
+        DataWriter.save(crimeList.getCrimeArrayList(), personList.getPersonArrayList());
     }
 
     public void exit() {
