@@ -135,6 +135,10 @@ public abstract class Person {
         this.isUSCitizen = isUsCitizen; 
     }
     public String toString() {
-        return ""; 
+        return "The persons name is " + this.firstName + " " + this.lastName 
+        + "\n The persons age is" + this.age + "\n the persons gender is " + this.gender + "\n the persons race is " + this.race
+        + "\n The persons UUID is " +this.PersonID + "\n The persons address is " + this.address + this.profession + this.height + this. weight
+        + this.skinColor + this.hairColorNatural + this.hairColorUnNatural + this.clothing + this.tattoo + this.tattooDescription + this.shoeSize
+        + this.isUSCitizen + this.crimeOrganization + this.personType; 
     }
 }
