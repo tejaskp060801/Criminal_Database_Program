@@ -79,9 +79,11 @@ public abstract class Person {
     public String getOrganization() {
         return this.crimeOrganization;
     }
-    public void setName(String firstName, String lastName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName; 
-        this.lastName = lastName; 
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
     public void setAge(int age) {
         if(age <= 0) {
@@ -133,6 +135,9 @@ public abstract class Person {
     }
     public void setIsUSCitizen(boolean isUsCitizen) {
         this.isUSCitizen = isUsCitizen; 
+    }
+    public void setCriminalOrganization(String org) {
+        this.crimeOrganization = org;
     }
     public void editPerson() {
         

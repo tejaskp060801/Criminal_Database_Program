@@ -8,11 +8,11 @@ public class DataBaseManager {
     private PersonList personList;
     private double timeSinceUpdate;
     private LawEnforcementUser user;
-
+/*
     public DataBaseManager() {
         
     }
-
+*/
     public void CheckUpdateTime() {
         return;
     }

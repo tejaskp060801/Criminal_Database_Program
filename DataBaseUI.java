@@ -69,7 +69,8 @@ public class DataBaseUI {
     }
 
     private void DisplayMenu() {
-        return;
+        System.out.println("***** Main Menu *****");
+        System.out.println("What would you like to do?\n1. Search\n2. Export Criminal Profile\n3. Add crime\n4. Edit crime\n5. Update files\n6. Logout");
     }
 
     private void search() {
@@ -262,6 +263,7 @@ public class DataBaseUI {
                 searchParams.add(crimeOrganization);
             }
         }
+        databaseManager.searchPerson(paramChoiceArrayList, searchParams);
     }
 
     private void add() {
@@ -561,13 +563,195 @@ public class DataBaseUI {
         Edit the person; will be swapping out old person for new person
         databaseManager.editPerson(old, newPerson);
         */
+        ArrayList<String> paramChoices = new ArrayList<String>();
+        //putting "6" in paramChocies arrayList so we are specifying we will search by UUID
+        paramChocies.add("6");
+        ArrayList<Object> searchParams = new ArrayList<Object>();
+        searchParams.add(personIDEdit);
+
+        //this should put the person that they searched for into Person temp
+        Person temp = databaseManager.searchPerson(paramChoices, searchParams);
+        Person replacement = temp;
+
+        System.out.println("What attributes of this person would you like to edit?\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Tattoo Description\n16. ShoeSize\n17. crimeOrganization\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma (no space).\n");
+        String input = scanner.nextLine();
+        String[] editChoices = input.split(",");
+
+        for(int i=0; i<18; i++) {
+            if(editChoices[i] == "1") {
+                System.out.println("\nEnter the first name of the person you would like to edit");
+                String firstName = scanner.nextLine();
+                replacement.setFirstName(firstName);
+            }
+
+            if(editChoices[i] == "2") {
+                System.out.println("\nEnter the last name of the person you would like to edit");
+                String lastName = scanner.nextLine();
+                replacement.setLastName(lastName);
+            }
+
+            if(editChoices[i] == "3") {
+                System.out.println("\nEnter the age of the person you would like to edit");
+                int age = scanner.nextInt();
+                replacement.setAge(age);
+            }
+
+            if(editChoices[i] == "4") {
+                System.out.println("\nEnter the gender of the person you would like to edit");
+                String gender = scanner.nextLine();
+                replacement.setGender(gender);
+            }
+
+            if(editChoices[i] == "5") {
+                System.out.println("\nEnter the race or ethnicity of the person you would like to edit");
+                String race = scanner.nextLine();
+                repalcement.setRace(race);
+            }
+
+            if(editChoices[i] == "6") {
+                System.out.println("\nEnter the UUID of the person you would like to edit");
+                UUID personID = scanner.nextLine();
+                replacement.setPersonID(personID);
+            }
+
+            if(editChoices[i] == "7") {
+                System.out.println("\nEnter the address of the person you would like to edit");
+                String address = scanner.nextLine();
+                repalcement.setAddress(address);
+            }
+
+            if(editChoices[i] == "8") {
+                System.out.println("\nEnter the profession of the person you would like to edit");
+                String profession = scanner.nextLine();
+                replacement.setProfession(profession);
+            }
+
+            if(editChoices[i] == "9") {
+                System.out.println("\nEnter the height of the person you would like to edit");
+                double height = scanner.nextLine();
+                replacement.setHeight(height);
+            }
+
+            if(editChoices[i] == "10") {
+                System.out.println("\nEnter the weight of the person you would like to edit");
+                double weight = scanner.nextLine();
+                replacement.setWeight(weight);
+            }
+
+            if(editChoices[i] == "11") {
+                System.out.println("\nEnter the skin color of the person you would like to edit");
+                String skinColor = scanner.nextLine();
+                replacement.setSkinColor(skinColor);
+            }
+
+            if(editChoices[i] == "12") {
+                System.out.println("\nEnter the natural hair color of the person you would like to edit");
+                String naturalHairColor = scanner.nextLine();
+                replacement.setHairColorNatural(naturalHairColor);
+            }
+
+            if(editChoices[i] == "13") {
+                System.out.println("\nEnter the un-natural hair color of the person you would like to edit");
+                String unNaturalHairColor = scanner.nextLine();
+                replacement.setHairColorUnNatural(unNaturalHairColor);
+            }
+
+            if(editChoices[i] == "14") {
+                System.out.println("\nEnter the clothing of the person you would like to edit");
+                String clothing = scanner.nextLine();
+                replacement.setClothing(clothing);
+            }
+
+            if(editChoices[i] == "15") {
+                System.out.println("\nEnter the tattoo description of the person you would like to edit");
+                String tattooDescription = scanner.nextLine();
+                replacement.setTattooDescription(tattooDescription);
+            }
+
+            if(editChoices[i] == "16") {
+                System.out.println("\nEnter the shoe size of the person you would like to edit");
+                double shoeSize = scanner.nextLine();
+                replacement.setShoeSize(shoeSize);
+            }
+
+            if(editChoices[i] == "17") {
+                System.out.println("\nEnter the criminal organization of the person you would like to edit");
+                String crimeOrganization = scanner.nextLine();
+                replacement.setCrimeOrganization(crimeOrganization);
+            }
+        }
+        databaseManager.editPerson(temp, replacement);
     }
 
     private void editCrime() {
-        System.out.println("Enter the UUID of the crime you would oike to edit");
+        System.out.println("Enter the UUID of the crime you would like to edit");
         UUID crimeIDEdit = scanner.nextLine();
         /*
             search for crime with UUID parameter... return crime and allow user to edit
         */
+        ArrayList<String> paramChoices = new ArrayList<String>();
+        //putting "1" in paramChocies arrayList so we are specifying we will search by UUID
+        paramChocies.add("1");
+        ArrayList<Object> searchParams = new ArrayList<Object>();
+        searchParams.add(crimeIDEdit);
+
+        //this should put the person that they searched for into Person temp
+        Crime temp = databaseManager.searchCrime(paramChoices, searchParams);
+        Crime replacement = temp;
+
+        System.out.println("What attributes of this crime would you like to edit?\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Tattoo Description\n16. ShoeSize\n17. crimeOrganization\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma (no space).\n");
+        String input = scanner.nextLine();
+        String[] editChoices = input.split(",");
+
+        for(int i=0; i<7; i++) {
+            if(editChoices[i] == "1") {
+                System.out.println("\nEnter the CaseID of the crime you would like to edit");
+                UUID caseID = scanner.nextLine();
+                replacement.setCaseID(caseID);
+            }
+
+            if(editChoices[i] == "2") {
+                System.out.println("\nEnter the case title of the crime you would like to edit");
+                String title = scanner.nextLine();
+                replacement.setTitle(title);
+            }
+
+            if(editChoices[i] == "3") {
+                System.out.println("\nEnter the UUIDs of the people involved separated by a comma (no spaces)");
+                input = scanner.nextLine();
+                UUID[] people = inpus.split(",");
+                List<String> peopleList = Arrays.asList(people);
+                ArrayList<UUID> peopleInvolved = new ArrayList<UUID>(peopleList);
+                replacement.setPeopleInvolved(people);
+            }
+
+            if(editChoices[i] == "4") {
+                System.out.println("\nEnter the type of crime");
+                String crimeType = scanner.nextLine();
+                replacement.setCrimeType(crimeType);
+            }
+
+            if(editChoices[i] == "5") {
+                System.out.println("\nEnter the location of the crime");
+                String location = scanner.nextLine();
+                replacement.setLocation(location);
+            }
+
+            if(editChoices[i] == "6") {
+                System.out.println("\nEnter the date that the crime took place");
+                String date = scanner.nextLine();
+                replacement.setDate(date);
+            }
+
+            if(editChoices[i] == "7") {
+                System.out.println("Enter the UUIDs of the evidence related to the crime separated by a comma (no spaces)");
+                input = scanner.nextLine();
+                UUID[] evidence = inpus.split(",");
+                List<String> evidenceList = Arrays.asList(evidence);
+                ArrayList<UUID> evidenceArrayList = new ArrayList<UUID>(evidenceList);
+                replacement.setEvidence(evidence);
+            }
+        }
+        databaseManager.editCrime(temp, replacement);
     }
 }
