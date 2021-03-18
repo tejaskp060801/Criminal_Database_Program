@@ -4,10 +4,8 @@ public class HairSample extends Evidence {
     public double thickness; 
 
     public HairSample() {
+        super();
         this.color = color; 
-        super.description = description; 
-        super.evidenceId = evidenceId; 
-        super.evidenceType = evidenceType; 
         this.length = length; 
         this.thickness = thickness; 
     }

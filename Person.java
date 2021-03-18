@@ -25,7 +25,7 @@ public abstract class Person {
     protected String crimeOrganization; 
     protected Person personType;
 
-    public abstract void addPerson(Person p); 
+    public abstract void addToDataBase(Person p); 
     public String getName() {
         return this.firstName + " " + this.lastName; 
     }
@@ -136,13 +136,20 @@ public abstract class Person {
     public void setIsUSCitizen(boolean isUsCitizen) {
         this.isUSCitizen = isUsCitizen; 
     }
+<<<<<<< HEAD
     public void setCriminalOrganization(String org) {
         this.crimeOrganization = org;
     }
     public void editPerson() {
         
     }
+=======
+>>>>>>> 5561ac87a27a0998b6f18bf59004f6f1f404249f
     public String toString() {
-        return ""; 
+        return "The persons name is " + this.firstName + " " + this.lastName 
+        + "\n The persons age is" + this.age + "\n the persons gender is " + this.gender + "\n the persons race is " + this.race
+        + "\n The persons UUID is " +this.PersonID + "\n The persons address is " + this.address + this.profession + this.height + this. weight
+        + this.skinColor + this.hairColorNatural + this.hairColorUnNatural + this.clothing + this.tattoo + this.tattooDescription + this.shoeSize
+        + this.isUSCitizen + this.crimeOrganization + this.personType; 
     }
 }

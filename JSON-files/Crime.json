@@ -3,10 +3,8 @@
         "caseNumber": "ab4639e8-8664-11eb-8dcd-0242ac130003",
         "title": "Jerome Anderson car accident",
         "isSolved": true,
-        "People": {
-            "PersonID": [ 2 ]
-        },
-        "typeOfCrime": ["class C felony", "class E felony"],
+        "People": [ "16027eb8-8660-11eb-8dcd-0242ac130003" ],
+        "typeofCrime": ["class C felony", "class E felony"],
         "location": "Intersection of Assembly and Blossom",
         "date": "February 19th, 2021 at 15:21",
         "evidence": [
@@ -17,26 +15,39 @@
             }, {
                 "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
                 "evidenceId": "f302aeea-8675-11eb-8dcd-0242ac130003",
-                "evidenceType": {
-                    "BloodSample": {
-                        "bloodType": "AB+",
-                        "bloodVolume": "10.0"
-                    }
-                }
+                "evidenceType": "BloodSample",
+                "bloodType": "AB+",
+                "bloodVolume": "10.0"
+            }, {
+                "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
+                "evidenceId": "f573a770-8732-11eb-8dcd-0242ac130003",
+                "evidenceType": "HairSample",
+                "color": "green",
+                "length": 1.2,
+                "thickness": 0.1
+            }, {
+                "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
+                "evidenceId": "fb8d7e88-8732-11eb-8dcd-0242ac130003",
+                "evidenceType": "Gun",
+                "GunType": "Westchester",
+                "model": "1967",
+                "bulletType": "12 grain",
+                "yearmade": 1967
+            }, {
+                "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
+                "evidenceId": "01d146b2-8733-11eb-8dcd-0242ac130003",
+                "evidenceType": "Bullet",
+                "Type": "12 grain"
             }
         ],
-        "workingOnCase": {
-            "LawEnforcementID": [ 1, 2 ]
-        },
+        "workingOnCase": [ "8637eec8-865d-11eb-8dcd-0242ac130003", "8c60225c-865d-11eb-8dcd-0242ac130003" ],
         "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
     }, {
         "caseNumber": "c0a98718-8664-11eb-8dcd-0242ac130003",
         "title": "Watermelon murder",
         "isSolved": true,
-        "People": {
-            "PersonID": [ 3 ]
-        },
-        "typeOfCrime": [ "class A felony" ],
+        "People": [ "1f6f069c-8660-11eb-8dcd-0242ac130003" ],
+        "typeofCrime": [ "class A felony" ],
         "location": "Corner of Fredrickson and Main",
         "date": "February 2nd, 2020 at 4:02",
         "evidence": [
@@ -46,9 +57,7 @@
                 "evidenceType": null
             }
         ],
-        "workingOnCase": {
-            "LawEnforcementID": [ 1, 2 ]
-        },
+        "workingOnCase": [ "8637eec8-865d-11eb-8dcd-0242ac130003", "8c60225c-865d-11eb-8dcd-0242ac130003" ],
         "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
     }
 ]

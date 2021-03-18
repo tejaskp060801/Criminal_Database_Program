@@ -69,4 +69,15 @@ public abstract class JSONconstants {
     public static final String EVIDENCE_ID = "evidenceId";
     public static final String EVIDENCE_TYPE = "evidenceType";
     //  Add Evidence Type info
+    public static final String BLOOD_TYPE = "bloodType";
+    public static final String BLOOD_VOLUME = "bloodVolume";
+    public static final String HAIR_COLOR = "color";
+    public static final String HAIR_LENGTH = "length";
+    public static final String HAIR_THICKNESS = "thickness";
+    public static final String GUN_TYPE = "GunType";
+    public static final String GUN_MODEL = "model";
+    public static final String GUN_BULLET_TYPE = "bulletType";
+    public static final String GUN_YEAR_MADE = "yearmade";
+    public static final String BULLET_TYPE = "Type";
+
 }
