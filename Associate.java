@@ -6,6 +6,7 @@ public class Associate extends Person{
 
 
     public Associate() {
+        super(); 
         this.relationship = relationship;
         this.relationshipID = relationshipID; 
     }

@@ -2,10 +2,11 @@ public class Victim extends PersonOfInterest {
     public boolean willTestify;
 
     public Victim(){
-        return;
+        super(); 
+        this.willTestify = willTestify;
     }
 
     public String toString(){
-        return "";
+        return super.toString() + this.willTestify;
     }
 }

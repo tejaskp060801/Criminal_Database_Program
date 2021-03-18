@@ -3,9 +3,7 @@ public class BloodSample extends Evidence {
     public double bloodVolume; 
 
     public BloodSample() {
-        super.description = description; 
-        super.evidenceId = evidenceId; 
-        super.evidenceType = evidenceType; 
+        super(); 
         this.bloodType = bloodType; 
         this.bloodVolume = bloodVolume; 
     }
