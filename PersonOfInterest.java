@@ -6,11 +6,8 @@ public abstract class PersonOfInterest extends Person{
     protected String statement;
 
     public String toString(){
-        return "";
+        return super.toString()+this.crimes+this.relations+this.statement;
     }
 
-    public void addPerson(Person person) {
-        
-    }
      
 }
