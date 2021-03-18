@@ -6,18 +6,10 @@ public class FamilyMember extends Person{
     private UUID relationshipID;
 
     public FamilyMember() {
-
+        this.relationship = relationship; 
+        this.relationshipID = relationshipID; 
     }
-
-    public void addToDataBase(Person p) {
-        return;
-    }
-
     public String toString() {
-        return "";
-    }
-
-    public void addPerson(Person person) {
-        
+        return super.toString()+ this.relationship + this.relationshipID;
     }
 }
