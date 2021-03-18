@@ -50,22 +50,6 @@ public class PersonList {
     }
 
     public void getInformation(Person person) {
-        person.getAddress(); 
-        person.getAge(); 
-        person.getClothing(); 
-        person.getHairColorNatural(); 
-        person.getHairColorUnNatural(); 
-        person.getHeight(); 
-        person.getWeight(); 
-        person.getIsUSCitizen(); 
-        person.getName(); 
-        person.getOrganization(); 
-        person.getPersonID(); 
-        person.getProfession(); 
-        person.getRace(); 
-        person.getSkinColor(); 
-        person.getShoeSize(); 
-        person.getTattoo(); 
-        person.getTattooDescription(); 
+        person.toString(); 
     }
 }
