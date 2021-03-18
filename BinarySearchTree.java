@@ -82,5 +82,19 @@ public class BinarySearchTree <T extends Comparable<T>> {
 		else 
 			return recursiveSearch(node.rightChild, data);
 	}
+    public void printInOrder()
+	{
+		printInOrder(root); 
+	}
+	private void printInOrder(Node aNode)
+	{
+		if(aNode == null)
+		{
+			return; 
+		}
+		printInOrder(aNode.leftChild); 
+		System.out.println(aNode.data);
+		printInOrder(aNode.rightChild); 
+	}
 
 }
