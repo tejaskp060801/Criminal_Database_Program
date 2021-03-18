@@ -136,15 +136,12 @@ public abstract class Person {
     public void setIsUSCitizen(boolean isUsCitizen) {
         this.isUSCitizen = isUsCitizen; 
     }
-<<<<<<< HEAD
     public void setCriminalOrganization(String org) {
         this.crimeOrganization = org;
     }
     public void editPerson() {
         
     }
-=======
->>>>>>> 5561ac87a27a0998b6f18bf59004f6f1f404249f
     public String toString() {
         return "The persons name is " + this.firstName + " " + this.lastName 
         + "\n The persons age is" + this.age + "\n the persons gender is " + this.gender + "\n the persons race is " + this.race
