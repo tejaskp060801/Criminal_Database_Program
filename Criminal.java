@@ -6,10 +6,6 @@ public class Criminal extends Person {
     private ArrayList<Crime> crimes; 
     private ArrayList<FamilyMember> family; 
     private ArrayList<Associate> associates; 
-    @Override
-    public void addToDataBase(Person p) {
-        
-    }
     public Criminal() {
         super(); 
         this.isInJail = isInJail; 
