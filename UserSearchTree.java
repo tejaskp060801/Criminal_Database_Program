@@ -27,7 +27,7 @@ public class UserSearchTree {
     }
 
     public void printUserNamesInOrder() {
-        users.print(); 
+        users.printInOrder(); 
     }
 
 
