@@ -25,7 +25,6 @@ public abstract class Person {
     protected String crimeOrganization; 
     protected Person personType;
 
-    public abstract void addToDataBase(Person p); 
     public String getName() {
         return this.firstName + " " + this.lastName; 
     }
