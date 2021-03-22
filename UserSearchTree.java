@@ -1,15 +1,19 @@
 import java.util.ArrayList;
 
 public class UserSearchTree {
-    private UserSearchTree userSearchTree;
+    private static UserSearchTree userSearchTree;
     private BinarySearchTree <LawEnforcementUser> users;
 
     private UserSearchTree() {
-        
+        users = JSONReader.getUsers();
     }
 
-    public UserSearchTree getUserSearchTree() {
-        return this.userSearchTree;
+    public static UserSearchTree getUserSearchTree() {
+        if (userSearchTree == null) {
+            userSearchTree = new UserSearchTree();
+        }
+        
+        return userSearchTree;
     }
 
     public boolean Login (String username, String pw) {

@@ -3,15 +3,19 @@
 import java.util.ArrayList;
 
 public class CrimeList {
-    private CrimeList crimelist;
+    private static CrimeList crimelist;
     private ArrayList<Crime> crimes;
 
-    private CrimeList(Object crimes) {
-        crimes = Crime.getCriminalArray();
+    private CrimeList() {
+        crimes = JSONReader.getCrimes();
     }
 
-    public CrimeList getCrimeList() {
-        return this.crimelist;
+    public static CrimeList getCrimeList() {
+        if (crimelist == null) {
+            crimelist = new CrimeList();
+        }
+        
+        return crimelist;
     }
 
     public boolean removeCrime(Crime crime ) {

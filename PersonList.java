@@ -1,17 +1,22 @@
 
 
 import java.util.ArrayList;
+import java.util.UUID;
+import java.util.Iterator;
 
 public class PersonList {
-    private PersonList personlist;
+    private static PersonList personlist;
     private ArrayList<Person> people;
 
-    private PersonList() {
-        this.personlist = personlist; 
-        this.people = people; 
+    private PersonList() { 
+        people = JSONReader.getPeople();
     }
 
-    public PersonList getPersonList() {
+    public static PersonList getPersonList() {
+        if (personlist == null) {
+            personlist = new PersonList();
+        }
+        
         return personlist;
     }
 
@@ -47,6 +52,18 @@ public class PersonList {
             System.out.println("Sorry this person does not exist");  
         }
         return person; 
+    }
+
+    public Person searchPerson(UUID id) {
+
+        Iterator<Person> iterator = people.iterator();
+        while (iterator.hasNext()) {
+            Person temp = iterator.next();
+            if (temp.getPersonID() == id) {
+                return temp;
+            }
+        }
+        return null;
     }
 
     public void getInformation(Person person) {
