@@ -437,7 +437,7 @@ public class DataBaseUI {
                 else
                     willTestify = false;
                 //construct victim
-                Person newVictim = new Victim(firstName, lastName, age, gender, race, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, willTestify);
+                Person newVictim = new Victim(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, willTestify);
                 break;
 
             case 2:
@@ -449,12 +449,12 @@ public class DataBaseUI {
                 else
                     willTestify1 = false;
                  //construct witness
-                Person newWitness= new Witness(firstName, lastName, age, gender, race, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, willTestify1);
+                Person newWitness= new Witness(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, willTestify1);
                 break;
 
             case 3:
                  //construct suspect
-                 Person newSuspect = new Suspect(firstName, lastName, age, gender, race, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg);
+                 Person newSuspect = new Suspect(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg);
                 break;
 
             case 4:
