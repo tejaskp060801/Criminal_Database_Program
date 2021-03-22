@@ -488,7 +488,7 @@ public class DataBaseUI {
 
                 UUID relationshipID = UUID.randomUUID();
 
-                Person newFamilyMember = new FamilyMember(firstName, lastName, age, gender, race, relationshipID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, relationship, relationshipID);
+                Person newFamilyMember = new FamilyMember(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, relationship, relationshipID);
                 break;
             
             case 6:
@@ -497,7 +497,7 @@ public class DataBaseUI {
 
                 UUID relationshipID1 = UUID.randomUUID();
 
-                Person newAssociate = new Associate(firstName, lastName, age, gender, race, relationshipID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, relationship1, relationshipID1);
+                Person newAssociate = new Associate(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, relationship1, relationshipID1);
                 break;
         }
     }
