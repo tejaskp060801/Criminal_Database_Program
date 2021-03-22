@@ -28,6 +28,7 @@ public class HairSample extends Evidence {
         this.thickness = thickness; 
     }
     public String toString() {
-        return ""; 
+        return super.toString() + this.color + this.length +
+        this.thickness;
     }
 }

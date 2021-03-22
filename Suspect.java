@@ -1,11 +1,11 @@
 public class Suspect extends PersonOfInterest {
 
     public Suspect(){
-        return;
+        super();
     }
 
     public String toString(){
-        return "";
+        return super.toString();
     }
     
 }

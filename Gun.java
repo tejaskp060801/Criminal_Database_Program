@@ -7,7 +7,11 @@ public class Gun extends Evidence {
     public int yearMade;
 
     public Gun() {
-
+        super();
+        this.gunType = gunType; 
+        this.model = model;
+        this.bulletType = bulletType; 
+        this.yearMade = yearMade;
     }
 
     public String getGunType() {
@@ -26,24 +30,25 @@ public class Gun extends Evidence {
         return this.yearMade;
     }
 
-    public void setGunType(String type) {
-        this.gunType = type;
+    public void setGunType(String gunType) {
+        this.gunType = gunType;
     }
 
     public void setModel(String model) {
         this.model = model;
     }
 
-    public void setBulletType(Bullet b) {
-        this.bulletType = b;
+    public void setBulletType(Bullet bulletType) {
+        this.bulletType = bulletType;
     }
 
-    public void setYearMade(int year) {
-        this.yearMade = year;
+    public void setYearMade(int yearMade) {
+        this.yearMade = yearMade;
     }   
 
     public String toString() {
-        return "";
+        return super.toString() + this.gunType + this.model +
+        this.bulletType + this.yearMade;
     }
 
 
