@@ -147,7 +147,7 @@ public class JSONReader extends JSONconstants {
                         associates.add(UUID.fromString(iteratorassociates.next()));
                     }
 
-                    Criminal temp = new Criminal(); //  TODO  insert parameterized constructor
+                    Criminal temp = new Criminal(persontype, persontype, age, persontype, persontype, id, persontype, persontype, shoesize, shoesize, persontype, persontype, persontype, persontype, deceased, persontype, shoesize, deceased, persontype, deceased, deceased, jsonassociates, jsonassociates, jsonassociates); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("FamilyMember")) {
                     String relationship = (String) object.get(FAMILY_RELATIONSHIP);
