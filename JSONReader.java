@@ -90,7 +90,7 @@ public class JSONReader extends JSONconstants {
                    while (iteratorassociate.hasNext()) {
                     relations.add(UUID.fromString(iteratorassociate.next()));
                 }
-                    Victim temp = new Victim(); //  TODO  insert parameterized constructor
+                    Victim temp = new Victim(statement, statement, age, statement, statement, id, statement, statement, shoesize, shoesize, statement, statement, statement, statement, willtestify, statement, shoesize, willtestify, statement, willtestify); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Witness")) {
                     boolean willtestify = (boolean) object.get(PERSON_TESTIFY);
