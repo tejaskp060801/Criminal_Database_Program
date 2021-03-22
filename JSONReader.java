@@ -107,7 +107,7 @@ public class JSONReader extends JSONconstants {
                     while (iteratorassociate.hasNext()) {
                         relations.add(UUID.fromString(iteratorassociate.next()));
                     }
-                    Witness temp = new Witness(); //  TODO  insert parameterized constructor
+                    Witness temp = new Witness(statement, statement, age, statement, statement, id, statement, statement, shoesize, shoesize, statement, statement, statement, statement, willtestify, statement, shoesize, willtestify, statement, willtestify); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Suspect")) {                    
                     String statement = (String) object.get(PERSON_STATEMENT);
@@ -123,7 +123,7 @@ public class JSONReader extends JSONconstants {
                     while (iteratorassociate.hasNext()) {
                         relations.add(UUID.fromString(iteratorassociate.next()));
                     }
-                    Suspect temp = new Suspect(); //  TODO  insert parameterized constructor
+                    Suspect temp = new Suspect(statement, statement, age, statement, statement, id, statement, statement, shoesize, shoesize, statement, statement, statement, statement, citizen, statement, shoesize, citizen, statement, citizen); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Criminal")) {
                     boolean injail = (boolean) object.get(PERSON_IN_JAIL);
