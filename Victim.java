@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public class Victim extends PersonOfInterest {
     public boolean willTestify;
 
