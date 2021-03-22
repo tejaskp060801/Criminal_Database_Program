@@ -23,7 +23,7 @@ public class FamilyMember extends Person{
         this.relationship = relationship; 
     }
     public void setRelationshipID(UUID relationshipID){
-        this.relationshipID = id; 
+        this.relationshipID = relationshipID; 
     }
     public String toString() {
         return super.toString()+ this.relationship + this.relationshipID;

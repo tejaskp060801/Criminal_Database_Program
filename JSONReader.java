@@ -161,7 +161,7 @@ public class JSONReader extends JSONconstants {
                     String relationshipid = (String) object.get(FAMILY_RELATIONSHIP_ID);
                     UUID familyid = UUID.fromString(relationshipid);
 
-                    Associate temp = new Associate(); // TODO insert parameterized constructor
+                    Associate temp = new Associate(relationshipid, relationshipid, age, relationshipid, relationshipid, familyid, relationshipid, relationshipid, shoesize, shoesize, relationshipid, relationshipid, relationshipid, relationshipid, citizen, relationshipid, shoesize, citizen, relationshipid, relationshipid, familyid); // TODO insert parameterized constructor
                     ret.add(temp);
                 } else {
                     System.out.println("JSON file invalid, not a valid type of person included");
