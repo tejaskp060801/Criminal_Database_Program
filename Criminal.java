@@ -7,7 +7,7 @@ public class Criminal extends Person {
     private ArrayList<FamilyMember> family; 
     private ArrayList<Associate> associates; 
     public Criminal() {
-        super(); 
+        super(address, address, age, address, address, PersonID, address, address, height, height, address, address, address, address, Deceased, address, height, Deceased, address); 
         this.isInJail = isInJail; 
         this.Deceased = Deceased; 
         this.crimes = crimes; 
