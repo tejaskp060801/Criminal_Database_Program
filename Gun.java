@@ -6,12 +6,20 @@ public class Gun extends Evidence {
     public String bulletType;
     public int yearMade;
 
+<<<<<<< HEAD
     public Gun(String description, String gunType, String model, Bullet bulletType, int yearMade) {
         this.description = description;
         this.evidenceId = UUID.randomUUID();
         this.gunType = gunType;
         this.model = model;
         this.bulletType = bulletType;
+=======
+    public Gun() {
+        super();
+        this.gunType = gunType; 
+        this.model = model;
+        this.bulletType = bulletType; 
+>>>>>>> 7d84de8fca1393e8c476be140cb844ac5277240c
         this.yearMade = yearMade;
     }
 
@@ -31,24 +39,25 @@ public class Gun extends Evidence {
         return this.yearMade;
     }
 
-    public void setGunType(String type) {
-        this.gunType = type;
+    public void setGunType(String gunType) {
+        this.gunType = gunType;
     }
 
     public void setModel(String model) {
         this.model = model;
     }
 
-    public void setBulletType(Bullet b) {
-        this.bulletType = b;
+    public void setBulletType(Bullet bulletType) {
+        this.bulletType = bulletType;
     }
 
-    public void setYearMade(int year) {
-        this.yearMade = year;
+    public void setYearMade(int yearMade) {
+        this.yearMade = yearMade;
     }   
 
     public String toString() {
-        return "";
+        return super.toString() + this.gunType + this.model +
+        this.bulletType + this.yearMade;
     }
 
 

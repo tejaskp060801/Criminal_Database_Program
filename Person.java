@@ -25,6 +25,29 @@ public abstract class Person {
     protected String crimeOrganization; 
     protected Person personType;
 
+    public Person(String firstName, String lastName, int age, String gender, String race, UUID id, String address,
+            String profession, double height, double weight, String skinCol, String natHairCol, String unNatHairCol,
+            String clothing, boolean hasTattoo, String tatDesc, double shoeSize, boolean isUsCitizen,
+            String org) {
+                this.setAddress(address);
+                this.setAge(age);
+                this.setPersonID(id); 
+                this.setClothing(clothing);
+                this.setCriminalOrganization(org);
+                this.setFirstName(firstName);
+                this.setGender(gender);
+                this.setHairColorNatural(natHairCol);
+                this.setHairColorUnNatural(unNatHairCol);
+                this.setHeight(height);
+                this.setIsUSCitizen(isUsCitizen);
+                this.setLastName(lastName);
+                this.setProfession(profession);
+                this.setRace(race);
+                this.setShoeSize(shoeSize);
+                this.setSkinColor(skinCol);
+                this.setTattoo(tattoo);
+                this.setTattooDescription(tatDesc);
+    }
     public String getName() {
         return this.firstName + " " + this.lastName; 
     }
@@ -96,7 +119,7 @@ public abstract class Person {
     public void setRace(String race) {
         this.race = race; 
     }
-    public void PersonID (UUID id) {
+    public void setPersonID (UUID id) {
         id = PersonID; 
     }
     public void setAddress(String address) {
@@ -117,8 +140,8 @@ public abstract class Person {
     public void setHairColorNatural(String natHairCol) {
         this.hairColorNatural = natHairCol; 
     }
-    public void setHairColorUnNatural(String UnNatHairCol) {
-        this.hairColorUnNatural = UnNatHairCol; 
+    public void setHairColorUnNatural(String unNatHairCol) {
+        this.hairColorUnNatural = unNatHairCol; 
     }
     public void setClothing(String clothing) {
         this.clothing = clothing; 
@@ -126,8 +149,8 @@ public abstract class Person {
     public void setTattoo(boolean tattoo) {
         this.tattoo = tattoo; 
     }
-    public void setTattooDescription(String tattoDesc) {
-        this.tattooDescription = tattoDesc; 
+    public void setTattooDescription(String tatDesc) {
+        this.tattooDescription = tatDesc; 
     }
     public void setShoeSize(double shoeSize) {
         this.shoeSize = shoeSize; 
