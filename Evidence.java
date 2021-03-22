@@ -6,17 +6,23 @@ public class Evidence {
     public Evidence evidenceType;
 
     public String toString(){
-        return "";
+        return "Evidence description: " + this.description + "\nEvidence ID: " + this.evidenceId;
     }
 
     public String getDescription(){
-        return "";
+        return this.description;
     }
 
     public UUID getID(){
-        UUID uuid = UUID.randomUUID();
-        return uuid;
+        return this.evidenceId;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setID(UUID id) {
+        this.evidenceId = id;
+    }
     
 }

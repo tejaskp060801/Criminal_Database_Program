@@ -2,10 +2,10 @@ public class BloodSample extends Evidence {
     public String bloodType; 
     public double bloodVolume; 
 
-    public BloodSample() {
-        super.description = description; 
-        super.evidenceId = evidenceId; 
-        super.evidenceType = evidenceType; 
+    public BloodSample(String description, String bloodType, double bloodVolume) {
+        this.description = description; 
+        this.evidenceId = UUID.randomUUID(); 
+        this.evidenceType = "Blood sample";
         this.bloodType = bloodType; 
         this.bloodVolume = bloodVolume; 
     }

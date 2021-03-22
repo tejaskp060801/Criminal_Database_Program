@@ -1,13 +1,18 @@
-
+import java.util.UUID;
 
 public class Gun extends Evidence {
     public String gunType;
     public String model;
-    public Bullet bulletType;
+    public String bulletType;
     public int yearMade;
 
-    public Gun() {
-
+    public Gun(String description, String gunType, String model, Bullet bulletType, int yearMade) {
+        this.description = description;
+        this.evidenceId = UUID.randomUUID();
+        this.gunType = gunType;
+        this.model = model;
+        this.bulletType = bulletType;
+        this.yearMade = yearMade;
     }
 
     public String getGunType() {

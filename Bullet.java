@@ -1,10 +1,10 @@
 public class Bullet extends Evidence {
     public String type;
     
-    public Bullet() {
-        super.description = description; 
-        super.evidenceId = evidenceId; 
-        super.evidenceType = evidenceType; 
+    public Bullet(String description, String type) {
+        this.description = description; 
+        this.evidenceId = UUID.randomUUID(); 
+        this.evidenceType = "Bullet"; 
         this.type = type; 
     }
     public String getType() {

@@ -21,7 +21,7 @@ public class DataBaseUI {
 
     public void run() {
         System.out.println(WELCOME_MSG);
-        System.out.println("Please enter your username followed by ENTER and then your password");
+        System.out.println("Please enter your username followed by ENTER and then your password to login.");
         String uname = scanner.nextLine();
         String pw = scanner.nextLine();
         loginUser(uname, pw);
