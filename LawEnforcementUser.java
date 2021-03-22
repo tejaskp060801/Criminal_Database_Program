@@ -2,16 +2,30 @@
 
 import java.util.UUID;
 
-public class LawEnforcementUser <T extends Comparable<T>> {
+public class LawEnforcementUser implements Comparable<LawEnforcementUser> {
     protected String username;
     protected String password;
-    public String firstName;
-    public String lastName;
-    protected int clearanceLevel;
-    protected UUID LawEnforcementID;
+    public String firstname;
+    public String lastname;
+    protected int clearancelevel;
+    protected UUID lawenforcementID;
 
-    public LawEnforcementUser(String username, String password, int clearance) {
-        
+    public LawEnforcementUser(String username, String password, String firstname, String lastname, int clearancelevel) {
+        this.username = username;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.clearancelevel = clearancelevel;
+        this.lawenforcementID = UUID.randomUUID();
+    }
+
+    public LawEnforcementUser(String username, String password, String firstname, String lastname, int clearancelevel, UUID id) {
+        this.username = username;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.clearancelevel = clearancelevel;
+        this.lawenforcementID = id;
     }
 
     public String getUsername() {
@@ -19,18 +33,21 @@ public class LawEnforcementUser <T extends Comparable<T>> {
     }
 
     public int getClearanceLevel() {
-        return this.clearanceLevel;
+        return this.clearancelevel;
     }
 
     public String getName() {
-        return this.firstName + " " + this.lastName;
+        return this.firstname + " " + this.lastname;
     }
 
     public boolean passwordCorrect(String password) {
-        return true;
+        if (this.password.equals(password)) {
+            return true;
+        }
+        return false;
     }
 
     public int compareTo(LawEnforcementUser officer) {
-        return 1;
+        return (this.username.compareTo(officer.getUsername()) == -1) ? -1 : 1;
     }
 }

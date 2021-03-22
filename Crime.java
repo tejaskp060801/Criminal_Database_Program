@@ -2,30 +2,46 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class Crime {
-    protected UUID caseNumber; 
+    protected UUID casenumber; 
     protected String title; 
     protected boolean isSolved; 
-    protected ArrayList<Person> People; //array
-    protected ArrayList<TypeOfCrime> typeOfCrime;  //array
+    protected ArrayList<Person> people; //array
+    protected ArrayList<TypeOfCrime> typeofcrime;  //array
     protected String location; 
     protected String date;
     protected ArrayList<Evidence> evidence; //array
-    protected ArrayList<LawEnforcementUser> workingOnCase; //array
-    protected String crimeDescription; 
+    protected ArrayList<LawEnforcementUser> workingoncase; //array
+    protected String crimedescription; 
 
     public Crime() {
-        this.caseNumber = caseNumber; 
-        this.title = title; 
-        this.People = People; 
-        this.crimeDescription = crimeDescription; 
-        this.date = date; 
-        this.evidence = evidence; 
-        this.isSolved = isSolved; 
-        this.location = location; 
-        this.typeOfCrime = typeOfCrime; 
-        this.workingOnCase = workingOnCase; 
+        this.casenumber = null; 
+        this.title = null; 
+        this.people = null; 
+        this.crimedescription = null; 
+        this.date = null; 
+        this.evidence = null; 
+        this.isSolved = false; 
+        this.location = null; 
+        this.typeofcrime = null; 
+        this.workingoncase = null; 
     }
     
+    public Crime(UUID casenumber, String title, ArrayList<Person> people,
+                    ArrayList<TypeOfCrime> typeofcrime, String location,
+                    String date, ArrayList<Evidence> evidence, ArrayList<LawEnforcementUser> workingoncase,
+                    String crimedescription) 
+    {
+        this.casenumber = casenumber;
+        this.title = title;
+        this.people = people;
+        this.typeofcrime = typeofcrime;
+        this.location = location;
+        this.date = date;
+        this.evidence = evidence;
+        this.workingoncase = workingoncase;
+        this.crimedescription = crimedescription;
+    }
+
     public void deleteCrime(Crime crime) {
         
     }

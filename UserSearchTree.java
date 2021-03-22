@@ -20,9 +20,10 @@ public class UserSearchTree {
         return true;
     }
 
-    public LawEnforcementUser addUser(String username, String pw, int clearance) {
-        LawEnforcementUser user = new LawEnforcementUser<>(username, pw, clearance);
+    public LawEnforcementUser addUser(String username, String pw, String firstname, String lastname, int clearance) {
+        LawEnforcementUser user = new LawEnforcementUser(username, pw, firstname, lastname, clearance);
         users.addElement(user); 
+        return user;
     }
 
     public LawEnforcementUser search(String username) {

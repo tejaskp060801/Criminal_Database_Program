@@ -210,9 +210,21 @@ public class JSONReader extends JSONconstants {
                 while (typeiterator.hasNext()) {
                     String temp = typeiterator.next();
                     if (temp.equalsIgnoreCase("Class A Felony")) {
-                        TypeOfCrime temp23 = temp23.CLASSAFELONY;
+                        TypeOfCrime temp2 = TypeOfCrime.CLASSAFELONY;
+                        crimetype.add(temp2);
+                    } else if (temp.equalsIgnoreCase("Class B Felony")) {
+                        TypeOfCrime temp2 = TypeOfCrime.CLASSBFELONY;
+                        crimetype.add(temp2);
+                    } else if (temp.equalsIgnoreCase("Class C Felony")) {
+                        TypeOfCrime temp2 = TypeOfCrime.CLASSCFELONY;
+                        crimetype.add(temp2);
+                    } else if (temp.equalsIgnoreCase("Class D Felony")) {
+                        TypeOfCrime temp2 = TypeOfCrime.CLASSDFELONY;
+                        crimetype.add(temp2);
+                    } else {
+                        TypeOfCrime temp2 = TypeOfCrime.CLASSEFELONY;
+                        crimetype.add(temp2);
                     }
-
                 }
                 String location = (String) object.get(CRIME_LOCATION);
                 String date  = (String) object.get(CRIME_DATE);
@@ -259,9 +271,11 @@ public class JSONReader extends JSONconstants {
 
                 JSONArray jsonworkingoncase = (JSONArray) object.get(CRIME_WORKING_ON_CASE);
                 Iterator<String> caseiterator = jsonworkingoncase.iterator();
-                ArrayList<UUID> workingoncase = new ArrayList<UUID>();
+                ArrayList<LawEnforcementUser> workingoncase = new ArrayList<LawEnforcementUser>();
                 while (caseiterator.hasNext()) {
-                    workingoncase.add(UUID.fromString(caseiterator.next()));
+                    String temp = caseiterator.next();
+                    LawEnforcementUser templaw = users.search(temp);
+                    workingoncase.add(templaw);
                 }
                 String crimedesc = (String) object.get(CRIME_DESCRIPTION);
                 Crime temp = new Crime();  //  TODO add parameterized constructor
