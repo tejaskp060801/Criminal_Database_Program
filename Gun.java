@@ -6,20 +6,12 @@ public class Gun extends Evidence {
     public String bulletType;
     public int yearMade;
 
-<<<<<<< HEAD
     public Gun(String description, String gunType, String model, Bullet bulletType, int yearMade) {
         this.description = description;
         this.evidenceId = UUID.randomUUID();
         this.gunType = gunType;
         this.model = model;
         this.bulletType = bulletType;
-=======
-    public Gun() {
-        super();
-        this.gunType = gunType; 
-        this.model = model;
-        this.bulletType = bulletType; 
->>>>>>> 7d84de8fca1393e8c476be140cb844ac5277240c
         this.yearMade = yearMade;
     }
 
