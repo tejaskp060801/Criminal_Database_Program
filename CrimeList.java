@@ -33,7 +33,7 @@ public class CrimeList {
     }
 
 
-    public Crime editCrime(Crime crime) {
+    public Crime editCrime(Crime oldCrime, Crime newCrime) {
         searchCrime(crime);
         return crime;
     }
@@ -51,22 +51,15 @@ public class CrimeList {
         return crime;
     }
 
-    public Crime searchCaseNumber(UUID id){
-        Iterator<Crime> iterator = crimes.iterator();
-        while(iterator.hasNext()){
-            Crime temp = iterator.next();
-            if(temp.getcasenumber() == id){
-                return temp;
-            }
-        }
-        return null;
-        
+    public Crime searchCrime(UUID id) {
+        return crimes.get(0);
     }
 
-    //this seems like it doesnt belong here
-    public void addevidence() {
-
+    public Crime searchCrime(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {
+        return Crime;
     }
+
+    public void addEvidence() {
 
     public void getInformation(Crime crimes){
         crimes.toString();

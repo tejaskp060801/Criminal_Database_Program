@@ -34,7 +34,7 @@ public class PersonList {
         return false; 
     }
 
-    public Person editPerson(Person person) {
+    public Person editPerson(Person oldPerson, Person newPerson) {
         searchPerson(person); 
         
         return person;
@@ -64,6 +64,10 @@ public class PersonList {
             }
         }
         return null;
+    }
+
+    public Person searchPerson(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {
+        return Person;
     }
 
     public void getInformation(Person person) {

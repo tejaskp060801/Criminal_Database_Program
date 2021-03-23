@@ -13,6 +13,19 @@ public class Crime {
     protected ArrayList<LawEnforcementUser> workingoncase; 
     protected String crimedescription; 
 
+<<<<<<< HEAD
+    public Crime(String title, boolean isSolved, ArrayList<TypeOfFelony> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
+        casenumber = UUID.randomUUID(); 
+        this.title = title; 
+        this.people = people; 
+        this.crimeDescription = description; 
+        this.date = date; 
+        this.evidence = evidenceList; 
+        this.isSolved = isSolved; 
+        this.location = location; 
+        this.typeOfCrime = felonyType; 
+        this.workingOnCase = officers; 
+=======
 public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<LawEnforcementUser> officers, String description) {
     this.setID(id);
     this.title = title; 
@@ -24,6 +37,7 @@ public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> fel
     this.location = location; 
     this.typeOfCrime = felonyType; 
     this.workingoncase = officers; 
+>>>>>>> 6a7a46a8aa8eb435ac8586b5545356a90d04011c
     }
     
     //im not sure if this method is needed bc you remove the crime through the CrimeList class
