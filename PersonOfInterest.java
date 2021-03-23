@@ -19,6 +19,14 @@ public abstract class PersonOfInterest extends Person{
         this.relations = relations;
         this.statement = statement;
     }
+    public ArrayList<UUID> getCrimes() {
+        return this.crimes;
+    }
+    
+    public ArrayList<UUID> getRelations() {
+        return this.relations;
+    }
+    
     public String getStatement() {
         return this.statement; 
     }

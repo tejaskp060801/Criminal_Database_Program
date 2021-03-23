@@ -26,7 +26,7 @@ public class BinarySearchTree <T extends Comparable<T>> {
         }
     }
 
-    public Node add (Node node, T data) {
+    private Node add(Node node, T data) {
         if(node == null)
             node = new Node(data);
         else if(data.compareTo(node.data) < 0)

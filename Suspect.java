@@ -15,10 +15,15 @@ public class Suspect extends PersonOfInterest {
             hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg,
             crimes, relations, statement);
         this.willtestify = willTestify;
+        this.personType = "Suspect";
     }
 
     public String toString(){
         return super.toString();
+    }
+
+    public boolean getWillTestify() {
+        return this.willtestify;
     }
     
 }

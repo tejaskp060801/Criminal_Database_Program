@@ -34,7 +34,7 @@ public class PersonList {
         return false; 
     }
 
-    public Person editPerson(Person person) {
+    public Person editPerson(Person oldPerson, Person newPerson) {
         searchPerson(person); 
         
         return person;
@@ -72,5 +72,9 @@ public class PersonList {
 
     public void getInformation(Person person) {
         person.toString(); 
+    }
+
+    public ArrayList<Person> getPeople() {
+        return this.people;
     }
 }

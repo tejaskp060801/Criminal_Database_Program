@@ -51,7 +51,7 @@ public class JSONReader extends JSONconstants {
     }
 
     public static ArrayList<Person> getPeople() {
-        UserSearchTree users = UserSearchTree.getUserSearchTree();
+        //UserSearchTree users = UserSearchTree.getUserSearchTree();
         ArrayList<Person> ret = new ArrayList<Person>();
         
         try { 
@@ -87,9 +87,9 @@ public class JSONReader extends JSONconstants {
                    String statement = (String) object.get(PERSON_STATEMENT);
                    JSONArray crimes = (JSONArray) object.get(PERSON_OF_INTEREST_CRIMES);
                    Iterator<String> iterator = crimes.iterator();
-                   ArrayList<UUID> ids = new ArrayList<UUID>();
+                   ArrayList<UUID> crimeids = new ArrayList<UUID>();
                    while (iterator.hasNext()) {
-                    ids.add(UUID.fromString(iterator.next()));
+                    crimeids.add(UUID.fromString(iterator.next()));
                 }
                    JSONArray jsonrelations = (JSONArray) object.get(PERSON_OF_INTEREST_RELATIONS);
                    Iterator<String> iteratorassociate = jsonrelations.iterator();
@@ -100,16 +100,16 @@ public class JSONReader extends JSONconstants {
                     Victim temp = new Victim(firstname, lastname, age, gender, race,
                         id, address, profession, height, weight, skincolor, haircolornatural, 
                         haircolorunnatural, clothing, tattoo, tattoodescription, shoesize, citizen, 
-                        crimeorg, ); //  TODO  insert parameterized constructor
+                        crimeorg, crimeids, relations, statement, willtestify); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Witness")) {
                     boolean willtestify = (boolean) object.get(PERSON_TESTIFY);
                     String statement = (String) object.get(PERSON_STATEMENT);
                     JSONArray crimes = (JSONArray) object.get(PERSON_OF_INTEREST_CRIMES);
                     Iterator<String> iterator = crimes.iterator();
-                    ArrayList<UUID> ids = new ArrayList<UUID>();
+                    ArrayList<UUID> crimeids = new ArrayList<UUID>();
                     while (iterator.hasNext()) {
-                     ids.add(UUID.fromString(iterator.next()));
+                     crimeids.add(UUID.fromString(iterator.next()));
                     }
                     JSONArray jsonrelations = (JSONArray) object.get(PERSON_OF_INTEREST_RELATIONS);
                     Iterator<String> iteratorassociate = jsonrelations.iterator();
@@ -117,15 +117,19 @@ public class JSONReader extends JSONconstants {
                     while (iteratorassociate.hasNext()) {
                         relations.add(UUID.fromString(iteratorassociate.next()));
                     }
-                    Witness temp = new Witness(statement, statement, age, statement, statement, id, statement, statement, shoesize, shoesize, statement, statement, statement, statement, willtestify, statement, shoesize, willtestify, statement, willtestify); //  TODO  insert parameterized constructor
+                    Witness temp = new Witness(firstname, lastname, age, gender, race,
+                        id, address, profession, height, weight, skincolor, haircolornatural, 
+                        haircolorunnatural, clothing, tattoo, tattoodescription, shoesize, citizen, 
+                        crimeorg, crimeids, relations, statement, willtestify); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Suspect")) {                    
                     String statement = (String) object.get(PERSON_STATEMENT);
+                    boolean willtestify = (boolean) object.get(PERSON_TESTIFY);
                     JSONArray crimes = (JSONArray) object.get(PERSON_OF_INTEREST_CRIMES);
                     Iterator<String> iterator = crimes.iterator();
-                    ArrayList<UUID> ids = new ArrayList<UUID>();
+                    ArrayList<UUID> crimeids = new ArrayList<UUID>();
                     while (iterator.hasNext()) {
-                        ids.add(UUID.fromString(iterator.next()));
+                        crimeids.add(UUID.fromString(iterator.next()));
                     }
                     JSONArray jsonrelations = (JSONArray) object.get(PERSON_OF_INTEREST_RELATIONS);
                     Iterator<String> iteratorassociate = jsonrelations.iterator();
@@ -133,16 +137,19 @@ public class JSONReader extends JSONconstants {
                     while (iteratorassociate.hasNext()) {
                         relations.add(UUID.fromString(iteratorassociate.next()));
                     }
-                    Suspect temp = new Suspect(statement, statement, age, statement, statement, id, statement, statement, shoesize, shoesize, statement, statement, statement, statement, citizen, statement, shoesize, citizen, statement); //  TODO  insert parameterized constructor
+                    Suspect temp = new Suspect(firstname, lastname, age, gender, race,
+                        id, address, profession, height, weight, skincolor, haircolornatural, 
+                        haircolorunnatural, clothing, tattoo, tattoodescription, shoesize, citizen, 
+                        crimeorg, crimeids, relations, statement, willtestify);
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Criminal")) {
                     boolean injail = (boolean) object.get(PERSON_IN_JAIL);
                     boolean deceased = (boolean) object.get(PERSON_DECEASED);
                     JSONArray crimes = (JSONArray) object.get(PERSON_CRIMES);
                     Iterator<String> iterator = crimes.iterator();
-                    ArrayList<UUID> ids = new ArrayList<UUID>();
+                    ArrayList<UUID> crimeids = new ArrayList<UUID>();
                     while (iterator.hasNext()) {
-                        ids.add(UUID.fromString(iterator.next()));
+                        crimeids.add(UUID.fromString(iterator.next()));
                     }
                     JSONArray jsonfamily = (JSONArray) object.get(PERSON_FAMILY);
                     Iterator<String> iteratorfamily = jsonfamily.iterator();
@@ -157,21 +164,30 @@ public class JSONReader extends JSONconstants {
                         associates.add(UUID.fromString(iteratorassociates.next()));
                     }
 
-                    Criminal temp = new Criminal(persontype, persontype, age, persontype, persontype, id, persontype, persontype, shoesize, shoesize, persontype, persontype, persontype, persontype, deceased, persontype, shoesize, deceased, persontype, deceased, deceased, jsonassociates, jsonassociates, jsonassociates); //  TODO  insert parameterized constructor
+                    Criminal temp = new Criminal(firstname, lastname, age, gender, race,
+                        id, address, profession, height, weight, skincolor, haircolornatural, 
+                        haircolorunnatural, clothing, tattoo, tattoodescription, shoesize, citizen, 
+                        crimeorg, injail, deceased, crimeids, family, associates);
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("FamilyMember")) {
                     String relationship = (String) object.get(FAMILY_RELATIONSHIP);
                     String relationshipid = (String) object.get(FAMILY_RELATIONSHIP_ID);
                     UUID familyid = UUID.fromString(relationshipid);
                 
-                    FamilyMember temp = new FamilyMember(relationshipid, relationshipid, age, relationshipid, relationshipid, familyid, relationshipid, relationshipid, shoesize, shoesize, relationshipid, relationshipid, relationshipid, relationshipid, citizen, relationshipid, shoesize, citizen, relationshipid, relationshipid, familyid); // TODO insert parameterized constructor
+                    FamilyMember temp = new FamilyMember(firstname, lastname, age, gender, race,
+                        id, address, profession, height, weight, skincolor, haircolornatural, 
+                        haircolorunnatural, clothing, tattoo, tattoodescription, shoesize, citizen, 
+                        crimeorg, relationship, familyid);
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Associate")) {
                     String relationship = (String) object.get(FAMILY_RELATIONSHIP);
                     String relationshipid = (String) object.get(FAMILY_RELATIONSHIP_ID);
                     UUID familyid = UUID.fromString(relationshipid);
 
-                    Associate temp = new Associate(relationshipid, relationshipid, age, relationshipid, relationshipid, familyid, relationshipid, relationshipid, shoesize, shoesize, relationshipid, relationshipid, relationshipid, relationshipid, citizen, relationshipid, shoesize, citizen, relationshipid, relationshipid, familyid); // TODO insert parameterized constructor
+                    Associate temp = new Associate(firstname, lastname, age, gender, race,
+                        id, address, profession, height, weight, skincolor, haircolornatural, 
+                        haircolorunnatural, clothing, tattoo, tattoodescription, shoesize, citizen, 
+                        crimeorg, relationship, familyid);
                     ret.add(temp);
                 } else {
                     System.out.println("JSON file invalid, not a valid type of person included");
@@ -241,30 +257,34 @@ public class JSONReader extends JSONconstants {
                     UUID evidenceid = UUID.fromString(evidenceidstr);
                     String evidencetype = (String) current.get(EVIDENCE_TYPE);
 
-                    if (evidencetype == null) {
-                        Evidence eret = new Evidence();  // TODO add parameterized constructor
+                    if (evidencetype.equalsIgnoreCase("normal")) {
+                        Evidence eret = new Evidence(evidencedesc, evidenceid, evidencetype);
                         evidence.add(eret);
                     } else if (evidencetype.equalsIgnoreCase("BloodSample")) {
                         String bloodtype = (String) current.get(BLOOD_TYPE);
-                        String bloodvolume = (String) current.get(BLOOD_VOLUME);
-                        BloodSample eret = new BloodSample();  //  TODO add parameterized constructor
+                        Double bloodvolume = Double.parseDouble((String) current.get(BLOOD_VOLUME));
+                        BloodSample eret = new BloodSample(evidencedesc, evidenceid, evidencetype,
+                            bloodtype, bloodvolume);
                         evidence.add(eret);
                     } else if (evidencetype.equalsIgnoreCase("HairSample")) {
                         String haircolor = (String) current.get(HAIR_COLOR);
                         double hairlength = (double) current.get(HAIR_LENGTH);
                         double hairthickness = (double) current.get(HAIR_THICKNESS);
-                        HairSample eret = new HairSample();  //  TODO add parameterizeed constructor
+                        HairSample eret = new HairSample(evidencedesc, evidenceid, evidencetype,
+                            haircolor, hairlength, hairthickness);
                         evidence.add(eret);
                     } else if (evidencetype.equalsIgnoreCase("Gun")) {
                         String guntype = (String) current.get(GUN_TYPE);
                         String gunmodel = (String) current.get(GUN_MODEL);
                         String gunbullet = (String) current.get(GUN_BULLET_TYPE);
                         int gunyearmade = ((Long) current.get(GUN_YEAR_MADE)).intValue();
-                        Gun eret = new Gun();  //  TODO add parameterized constructor
+                        Gun eret = new Gun(evidencedesc, evidenceid, evidencetype,
+                            guntype, gunmodel, gunbullet, gunyearmade);
                         evidence.add(eret);
                     } else if (evidencetype.equalsIgnoreCase("Bullet")) {
                         String bullettype = (String) current.get(BULLET_TYPE);
-                        Bullet eret = new Bullet();  //  TODO add parameteried constructor
+                        Bullet eret = new Bullet(evidencedesc, evidenceid, evidencetype,
+                            bullettype);
                         evidence.add(eret);
                     } else {
                         System.out.println("JSON format invalid, seek assistance from a technical expert");

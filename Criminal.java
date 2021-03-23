@@ -17,7 +17,7 @@ public class Criminal extends Person {
         this.setCrimes(crimes); 
         this.setFamilyMembers(fm); 
         this.setAssociates(assoc);; 
-        
+        this.personType = "Criminal";
     }
     public boolean getIsInJail() {
         return isInJail; 

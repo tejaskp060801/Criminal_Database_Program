@@ -1,11 +1,12 @@
+import java.util.UUID;
+
 public class Bullet extends Evidence {
     public String type;
     
-    public Bullet(String description, String type) {
-        this.description = description; 
-        this.evidenceId = UUID.randomUUID(); 
-        this.evidenceType = "Bullet"; 
-        this.type = type; 
+    public Bullet(String description, UUID evidenceID, String evidencetype,
+                    String bullettype) {
+        super(description, evidenceID, evidencetype);
+        this.setType(bullettype);
     }
     public String getType() {
         return this.type; 

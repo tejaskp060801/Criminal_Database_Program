@@ -1,6 +1,6 @@
-
-
 import java.util.ArrayList;
+import java.util.UUID;
+import java.util.Iterator;
 
 public class CrimeList {
     private static CrimeList crimelist;
@@ -18,17 +18,37 @@ public class CrimeList {
         return crimelist;
     }
 
+    public void addCrime(Crime crime) {
+        crimelist.addCrime(crime);
+    }
+
     public boolean removeCrime(Crime crime ) {
-        return crimelist.removeCrime(crime);
+        for(int i =0; i < crimes.size(); i++){
+            if(crimes.get(i) == crime){
+                crimes.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public Object addCrime(Crime crime) {
-        return crimelist.addCrime(crime);
+
+    public Crime editCrime(Crime oldCrime, Crime newCrime) {
+        searchCrime(crime);
+        return crime;
     }
 
-
-    public void editCrime(Crime old, Crime newCrime) {
-
+    public Crime searchCrime(Crime crime) {
+        boolean found = false;
+        for(int i = 0; i<crimes.size(); i++) {
+            if(crimes.get(i).getcasenumber() == crime.getcasenumber()) {
+                found = true;  
+            }
+        }
+        if (found == false){
+            System.out.println("Sorry, this crime does not exist");
+        }
+        return crime;
     }
 
     public Crime searchCrime(UUID id) {
@@ -41,5 +61,12 @@ public class CrimeList {
 
     public void addEvidence() {
 
+    public void getInformation(Crime crimes){
+        crimes.toString();
+    }
+
+    public ArrayList<Crime> getCrimes() {
+        return this.crimes;
     }
 }
+

@@ -54,7 +54,7 @@
             {
                 "eviddescription": "A written confession from Ms. Windower indicating that she murdered her watermelon",
                 "evidenceId": "f91a8316-8675-11eb-8dcd-0242ac130003",
-                "evidenceType": null
+                "evidenceType": "normal"
             }
         ],
         "workingOnCase": [ "8637eec8-865d-11eb-8dcd-0242ac130003", "8c60225c-865d-11eb-8dcd-0242ac130003" ],
