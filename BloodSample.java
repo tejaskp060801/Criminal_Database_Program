@@ -1,13 +1,14 @@
+import java.util.UUID;
+
 public class BloodSample extends Evidence {
     public String bloodType; 
     public double bloodVolume; 
 
-    public BloodSample(String description, String bloodType, double bloodVolume) {
-        this.description = description; 
-        this.evidenceId = UUID.randomUUID(); 
-        this.evidenceType = "Blood sample";
-        this.bloodType = bloodType; 
-        this.bloodVolume = bloodVolume; 
+    public BloodSample(String description, UUID evidenceID, String evidencetype,
+        String bloodType, double bloodVolume) {
+        super(description, evidenceID, evidencetype);
+        this.bloodType = bloodType;
+        this.bloodVolume = bloodVolume;
     }
 
     public String getBloodType() {

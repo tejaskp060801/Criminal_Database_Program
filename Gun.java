@@ -6,9 +6,9 @@ public class Gun extends Evidence {
     public String bulletType;
     public int yearMade;
 
-    public Gun(String description, String gunType, String model, Bullet bulletType, int yearMade) {
-        this.description = description;
-        this.evidenceId = UUID.randomUUID();
+    public Gun(String description, UUID evidenceID, String evidenceType,
+        String gunType, String model, String bulletType, int yearMade) {
+        super(description, evidenceID, evidenceType);
         this.gunType = gunType;
         this.model = model;
         this.bulletType = bulletType;

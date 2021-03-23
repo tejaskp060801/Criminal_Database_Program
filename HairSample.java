@@ -5,12 +5,12 @@ public class HairSample extends Evidence {
     public double length; 
     public double thickness; 
 
-    public HairSample(String description, String color, double length, double thickness) {
-        this.description = description;
-        this.evidenceId = UUID.randomUUID();
-        this.color = color; 
-        this.length = length; 
-        this.thickness = thickness; 
+    public HairSample(String description, UUID evidenceID, String evidenceType,
+        String color, double length, double thickness) {
+        super(description, evidenceID, evidenceType);
+        this.color = color;
+        this.length = length;
+        this.thickness = thickness;
     }
     public String getColor(){
         return color; 
