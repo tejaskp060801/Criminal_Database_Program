@@ -6,11 +6,7 @@ public class Crime {
     protected String title; 
     protected boolean isSolved; 
     protected ArrayList<Person> people; //array
-<<<<<<< HEAD
     protected ArrayList<TypeOfCrime> typeOfCrime;  //array
-=======
-    protected ArrayList<TypeOfCrime> typeofcrime;  //array
->>>>>>> c484ad448008ba56b9c56dd0415074e948911278
     protected String location; 
     protected String date;
     protected ArrayList<Evidence> evidence; //array
@@ -18,7 +14,7 @@ public class Crime {
     protected String crimedescription; 
 
     public Crime(String title, boolean isSolved, ArrayList<TypeOfFelony> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
-        caseNumber = UUID.randomUUID(); 
+        casenumber = UUID.randomUUID(); 
         this.title = title; 
         this.people = people; 
         this.crimeDescription = description; 
@@ -30,21 +26,6 @@ public class Crime {
         this.workingOnCase = officers; 
     }
     
-    public Crime(UUID casenumber, String title, ArrayList<Person> people,
-                    ArrayList<TypeOfCrime> typeofcrime, String location,
-                    String date, ArrayList<Evidence> evidence, ArrayList<LawEnforcementUser> workingoncase,
-                    String crimedescription) 
-    {
-        this.casenumber = casenumber;
-        this.title = title;
-        this.people = people;
-        this.typeofcrime = typeofcrime;
-        this.location = location;
-        this.date = date;
-        this.evidence = evidence;
-        this.workingoncase = workingoncase;
-        this.crimedescription = crimedescription;
-    }
 
     public void deleteCrime(Crime crime) {
         
@@ -57,7 +38,7 @@ public class Crime {
     }
     public ArrayList<Person> getPOIArray() {
          ArrayList<Person> people = new ArrayList<Person>();
-        return People; 
+        return people; 
 
     }
     public static ArrayList<Criminal> getCriminalArray() {
