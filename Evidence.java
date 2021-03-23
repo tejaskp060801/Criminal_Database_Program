@@ -5,18 +5,18 @@ public class Evidence {
     public UUID evidenceID;
     public String evidenceType;
 
-    public Evidence(String description, UUID evidenceID, String evidencetype) {
-        this.description = description;
+    public Evidence(String description, UUID id, String evidencetype) {
+        this.setDescription(description);;
         if (evidenceID == null) {
             this.evidenceID = UUID.randomUUID();
         } else {
-            this.evidenceID = evidenceID;
+            this.setID(id);
         }
-        this.evidenceType = evidencetype;
+        this.setEvidenceType(evidenceType);
     }
 
     public String toString(){
-        return "Evidence description: " + this.description + "\nEvidence ID: " + this.evidenceId;
+        return "Evidence description: " + this.description + "\nEvidence ID: " + this.evidenceID;
     }
 
     public String getDescription(){
@@ -34,5 +34,7 @@ public class Evidence {
     public void setID(UUID id) {
         this.evidenceID = id;
     }
-    
+    public void setEvidenceType(String evidenceType){
+        this.evidenceType = evidenceType; 
+    }
 }
