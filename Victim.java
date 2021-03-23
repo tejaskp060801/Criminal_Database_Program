@@ -13,6 +13,7 @@ public class Victim extends PersonOfInterest {
             height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription,
             shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement); 
         this.setWillTestify(willTestify);
+        this.personType = "Victim";
     }
     public boolean getWillTestify(){
         return willTestify; 

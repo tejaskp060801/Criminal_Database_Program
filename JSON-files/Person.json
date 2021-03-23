@@ -124,6 +124,7 @@
         "personType": "Suspect",
         "crimes": [ ],
         "relations": [ ],
+        "willTestify": true,
         "statement": "I was in Florida!"
     }, {
         "PersonID": "68292fdc-8694-11eb-8dcd-0242ac130003",

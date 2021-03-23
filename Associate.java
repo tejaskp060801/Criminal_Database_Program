@@ -12,6 +12,7 @@ public class Associate extends Person{
         super(firstName, lastName, age, gender, race, id, address, profession, height, weight, skinCol, natHairCol, unNatHairCol, clothing, hasTattoo, tatDesc, shoeSize, isUsCitizen, org); 
         this.setRelationship(relationship);
         this.setRelationshipID(relationshipID);
+        this.persontype = "Associate";
     }
     public String getRelationship() {
         return relationship; 

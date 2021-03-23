@@ -9,9 +9,11 @@ public class FamilyMember extends Person{
     String profession, double height, double weight, String skinCol, String natHairCol, String unNatHairCol,
     String clothing, boolean hasTattoo, String tatDesc, double shoeSize, boolean isUsCitizen,
     String org, String relationship, UUID relationshipID) {
-        super(firstName, lastName, age, gender, race, id, address, profession, height, weight, skinCol, natHairCol, unNatHairCol, clothing, hasTattoo, tatDesc, shoeSize, isUsCitizen, org); 
+        super(firstName, lastName, age, gender, race, id, address, profession, height, weight, skinCol,
+        natHairCol, unNatHairCol, clothing, hasTattoo, tatDesc, shoeSize, isUsCitizen, org); 
         this.setRelationship(relationship);
         this.setRelationshipID(relationshipID);
+        this.personType = "FamilyMember";
     }
     public String getRelationship() {
         return relationship; 

@@ -14,6 +14,7 @@ public class Witness extends PersonOfInterest {
             weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription,
             shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement);
         this.setWillTestify(willTestify);  
+        this.personType = "Witness";
     }
     public boolean getWillTestify(){
         return willTestify; 

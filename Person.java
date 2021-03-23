@@ -23,7 +23,7 @@ public abstract class Person {
     protected double shoeSize; 
     protected boolean isUSCitizen; 
     protected String crimeOrganization; 
-    protected Person personType;
+    protected String personType;
 
     public Person(String firstName, String lastName, int age, String gender, String race, UUID id, String address,
             String profession, double height, double weight, String skinCol, String natHairCol, String unNatHairCol,
