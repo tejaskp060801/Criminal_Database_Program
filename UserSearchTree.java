@@ -12,12 +12,16 @@ public class UserSearchTree {
         if (userSearchTree == null) {
             userSearchTree = new UserSearchTree();
         }
-        
         return userSearchTree;
     }
 
     public boolean Login (String username, String pw) {
-        return true;
+        UserSearchTree usertree = UserSearchTree.getUserSearchTree();
+        LawEnforcementUser temp = usertree.search(username);
+        if (temp.passwordCorrect(pw)) {
+            return true;
+        }
+        return false;
     }
 
     public LawEnforcementUser addUser(String username, String pw, String firstname, String lastname, int clearance) {

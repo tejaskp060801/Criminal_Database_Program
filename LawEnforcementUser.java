@@ -48,6 +48,9 @@ public class LawEnforcementUser implements Comparable<LawEnforcementUser> {
     }
 
     public int compareTo(LawEnforcementUser officer) {
+        if (this.username.compareTo(officer.getUsername()) == 0) {
+            return 0;
+        }
         return (this.username.compareTo(officer.getUsername()) == -1) ? -1 : 1;
     }
 }
