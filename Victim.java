@@ -1,10 +1,17 @@
 import java.util.UUID;
+import java.util.ArrayList;
 
 public class Victim extends PersonOfInterest {
     public boolean willTestify;
 
-    public Victim(String firstName, String lastName, int age, String gender, String race, UUID id,String address, String profession, double height, double weight, String skinColor, String natHair, String unNatHair, String clothing, boolean hasTattoo, String tatDescription, double shoeSize, boolean isUSCitizen, String crimeOrg, boolean willTestify){
-        super(firstName, lastName, age, gender, race, id ,address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg); 
+    public Victim(String firstName, String lastName, int age, String gender, String race, UUID id,
+        String address, String profession, double height, double weight, String skinColor, String natHair, 
+        String unNatHair, String clothing, boolean hasTattoo, String tatDescription, double shoeSize, 
+        boolean isUSCitizen, String crimeOrg, ArrayList<UUID> crimes, ArrayList<UUID> relations,
+        String statement, boolean willTestify) {
+        super(firstName, lastName, age, gender, race, id ,address, profession,
+            height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription,
+            shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement); 
         this.setWillTestify(willTestify);
     }
     public boolean getWillTestify(){

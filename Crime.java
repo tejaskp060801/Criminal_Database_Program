@@ -2,16 +2,20 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class Crime {
-    protected UUID caseNumber; 
+    protected UUID casenumber; 
     protected String title; 
     protected boolean isSolved; 
     protected ArrayList<Person> people; //array
+<<<<<<< HEAD
     protected ArrayList<TypeOfCrime> typeOfCrime;  //array
+=======
+    protected ArrayList<TypeOfCrime> typeofcrime;  //array
+>>>>>>> c484ad448008ba56b9c56dd0415074e948911278
     protected String location; 
     protected String date;
     protected ArrayList<Evidence> evidence; //array
-    protected ArrayList<LawEnforcementUser> workingOnCase; //array
-    protected String crimeDescription; 
+    protected ArrayList<LawEnforcementUser> workingoncase; //array
+    protected String crimedescription; 
 
     public Crime(String title, boolean isSolved, ArrayList<TypeOfFelony> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
         caseNumber = UUID.randomUUID(); 
@@ -26,6 +30,22 @@ public class Crime {
         this.workingOnCase = officers; 
     }
     
+    public Crime(UUID casenumber, String title, ArrayList<Person> people,
+                    ArrayList<TypeOfCrime> typeofcrime, String location,
+                    String date, ArrayList<Evidence> evidence, ArrayList<LawEnforcementUser> workingoncase,
+                    String crimedescription) 
+    {
+        this.casenumber = casenumber;
+        this.title = title;
+        this.people = people;
+        this.typeofcrime = typeofcrime;
+        this.location = location;
+        this.date = date;
+        this.evidence = evidence;
+        this.workingoncase = workingoncase;
+        this.crimedescription = crimedescription;
+    }
+
     public void deleteCrime(Crime crime) {
         
     }
@@ -75,5 +95,9 @@ public class Crime {
         this.location + "\nDate: " + this.date + "\nEvidence: " + this.evidence + 
         "\nLaw Enforcement User Working On Case: " + this.workingOnCase +
         "\nDescription of Crime: " + this.crimeDescription + "\n----------\n"; 
+    }
+
+    public UUID getcasenumber() {
+        return this.casenumber;
     }
 }

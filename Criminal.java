@@ -4,13 +4,13 @@ import java.util.UUID;
 public class Criminal extends Person {
     private boolean isInJail; 
     private boolean Deceased; 
-    private ArrayList<Crime> crimes; 
-    private ArrayList<FamilyMember> family; 
-    private ArrayList<Associate> associates; 
+    private ArrayList<UUID> crimes; 
+    private ArrayList<UUID> family; 
+    private ArrayList<UUID> associates; 
     public Criminal(String firstName, String lastName, int age, String gender, String race, UUID id, String address,
     String profession, double height, double weight, String skinCol, String natHairCol, String unNatHairCol,
     String clothing, boolean hasTattoo, String tatDesc, double shoeSize, boolean isUsCitizen,
-    String org, boolean isInJail, boolean Deceased, ArrayList<Crime> crimes, ArrayList<FamilyMember> fm, ArrayList<Associate> assoc) {
+    String org, boolean isInJail, boolean Deceased, ArrayList<UUID> crimes, ArrayList<UUID> fm, ArrayList<UUID> assoc) {
         super(firstName, lastName, age, gender, race, id, address, profession, height, weight, skinCol, natHairCol, unNatHairCol, clothing, hasTattoo, tatDesc, shoeSize, isUsCitizen, org); 
         this.setisInJail(isInJail); 
         this.setDeceased(Deceased);;
@@ -26,21 +26,24 @@ public class Criminal extends Person {
         return Deceased; 
     }
     public void addFamilyMember(FamilyMember fm) {
-        family.add(fm);  
+        UUID temp = fm.getPersonID();
+        family.add(temp);  
     }
     public void addAssociate(Associate assoc) {
-        associates.add(assoc); 
+        UUID temp = assoc.getPersonID();
+        associates.add(temp); 
     }
     public void addCrime(Crime crime) {
-        crimes.add(crime); 
+        UUID temp = crime.getcasenumber();
+        crimes.add(temp);
     }
-    public ArrayList<Crime> getCrimes() {
+    public ArrayList<UUID> getCrimes() {
         return crimes; 
     }
-    public ArrayList<FamilyMember> getFamily() {
+    public ArrayList<UUID> getFamily() {
         return family; 
     }
-    public ArrayList<Associate> getAssociates() {
+    public ArrayList<UUID> getAssociates() {
         return associates; 
     }
     public void setisInJail(boolean isInJail){
@@ -49,13 +52,13 @@ public class Criminal extends Person {
     public void setDeceased(boolean Deceased){
         this.Deceased = Deceased; 
     }
-    public void setCrimes(ArrayList<Crime> crimes) {
+    public void setCrimes(ArrayList<UUID> crimes) {
         this.crimes = crimes; 
     }
-    public void setFamilyMembers(ArrayList<FamilyMember> fm) {
+    public void setFamilyMembers(ArrayList<UUID> fm) {
         this.family = fm; 
     }
-    public void setAssociates(ArrayList<Associate> assoc) {
+    public void setAssociates(ArrayList<UUID> assoc) {
         this.associates = assoc; 
     }
     public String toString() {
