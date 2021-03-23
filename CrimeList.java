@@ -1,6 +1,6 @@
-
-
 import java.util.ArrayList;
+import java.util.UUID;
+import java.util.Iterator;
 
 public class CrimeList {
     private static CrimeList crimelist;
@@ -18,24 +18,58 @@ public class CrimeList {
         return crimelist;
     }
 
+    public void addCrime(Crime crime) {
+        crimelist.addCrime(crime);
+    }
+
     public boolean removeCrime(Crime crime ) {
-        return crimelist.removeCrime(crime);
+        for(int i =0; i < crimes.size(); i++){
+            if(crimes.get(i) == crime){
+                crimes.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public Object addCrime(Crime crime) {
-        return crimelist.addCrime(crime);
+
+    public Crime editCrime(Crime crime) {
+        searchCrime(crime);
+        return crime;
     }
 
+    public Crime searchCrime(Crime crime) {
+        boolean found = false;
+        for(int i = 0; i<crimes.size(); i++) {
+            if(crimes.get(i).getcasenumber() == crime.getcasenumber()) {
+                found = true;  
+            }
+        }
+        if (found == false){
+            System.out.println("Sorry, this crime does not exist");
+        }
+        return crime;
+    }
 
-    public void editCrime(Crime crime) {
+    public Crime searchCaseNumber(UUID id){
+        Iterator<Crime> iterator = crimes.iterator();
+        while(iterator.hasNext()){
+            Crime temp = iterator.next();
+            if(temp.getcasenumber() == id){
+                return temp;
+            }
+        }
+        return null;
+        
+    }
+
+    //this seems like it doesnt belong here
+    public void addevidence() {
 
     }
 
-    public Crime searchCrime() {
-        return crimes.get(0);
-    }
-
-    public void addEvidence() {
-
+    public void getInformation(Crime crimes){
+        crimes.toString();
     }
 }
+
