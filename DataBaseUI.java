@@ -15,9 +15,8 @@ public class DataBaseUI {
 
 
     public static void main(String [] args) {
-        /*DataBaseUI ui = new DataBaseUI();
-        ui.run();*/
-        UserSearchTree temp = UserSearchTree.getUserSearchTree();
+        DataBaseUI ui = new DataBaseUI();
+        ui.run();
     }
 
     public void run() {
