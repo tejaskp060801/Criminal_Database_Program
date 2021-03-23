@@ -6,41 +6,26 @@ public class Crime {
     protected String title; 
     protected boolean isSolved; 
     protected ArrayList<Person> people; //array
-    protected ArrayList<TypeOfCrime> typeofcrime;  //array
+    protected ArrayList<TypeOfCrime> typeOfCrime;  //array
     protected String location; 
     protected String date;
     protected ArrayList<Evidence> evidence; //array
     protected ArrayList<LawEnforcementUser> workingoncase; //array
     protected String crimedescription; 
 
-    public Crime() {
-        this.casenumber = null; 
-        this.title = null; 
-        this.people = null; 
-        this.crimedescription = null; 
-        this.date = null; 
-        this.evidence = null; 
-        this.isSolved = false; 
-        this.location = null; 
-        this.typeofcrime = null; 
-        this.workingoncase = null; 
+    public Crime(String title, boolean isSolved, ArrayList<TypeOfFelony> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
+        casenumber = UUID.randomUUID(); 
+        this.title = title; 
+        this.people = people; 
+        this.crimeDescription = description; 
+        this.date = date; 
+        this.evidence = evidence; 
+        this.isSolved = isSolved; 
+        this.location = location; 
+        this.typeOfCrime = typeOfCrime; 
+        this.workingOnCase = officers; 
     }
     
-    public Crime(UUID casenumber, String title, ArrayList<Person> people,
-                    ArrayList<TypeOfCrime> typeofcrime, String location,
-                    String date, ArrayList<Evidence> evidence, ArrayList<LawEnforcementUser> workingoncase,
-                    String crimedescription) 
-    {
-        this.casenumber = casenumber;
-        this.title = title;
-        this.people = people;
-        this.typeofcrime = typeofcrime;
-        this.location = location;
-        this.date = date;
-        this.evidence = evidence;
-        this.workingoncase = workingoncase;
-        this.crimedescription = crimedescription;
-    }
 
     public void deleteCrime(Crime crime) {
         
@@ -53,7 +38,7 @@ public class Crime {
     }
     public ArrayList<Person> getPOIArray() {
          ArrayList<Person> people = new ArrayList<Person>();
-        return People; 
+        return people; 
 
     }
     public static ArrayList<Criminal> getCriminalArray() {
