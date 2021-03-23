@@ -69,4 +69,8 @@ public class PersonList {
     public void getInformation(Person person) {
         person.toString(); 
     }
+
+    public ArrayList<Person> getPeople() {
+        return this.people;
+    }
 }
