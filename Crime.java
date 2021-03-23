@@ -92,4 +92,8 @@ public class Crime {
         "\nLaw Enforcement User Working On Case: " + this.workingOnCase +
         "\nDescription of Crime: " + this.crimeDescription + "\n----------\n"; 
     }
+
+    public UUID getcasenumber() {
+        return this.casenumber;
+    }
 }

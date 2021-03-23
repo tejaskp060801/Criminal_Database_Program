@@ -100,7 +100,7 @@ public class JSONReader extends JSONconstants {
                     Victim temp = new Victim(firstname, lastname, age, gender, race,
                         id, address, profession, height, weight, skincolor, haircolornatural, 
                         haircolorunnatural, clothing, tattoo, tattoodescription, shoesize, citizen, 
-                        crimeorg, willtestify); //  TODO  insert parameterized constructor
+                        crimeorg, ); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Witness")) {
                     boolean willtestify = (boolean) object.get(PERSON_TESTIFY);
