@@ -34,8 +34,13 @@ public class CrimeList {
 
 
     public Crime editCrime(Crime oldCrime, Crime newCrime) {
-        searchCrime(crime);
-        return crime;
+        Crime temp = searchCrime(oldCrime);
+        if (temp == null) {
+            return null;
+        } 
+        removeCrime(oldCrime);
+        addCrime(newCrime);
+        return newCrime;
     }
 
     public Crime searchCrime(Crime crime) {
@@ -47,6 +52,7 @@ public class CrimeList {
         }
         if (found == false){
             System.out.println("Sorry, this crime does not exist");
+            return null;
         }
         return crime;
     }

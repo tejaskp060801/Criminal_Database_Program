@@ -51,7 +51,7 @@ public class JSONReader extends JSONconstants {
     }
 
     public static ArrayList<Person> getPeople() {
-        //UserSearchTree users = UserSearchTree.getUserSearchTree();
+        UserSearchTree users = UserSearchTree.getUserSearchTree();
         ArrayList<Person> ret = new ArrayList<Person>();
         
         try { 
@@ -203,7 +203,7 @@ public class JSONReader extends JSONconstants {
     }
 
     public static ArrayList<Crime> getCrimes() {
-        //UserSearchTree users = UserSearchTree.getUserSearchTree();
+        UserSearchTree users = UserSearchTree.getUserSearchTree();
         PersonList people = PersonList.getPersonList();
         ArrayList<Crime> ret = new ArrayList<Crime>();
 

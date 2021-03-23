@@ -15,7 +15,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class JSONWriter extends JSONconstants {
-    public static void DataWriter() {
+    public static void save() {
         saveUsers();
         savePeople();
         saveCrimes();
