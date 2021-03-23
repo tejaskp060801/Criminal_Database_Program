@@ -38,27 +38,23 @@ public class CrimeList {
         if (temp == null) {
             return null;
         } 
-        removeCrime(oldCrime);
+        removeCrime(temp);
         addCrime(newCrime);
         return newCrime;
     }
 
     public Crime searchCrime(Crime crime) {
-        boolean found = false;
-        for(int i = 0; i<crimes.size(); i++) {
-            if(crimes.get(i).getcasenumber() == crime.getcasenumber()) {
-                found = true;  
-            }
-        }
-        if (found == false){
-            System.out.println("Sorry, this crime does not exist");
-            return null;
-        }
-        return crime;
+        return searchCrime(crime.getcasenumber());
     }
 
     public Crime searchCrime(UUID id) {
-        return crimes.get(0);
+        for (int i = 0; i < crimes.size(); i++) {
+            if (crimes.get(i).getcasenumber().compareTo(id) == 0) {
+                return crimes.get(i);
+            }
+        }
+        System.out.println("Sorry, this crime does not exist");
+        return null;
     }
 
     public Crime searchCrime(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {
