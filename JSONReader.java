@@ -301,7 +301,7 @@ public class JSONReader extends JSONconstants {
                     workingoncase.add(templaw);
                 }
                 String crimedesc = (String) object.get(CRIME_DESCRIPTION);
-                Crime temp = new Crime(crimeid);  //  TODO add parameterized constructor
+                Crime temp = new Crime();  //  TODO add parameterized constructor
                 ret.add(temp);
             } 
         } catch(Exception e) {

@@ -32,15 +32,7 @@ public class Evidence {
     }
 
     public void setID(UUID id) {
-        if (id == null) {
-            this.evidenceID = UUID.randomUUID();
-        } else {
-            this.evidenceID = id;
-        }
-    }
-
-    public void setType(String evidencetype) {
-        this.evidenceType = evidencetype;
+        this.evidenceID = id;
     }
     public void setEvidenceType(String evidenceType){
         this.evidenceType = evidenceType; 
