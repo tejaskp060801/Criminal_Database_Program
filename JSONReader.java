@@ -257,8 +257,8 @@ public class JSONReader extends JSONconstants {
                     UUID evidenceid = UUID.fromString(evidenceidstr);
                     String evidencetype = (String) current.get(EVIDENCE_TYPE);
 
-                    if (evidencetype == null) {
-                        Evidence eret = new Evidence();  // TODO add parameterized constructor
+                    if (evidencetype.equalsIgnoreCase("normal")) {
+                        Evidence eret = new Evidence(evidencedesc, evidenceid, evidencetype);  // TODO add parameterized constructor
                         evidence.add(eret);
                     } else if (evidencetype.equalsIgnoreCase("BloodSample")) {
                         String bloodtype = (String) current.get(BLOOD_TYPE);

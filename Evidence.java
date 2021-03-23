@@ -2,8 +2,18 @@ import java.util.UUID;
 
 public class Evidence {
     public String description;
-    public UUID evidenceId;
-    public Evidence evidenceType;
+    public UUID evidenceID;
+    public String evidenceType;
+
+    public Evidence(String description, UUID evidenceID, String evidencetype) {
+        this.description = description;
+        if (evidenceID == null) {
+            this.evidenceID = UUID.randomUUID();
+        } else {
+            this.evidenceID = evidenceID;
+        }
+        this.evidenceType = evidencetype;
+    }
 
     public String toString(){
         return "Evidence description: " + this.description + "\nEvidence ID: " + this.evidenceId;
@@ -14,7 +24,7 @@ public class Evidence {
     }
 
     public UUID getID(){
-        return this.evidenceId;
+        return this.evidenceID;
     }
 
     public void setDescription(String description) {
@@ -22,7 +32,7 @@ public class Evidence {
     }
 
     public void setID(UUID id) {
-        this.evidenceId = id;
+        this.evidenceID = id;
     }
     
 }
