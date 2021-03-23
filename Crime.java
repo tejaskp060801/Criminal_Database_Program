@@ -19,10 +19,10 @@ public class Crime {
         this.people = people; 
         this.crimeDescription = description; 
         this.date = date; 
-        this.evidence = evidence; 
+        this.evidence = evidenceList; 
         this.isSolved = isSolved; 
         this.location = location; 
-        this.typeOfCrime = typeOfCrime; 
+        this.typeOfCrime = felonyType; 
         this.workingOnCase = officers; 
     }
     

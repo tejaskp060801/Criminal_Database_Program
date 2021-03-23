@@ -27,12 +27,16 @@ public class CrimeList {
     }
 
 
-    public void editCrime(Crime crime) {
+    public void editCrime(Crime old, Crime newCrime) {
 
     }
 
-    public Crime searchCrime() {
+    public Crime searchCrime(UUID id) {
         return crimes.get(0);
+    }
+
+    public Crime searchCrime(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {
+        return Crime;
     }
 
     public void addEvidence() {

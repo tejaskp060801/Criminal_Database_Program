@@ -66,6 +66,10 @@ public class PersonList {
         return null;
     }
 
+    public Person searchPerson(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {
+        return Person;
+    }
+
     public void getInformation(Person person) {
         person.toString(); 
     }

@@ -568,7 +568,7 @@ public class DataBaseUI {
                     isDeceased = false;
                     
                 /*
-                    NEED TO ADD ARRAY LISTS OF CRIMES, FAMILY, ASSOCIATES?
+                    NEED TO ADD ARRAY LISTS OF CRIMES, FAMILY, ASSOCIATES
                 */
                 ArrayList<Crime> crimes = new ArrayList<Crime>();
                 while(true) {
