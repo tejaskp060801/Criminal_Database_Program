@@ -8,9 +8,9 @@ public class HairSample extends Evidence {
     public HairSample(String description, UUID evidenceID, String evidenceType,
         String color, double length, double thickness) {
         super(description, evidenceID, evidenceType);
-        this.color = color;
-        this.length = length;
-        this.thickness = thickness;
+        this.setColor(color);
+        this.setLength(length);
+        this.setThickness(thickness);
     }
     public String getColor(){
         return color; 

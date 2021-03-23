@@ -6,7 +6,7 @@ public class Bullet extends Evidence {
     public Bullet(String description, UUID evidenceID, String evidencetype,
                     String bullettype) {
         super(description, evidenceID, evidencetype);
-        this.type = bullettype;
+        this.setType(bullettype);
     }
     public String getType() {
         return this.type; 

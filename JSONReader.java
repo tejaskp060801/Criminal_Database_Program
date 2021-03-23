@@ -258,29 +258,33 @@ public class JSONReader extends JSONconstants {
                     String evidencetype = (String) current.get(EVIDENCE_TYPE);
 
                     if (evidencetype.equalsIgnoreCase("normal")) {
-                        Evidence eret = new Evidence(evidencedesc, evidenceid, evidencetype);  // TODO add parameterized constructor
+                        Evidence eret = new Evidence(evidencedesc, evidenceid, evidencetype);
                         evidence.add(eret);
                     } else if (evidencetype.equalsIgnoreCase("BloodSample")) {
                         String bloodtype = (String) current.get(BLOOD_TYPE);
-                        String bloodvolume = (String) current.get(BLOOD_VOLUME);
-                        BloodSample eret = new BloodSample();  //  TODO add parameterized constructor
+                        Double bloodvolume = Double.parseDouble((String) current.get(BLOOD_VOLUME));
+                        BloodSample eret = new BloodSample(evidencedesc, evidenceid, evidencetype,
+                            bloodtype, bloodvolume);
                         evidence.add(eret);
                     } else if (evidencetype.equalsIgnoreCase("HairSample")) {
                         String haircolor = (String) current.get(HAIR_COLOR);
                         double hairlength = (double) current.get(HAIR_LENGTH);
                         double hairthickness = (double) current.get(HAIR_THICKNESS);
-                        HairSample eret = new HairSample();  //  TODO add parameterizeed constructor
+                        HairSample eret = new HairSample(evidencedesc, evidenceid, evidencetype,
+                            haircolor, hairlength, hairthickness);
                         evidence.add(eret);
                     } else if (evidencetype.equalsIgnoreCase("Gun")) {
                         String guntype = (String) current.get(GUN_TYPE);
                         String gunmodel = (String) current.get(GUN_MODEL);
                         String gunbullet = (String) current.get(GUN_BULLET_TYPE);
                         int gunyearmade = ((Long) current.get(GUN_YEAR_MADE)).intValue();
-                        Gun eret = new Gun();  //  TODO add parameterized constructor
+                        Gun eret = new Gun(evidencedesc, evidenceid, evidencetype,
+                            guntype, gunmodel, gunbullet, gunyearmade);
                         evidence.add(eret);
                     } else if (evidencetype.equalsIgnoreCase("Bullet")) {
                         String bullettype = (String) current.get(BULLET_TYPE);
-                        Bullet eret = new Bullet();  //  TODO add parameteried constructor
+                        Bullet eret = new Bullet(evidencedesc, evidenceid, evidencetype,
+                            bullettype);
                         evidence.add(eret);
                     } else {
                         System.out.println("JSON format invalid, seek assistance from a technical expert");
@@ -297,7 +301,7 @@ public class JSONReader extends JSONconstants {
                     workingoncase.add(templaw);
                 }
                 String crimedesc = (String) object.get(CRIME_DESCRIPTION);
-                Crime temp = new Crime();  //  TODO add parameterized constructor
+                Crime temp = new Crime(crimeid);  //  TODO add parameterized constructor
                 ret.add(temp);
             } 
         } catch(Exception e) {

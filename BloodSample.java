@@ -7,8 +7,8 @@ public class BloodSample extends Evidence {
     public BloodSample(String description, UUID evidenceID, String evidencetype,
         String bloodType, double bloodVolume) {
         super(description, evidenceID, evidencetype);
-        this.bloodType = bloodType;
-        this.bloodVolume = bloodVolume;
+        this.setType(bloodType);
+        this.setBloodVolume(bloodVolume);
     }
 
     public String getBloodType() {

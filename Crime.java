@@ -13,7 +13,7 @@ public class Crime {
     protected ArrayList<LawEnforcementUser> workingoncase; //array
     protected String crimedescription; 
 
-    public Crime(String title, boolean isSolved, ArrayList<TypeOfFelony> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
+    public Crime(UUID casenumber, String title, boolean isSolved, ArrayList<TypeOfFelony> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
         casenumber = UUID.randomUUID(); 
         this.title = title; 
         this.people = people; 
