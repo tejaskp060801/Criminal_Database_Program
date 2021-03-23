@@ -69,7 +69,7 @@ public class DataBaseUI {
 
     private void DisplayMenu() {
         System.out.println("***** Main Menu *****");
-        System.out.println("What would you like to do?\n1. Search\n2. Export Criminal Profile\n3. Add crime\n4. Edit crime\n5. Update files\n6. Logout");
+        System.out.println("What would you like to do?\n1. Search a person or crime\n2. Export a person or crime\n3. Add a person or crime to the database\n4. Edit an existing person or crime\n5. Update files\n6. Logout");
     }
 
     private void search() {
@@ -270,7 +270,8 @@ public class DataBaseUI {
         int choice = scanner.nextInt();
         if(choice == 1) {
             System.out.println("Adding new person");
-            addPerson();
+            Person temp = addPerson();
+            databaseManager.AddPerson(temp);
             System.out.println("The person has been added to the database");
         }
         if(choice == 2) {
@@ -283,9 +284,6 @@ public class DataBaseUI {
     }
 
     private void addCrime() {
-        UUID crimeID = UUID.randomUUID();
-        System.out.println("Crime ID: " + crimeID);
-
         System.out.println("Enter a title for the crime");
         String title = scanner.nextLine();
 
@@ -297,15 +295,19 @@ public class DataBaseUI {
         if(solved == "N" || solved == "n");
             isSolved = false;
         
+        ArrayList<Person> people = new ArrayList<Person>();
         System.out.println("Would you like to add a person to this crime? (Y/N)");
         String s = scanner.nextLine();
-        if(s == "Y" || s == "y")
-            addPerson();
+        if(s == "Y" || s == "y") {
+            Person temp = addPerson();
+            people.add(temp);
+        }
         while(true) {
             System.out.println("Would you like to add another person? (Y/N)");
             String more = scanner.nextLine();
             if(more == "Y" || more == "y") {
-                addPerson();
+                Person temp = addPerson();
+                people.add(temp);
                 continue;
             }
             if(more == "N" || more == "n")
@@ -313,11 +315,36 @@ public class DataBaseUI {
             else
                 break;
         }
-        /*
-            NEED TO ADD FUNCTIONALITY TO SELECT MULTIPLE LEVELS OF FELONY
-        */
-        System.out.println("What type of felony is this crime?\n1. Class A felony\n2. Class B felony\n3. Class C felony\n4. Class D felony\n5. Class E felony\n6. Class F felony");
-        int felonyType = scanner.NextInt();
+        
+        System.out.println("What type of felony is this crime?\n1. Class A felony\n2. Class B felony\n3. Class C felony\n4. Class D felony\n5. Class E felony\n6. Class F felony\nPlease enter the numbers corresponding to the type of felonies that this crime falls under. Separate numbers by comma with no space");
+        String input = scanner.nextLine();
+        String[] inputArr = input.split(",");
+        ArrayList<TypeOfCrime> felonyType = new ArrayList<TypeOfCrime>();
+        for(int i=0; i<6; i++) {
+            if(inputArr[i] == "1") {
+                felonyType.add(CLASSAFELONY);
+            }
+
+            if(inputArr[i] == "2") {
+                felonyType.add(CLASSBFELONY);
+            }
+
+            if(inputArr[i] == "3") {
+                felonyType.add(CLASSCFELONY);
+            }
+
+            if(inputArr[i] == "4") {
+                felonyType.add(CLASSDFELONY);
+            }
+
+            if(inputArr[i] == "5") {
+                felonyType.add(CLASSEFELONY);
+            }
+
+            if(inputArr[i] == "6") {
+                felonyType.add(CLASSFFELONY);   
+            }
+        }
 
         System.out.println("Enter the location of where the crime took place:");
         String location = scanner.nextLine();
@@ -325,31 +352,94 @@ public class DataBaseUI {
         System.out.println("Enter the date that the crime took place");
         String date = scanner.nextLine();
 
-        /*
-            REEXAMINE. MIGHT NEED TO MAKE METHOD FOR ADD EVIDENCE
-        
-        System.out.println("Would you like to add evidence? (Y/N)");
-        String aChoice = scanner.nextLine();
-        if(aChoice == "Y" || aChoice == "y") {
-           
+        ArrayList<Evidence> evidenceList = new AraryList<Evidence>();
+        while(true) { 
+            System.out.println("Would you like to add evidence? (Y/N)");
+            String aChoice = scanner.nextLine();
+            if(aChoice == "Y" || aChoice == "y") {
+                System.out.println("\nEnter the type of evidence you would like to add.\n1. Hair sample\n2. Blood sample\n3. Gun\n4. Bullet");
+                String input1 = scanner.nextLine();
+                System.out.println("\nEnter the description of the evidence");
+                String description = scanner.nextLine();
+                switch(input1) {
+                    case 1:
+                        System.out.println("\nEnter the color of the hair sample");
+                        String color = scanner.nextLine();
+                        
+                        System.out.println("\nEnter the length of the hair sample");
+                        double length = scanner.nextLine();
+
+                        System.out.println("\nEnter the thickness of the hair sample");
+                        double thickness = scanner.nextLine();
+                        Evidence newHairSample = new HairSample(description, color, length, thickness);
+                        evidenceList.add(newHairSample);
+                        break;
+                    
+                    case 2:
+                        System.out.println("\nEnter the blood type");
+                        String bloodType = scanner.nextLine();
+
+                        System.out.println("\nEnter the volume of blood in this sample");
+                        double bloodVolume;
+                        Evidence newBloodSample = new BloodSample(description, bloodType, bloodVolume);
+                        evidenceList.add(newBloodSample);
+                        break;
+
+                    case 3:
+                        System.out.println("\nEnter the type of gun");
+                        String gunType = scanner.nextLine();
+
+                        System.out.println("\nEnter the model of the gun");
+                        String model = scanner.nextLine();
+
+                        System.out.println("\nEnter the type of bullet");
+                        String bulletType = scanner.nextLine();
+
+                        System.out.println("\nEnter the year the gun was manufactured");
+                        int yearMade = scanner.nextInt();
+                        Evidence newGun = new Gun(description, gunType, model, bulletType, yearMade);
+                        evidenceList.add(newGun);
+                        break;
+
+                    case 4:
+                        System.out.println("\nEnter the type of bullet");
+                        String type = scanner.nextLine();
+                        Evidence newBullet = new Bullet(description, type);
+                        evidenceList.add(newBullet);
+                        break;
+                }
+            }
+            System.out.println("Would you like to add more evidence to the crime?");  
+            String choice = scanner.nextLine();
+            if(choice == "Y" || choice == "y") {
+                continue;
+            } 
+            else {
+                break;
+            }
         }
-        */
-
-
-         /*
-            NEED TO ADD FUNCTIONALITY TO ENTER MULTIPLE UUIDS AT A TIME
-            looping and adding 1 by 1 might be easier
-         */
-        System.out.println("Please enter the UUIDs of the officers working on the case");
-        UUID officerID = scanner.nextLine();
+        ArrayList<String> officersOnCase = new ArrayList<String>();
+        while(true) {
+            System.out.println("Please enter the first and last name (separated by a space) of an officer working on the case and then press ENTER");
+            String name = scanner.nextLine();
+            officersOnCase.add(name);
+            System.out.println("Would you like to add another officer? (Y/N)");
+            String input1 = scanner.nextLine();
+            if(input1 == "y" || input1 == "Y") {
+                continue;
+            }
+            else {
+                break;
+            }
+        }
 
         System.out.println("Please enter a description for the crime");
         String description = scanner.nextLine();
-        Crime newCrime = new Crime(crimeID, title, isSolved, location, date, officerID, description);
+        Crime newCrime = new Crime(title, isSolved, felonyType, people, location, date, evidenceList, officersOnCase, description);
         databaseManager.AddCrime(newCrime);
     }
 
-    private void addPerson() {
+    private Person addPerson() {
         //find what kind of person they want to add
         System.out.println("Please enter the type of person you would like to add\n1. Victim\n2. Witness\n3. Suspect\n4. Criminal\n5. Family member\n6. Associate");
         int personType = scanner.nextInt();
@@ -438,6 +528,7 @@ public class DataBaseUI {
                     willTestify = false;
                 //construct victim
                 Person newVictim = new Victim(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, willTestify);
+                return newVictim;
                 break;
 
             case 2:
@@ -450,11 +541,13 @@ public class DataBaseUI {
                     willTestify1 = false;
                  //construct witness
                 Person newWitness= new Witness(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, willTestify1);
+                return newWitness;
                 break;
 
             case 3:
-                 //construct suspect
-                 Person newSuspect = new Suspect(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg);
+                //construct suspect
+                Person newSuspect = new Suspect(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg);
+                return newSuspect;
                 break;
 
             case 4:
@@ -475,11 +568,70 @@ public class DataBaseUI {
                     isDeceased = false;
                     
                 /*
-                    ?NEED TO ADD ARRAY LISTS OF CRIMES, FAMILY, ASSOCIATES?
+                    NEED TO ADD ARRAY LISTS OF CRIMES, FAMILY, ASSOCIATES?
                 */
+                ArrayList<Crime> crimes = new ArrayList<Crime>();
+                while(true) {
+                    System.out.println("\nEnter the UUID of the cime you would like to add to this person");
+                    UUID pCrime = scanner.nextLine();
+                    ArrayList<String> paramChocies = new ArrayList<String>();
+                    paramChocies.add("1");
+                    ArrayList<Object> searchParams = new ArrayList<Object>();
+                    searchparams.add(pCrime);
+                    Crime temp = databaseManager.searchCrime(paramChocies, searchParams);
+                    crimes.add(temp);
+                    System.out.println("\nWould you like to add another crime to this person? (Y/N)");
+                    String choice = scanner.nextLine();
+                    if(choice == "Y" || choice == "y") {
+                        continue;
+                    }
+                    else {
+                        break;
+                    }
+                }
 
+                ArrayList<FamilyMember> family = new ArrayList<FamilyMember>();
+                while(true) {
+                    System.out.println("\nEnter the UUID of the family member you would like to add to this person");
+                    UUID pFamMem = scanner.nextLine();
+                    ArrayList<String> paramChocies = new ArrayList<String>();
+                    paramChocies.add("1");
+                    ArrayList<Object> searchParams = new ArrayList<Object>();
+                    searchparams.add(pFamMem);
+                    FamilyMember temp = databaseManager.searchPerson(paramChocies, searchParams);
+                    family.add(temp);
+                    System.out.println("\nWould you like to add another family member to this person? (Y/N)");
+                    String choice = scanner.nextLine();
+                    if(choice == "Y" || choice == "y") {
+                        continue;
+                    }
+                    else {
+                        break;
+                    }
+                }
+
+                ArrayList<Assocaite> associates = new Arraylist<Associate>();
+                while(true) {
+                    System.out.println("\nEnter the UUID of the associate you would like to add to this person");
+                    UUID pAssociate = scanner.nextLine();
+                    ArrayList<String> paramChocies = new ArrayList<String>();
+                    paramChocies.add("1");
+                    ArrayList<Object> searchParams = new ArrayList<Object>();
+                    searchparams.add(pAssociate);
+                    Associate temp = databaseManager.searchPerson(paramChocies, searchParams);
+                    associates.add(temp);
+                    System.out.println("\nWould you like to add another associate to this person? (Y/N)");
+                    String choice = scanner.nextLine();
+                    if(choice == "Y" || choice == "y") {
+                        continue;
+                    }
+                    else {
+                        break;
+                    }
+                }
                 //construct criminal
-
+                Person newCriminal = new Criminal(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, crimes, family, associates);
+                return newCriminal;
                 break;
 
             case 5:
@@ -489,6 +641,7 @@ public class DataBaseUI {
                 UUID relationshipID = UUID.randomUUID();
 
                 Person newFamilyMember = new FamilyMember(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, relationship, relationshipID);
+                return newFamilyMember;
                 break;
             
             case 6:
@@ -498,6 +651,7 @@ public class DataBaseUI {
                 UUID relationshipID1 = UUID.randomUUID();
 
                 Person newAssociate = new Associate(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, relationship1, relationshipID1);
+                return newAssociate;
                 break;
         }
     }

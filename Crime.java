@@ -5,7 +5,7 @@ public class Crime {
     protected UUID caseNumber; 
     protected String title; 
     protected boolean isSolved; 
-    protected ArrayList<Person> People; //array
+    protected ArrayList<Person> people; //array
     protected ArrayList<TypeOfCrime> typeOfCrime;  //array
     protected String location; 
     protected String date;
@@ -13,17 +13,17 @@ public class Crime {
     protected ArrayList<LawEnforcementUser> workingOnCase; //array
     protected String crimeDescription; 
 
-    public Crime() {
-        this.caseNumber = caseNumber; 
+    public Crime(String title, boolean isSolved, ArrayList<TypeOfFelony> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
+        caseNumber = UUID.randomUUID(); 
         this.title = title; 
-        this.People = People; 
-        this.crimeDescription = crimeDescription; 
+        this.people = people; 
+        this.crimeDescription = description; 
         this.date = date; 
         this.evidence = evidence; 
         this.isSolved = isSolved; 
         this.location = location; 
         this.typeOfCrime = typeOfCrime; 
-        this.workingOnCase = workingOnCase; 
+        this.workingOnCase = officers; 
     }
     
     public void deleteCrime(Crime crime) {
