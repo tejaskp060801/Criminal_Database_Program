@@ -161,6 +161,10 @@ public class JSONWriter extends JSONconstants {
         for (int i = 0; i < crimes.size(); i++) {
             array.add(crimeConvert(crimes.get(i)))
         }
+
+        /*FileWriter filewriter = new FileWriter(CRIME_FILE_NAME);
+        filewriter.write(array.toJSONString());
+        filewriter.close();*/
     }
 
     public static JSONObject crimeConvert(Crime crime) {
