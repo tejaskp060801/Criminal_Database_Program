@@ -6,8 +6,18 @@ public abstract class PersonOfInterest extends Person{
     protected ArrayList<Person> relations;
     protected String statement;
 
-    public PersonOfInterest(String firstName, String lastName, int age, String gender, String race, UUID id,String address, String profession, double height, double weight, String skinColor, String natHair, String unNatHair, String clothing, boolean hasTattoo, String tatDescription, double shoeSize, boolean isUSCitizen,String crimeOrg) {
-        super(firstName, lastName, age, gender, race, id, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg);
+    public PersonOfInterest(String firstName, String lastName, int age, String gender,
+        String race, UUID id,String address, String profession, double height,
+        double weight, String skinColor, String natHair, String unNatHair,
+        String clothing, boolean hasTattoo, String tatDescription, double shoeSize,
+        boolean isUSCitizen, String crimeOrg, ArrayList<Crime> crimes, ArrayList<Person> relations,
+        String statement) {
+        super(firstName, lastName, age, gender, race, id, address, profession,
+            height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo,
+            tatDescription, shoeSize, isUSCitizen, crimeOrg);
+        this.crimes = crimes;
+        this.relations = relations;
+        this.statement = statement;
     }
     public String getStatement() {
         return this.statement; 

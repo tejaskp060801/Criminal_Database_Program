@@ -40,8 +40,8 @@ public class JSONReader extends JSONconstants {
                 String password = (String) object.get(USER_PASSWORD);
                 String username = (String) object.get(USER_USERNAME);
                 int clearance = ((Long) object.get(USER_CLEARANCE)).intValue();
-               // LawEnforcementUser temp = new LawEnforcementUser(username, password, firstname, lastname, clearance, id);
-               // ret.add(temp);
+                LawEnforcementUser temp = new LawEnforcementUser(username, password, firstname, lastname, clearance, id);
+                ret.addElement(temp);
             }
         } catch(Exception e) {
             e.printStackTrace();
@@ -73,7 +73,7 @@ public class JSONReader extends JSONconstants {
                 double weight = (double) object.get(PERSON_WEIGHT);
                 String skincolor = (String) object.get(PERSON_SKIN_COLOR);
                 String haircolornatural = (String) object.get(PERSON_HAIR_COLOR_NATURAL);
-                String haircolorunnatraul = (String) object.get(PERSON_HAIR_COLOR_UNNATURAL);
+                String haircolorunnatural = (String) object.get(PERSON_HAIR_COLOR_UNNATURAL);
                 String clothing = (String) object.get(PERSON_CLOTHING);
                 boolean tattoo = (boolean) object.get(PERSON_TATTOO);
                 String tattoodescription = (String) object.get(PERSON_TATTOO_DESCRIPTION);
@@ -97,7 +97,10 @@ public class JSONReader extends JSONconstants {
                    while (iteratorassociate.hasNext()) {
                     relations.add(UUID.fromString(iteratorassociate.next()));
                 }
-                    Victim temp = new Victim(statement, statement, age, statement, statement, id, statement, statement, shoesize, shoesize, statement, statement, statement, statement, willtestify, statement, shoesize, willtestify, statement, willtestify); //  TODO  insert parameterized constructor
+                    Victim temp = new Victim(firstname, lastname, age, gender, race,
+                        id, address, profession, height, weight, skincolor, haircolornatural, 
+                        haircolorunnatural, clothing, tattoo, tattoodescription, shoesize, citizen, 
+                        crimeorg, willtestify); //  TODO  insert parameterized constructor
                     ret.add(temp);
                 } else if (persontype.equalsIgnoreCase("Witness")) {
                     boolean willtestify = (boolean) object.get(PERSON_TESTIFY);
