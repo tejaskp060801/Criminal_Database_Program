@@ -53,4 +53,9 @@ public class LawEnforcementUser implements Comparable<LawEnforcementUser> {
         }
         return (this.username.compareTo(officer.getUsername()) == -1) ? -1 : 1;
     }
+
+    public String toString() {
+        return "username: " + this.username + "\nfirstname: " + this.firstname + 
+                "\nlastname: " + this.lastname;
+    }
 }

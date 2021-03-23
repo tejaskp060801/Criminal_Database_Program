@@ -40,5 +40,9 @@ public class UserSearchTree {
         users.printInOrder(); 
     }
 
+    public ArrayList<LawEnforcementUser> getEnforcementUsers() {
+        return users.getarraylist();
+    }
+
 
 }

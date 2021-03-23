@@ -101,7 +101,18 @@ public class BinarySearchTree <T extends Comparable<T>> {
 
     public ArrayList<T> getarraylist() {
         ArrayList<T> ret = new ArrayList<T>();
+        getArrayList(ret, root);
+
         return ret;  //  TODO add functionality
+    }
+
+    private void getArrayList(ArrayList<T> ret, Node aNode) {
+        if (aNode == null) {
+            return;
+        }
+        getArrayList(ret, aNode.leftChild);
+        ret.add(aNode.data);
+        getArrayList(ret, aNode.rightChild);
     }
 
 }
