@@ -15,8 +15,15 @@ public class DataBaseUI {
 
 
     public static void main(String [] args) {
-        DataBaseUI ui = new DataBaseUI();
-        ui.run();
+        /*DataBaseUI ui = new DataBaseUI();
+        ui.run();*/
+        PersonList temp = PersonList.getPersonList();
+        ArrayList<Person> arr = temp.getPeople();
+        /*for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }*/
+
+        JSONWriter.savePeople();
     }
 
     public void run() {

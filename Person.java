@@ -38,6 +38,7 @@ public abstract class Person {
                 this.setGender(gender);
                 this.setHairColorNatural(natHairCol);
                 this.setHairColorUnNatural(unNatHairCol);
+                this.setWeight(weight);
                 this.setHeight(height);
                 this.setIsUSCitizen(isUsCitizen);
                 this.setLastName(lastName);
@@ -51,8 +52,17 @@ public abstract class Person {
     public String getName() {
         return this.firstName + " " + this.lastName; 
     }
+    public String getFirstName() {
+        return this.firstName;
+    }
+    public String getLastName() {
+        return this.lastName;
+    }
     public int getAge() {
         return this.age; 
+    }
+    public String getGender() {
+        return this.gender;
     }
     public String getRace() {
         return this.race; 
@@ -101,6 +111,9 @@ public abstract class Person {
     public String getOrganization() {
         return this.crimeOrganization;
     }
+    public String getType() {
+        return this.personType;
+    }
     public void setFirstName(String firstName) {
         this.firstName = firstName; 
     }
@@ -120,7 +133,7 @@ public abstract class Person {
         this.race = race; 
     }
     public void setPersonID (UUID id) {
-        id = PersonID; 
+        PersonID = id; 
     }
     public void setAddress(String address) {
         this.address = address; 

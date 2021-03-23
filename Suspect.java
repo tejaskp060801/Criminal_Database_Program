@@ -21,5 +21,9 @@ public class Suspect extends PersonOfInterest {
     public String toString(){
         return super.toString();
     }
+
+    public boolean getWillTestify() {
+        return this.willtestify;
+    }
     
 }
