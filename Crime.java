@@ -13,17 +13,17 @@ public class Crime {
     protected ArrayList<LawEnforcementUser> workingoncase; 
     protected String crimedescription; 
 
-public Crime(String title, boolean isSolved, ArrayList<TypeOfCrime> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
-    casenumber = UUID.randomUUID(); 
+public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<LawEnforcementUser> officers, String description) {
+    this.setID(id);
     this.title = title; 
     this.people = people; 
     this.crimedescription = description; 
     this.date = date; 
-    this.evidence = evidence; 
+    this.evidence = evidenceList;
     this.isSolved = isSolved; 
     this.location = location; 
-    this.typeOfCrime = typeOfCrime; 
-    this.workingoncase = workingoncase; 
+    this.typeOfCrime = felonyType; 
+    this.workingoncase = officers; 
     }
     
     //im not sure if this method is needed bc you remove the crime through the CrimeList class
@@ -32,13 +32,25 @@ public Crime(String title, boolean isSolved, ArrayList<TypeOfCrime> felonyType, 
     public void removeCrime(Crime crime) {
 
     }
+
+    public void setID(UUID id) {
+        if (id == null) {
+            casenumber = UUID.randomUUID();
+        } else {
+            casenumber = id;
+        }
+    }
    
-    public boolean crimeSolved() {
-        return true;
+    public boolean isSolved() {
+        return this.isSolved;
     }
 
-    public String getTitle(String title) {
-        return title; 
+    public String getTitle() {
+        return this.title; 
+    }
+
+    public String getLocation() {
+        return this.location;
     }
 
     public ArrayList<Person> getPOIArray() {
@@ -52,22 +64,28 @@ public Crime(String title, boolean isSolved, ArrayList<TypeOfCrime> felonyType, 
          return criminalswoo;
     }
 
-    public ArrayList<UUID> getWorkingOnCaseArrayList() {
-        ArrayList<UUID> workingOnCase= new ArrayList<UUID>();
-        return workingOnCase; 
+    public ArrayList<LawEnforcementUser> getWorkingOnCaseArrayList() {
+        return this.workingoncase;
+    }
+
+    public ArrayList<Person> getPeople() {
+        return this.people;
+    }
+
+    public ArrayList<Evidence> getEvidence() {
+        return this.evidence;
     }
 
     public String getCrimeDescription() {
-        return crimedescription; 
+        return this.crimedescription; 
     }
 
     public String getDate() {
-        return date; 
+        return this.date; 
     }
 
     public ArrayList<TypeOfCrime> getTypeOfCrime() {
-        ArrayList<TypeOfCrime> typeOfCrimes = new ArrayList<TypeOfCrime>();
-        return typeOfCrime; 
+        return this.typeOfCrime; 
     }
 
     //i dont these two are neccessary because the person class doesnt have one like this either

@@ -71,5 +71,9 @@ public class CrimeList {
     public void getInformation(Crime crimes){
         crimes.toString();
     }
+
+    public ArrayList<Crime> getCrimes() {
+        return this.crimes;
+    }
 }
 

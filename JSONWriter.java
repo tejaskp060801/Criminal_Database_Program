@@ -155,5 +155,19 @@ public class JSONWriter extends JSONconstants {
 
     public static void saveCrimes() {
         CrimeList temp = CrimeList.getCrimeList();
+        ArrayList<Crime> crimes = temp.getCrimes();
+        JSONArray array = new JSONArray();
+
+        for (int i = 0; i < crimes.size(); i++) {
+            array.add(crimeConvert(crimes.get(i)))
+        }
     }
-}
+
+    public static JSONObject crimeConvert(Crime crime) {
+        JSONObject ret = new JSONObject();
+
+
+
+
+        return ret;
+    }
