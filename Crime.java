@@ -13,17 +13,17 @@ public class Crime {
     protected ArrayList<LawEnforcementUser> workingoncase; //array
     protected String crimedescription; 
 
-    public Crime(UUID casenumber, String title, boolean isSolved, ArrayList<TypeOfFelony> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
+    public Crime(String title, boolean isSolved, ArrayList<TypeOfCrime> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
         casenumber = UUID.randomUUID(); 
         this.title = title; 
         this.people = people; 
-        this.crimeDescription = description; 
+        this.crimedescription = description; 
         this.date = date; 
         this.evidence = evidence; 
         this.isSolved = isSolved; 
         this.location = location; 
         this.typeOfCrime = typeOfCrime; 
-        this.workingOnCase = officers; 
+        this.workingoncase = workingoncase; 
     }
     
 
@@ -50,7 +50,7 @@ public class Crime {
         return workingOnCase; 
     }
     public String getCrimeDescription() {
-        return crimeDescription; 
+        return crimedescription; 
     }
     public String getDate() {
         return date; 
