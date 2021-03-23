@@ -13,29 +13,26 @@ public class Crime {
     protected ArrayList<LawEnforcementUser> workingoncase; 
     protected String crimedescription; 
 
-    public Crime(String title, boolean isSolved, ArrayList<TypeOfCrime> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
-        casenumber = UUID.randomUUID(); 
-        this.title = title; 
-        this.people = people; 
-        this.crimedescription = description; 
-        this.date = date; 
-        this.evidence = evidence; 
-        this.isSolved = isSolved; 
-        this.location = location; 
-        this.typeOfCrime = typeOfCrime; 
-        this.workingoncase = workingoncase; 
+public Crime(String title, boolean isSolved, ArrayList<TypeOfCrime> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<String> officers, String description) {
+    casenumber = UUID.randomUUID(); 
+    this.title = title; 
+    this.people = people; 
+    this.crimedescription = description; 
+    this.date = date; 
+    this.evidence = evidence; 
+    this.isSolved = isSolved; 
+    this.location = location; 
+    this.typeOfCrime = typeOfCrime; 
+    this.workingoncase = workingoncase; 
     }
-    /*
-    deleteCrime method isnt needed cause we have a removeCrime method in CrimeList anyways
-   
-
-    public void deleteCrime(Crime crime) {
-        return CrimeList.remove(crime);
-    }
-    */
-     
     
+    //im not sure if this method is needed bc you remove the crime through the CrimeList class
+    //like in the Person class there is no removePerson; you can only remove through PersonList
+    //there is already a deleteCrime method in CrimeList
+    public void removeCrime(Crime crime) {
 
+    }
+   
     public boolean crimeSolved() {
         return true;
     }
@@ -73,10 +70,11 @@ public class Crime {
         return typeOfCrime; 
     }
 
-    //i dont these two are neccessary because the person class doesnt have one either
+    //i dont these two are neccessary because the person class doesnt have one like this either
+    //sort of confused with what information
 
     public void addInformation() {  
-        
+
        
     }
 
