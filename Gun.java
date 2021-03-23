@@ -9,10 +9,10 @@ public class Gun extends Evidence {
     public Gun(String description, UUID evidenceID, String evidenceType,
         String gunType, String model, String bulletType, int yearMade) {
         super(description, evidenceID, evidenceType);
-        this.gunType = gunType;
-        this.model = model;
-        this.bulletType = bulletType;
-        this.yearMade = yearMade;
+        this.setBulletType(bulletType);
+        this.setDescription(description);
+        this.setGunType(gunType);
+        this.setYearMade(yearMade);
     }
 
     public String getGunType() {
@@ -23,7 +23,7 @@ public class Gun extends Evidence {
         return this.model;
     }
 
-    public Bullet getBulletType() {
+    public String getBulletType() {
         return this.bulletType;
     }
 
@@ -39,7 +39,7 @@ public class Gun extends Evidence {
         this.model = model;
     }
 
-    public void setBulletType(Bullet bulletType) {
+    public void setBulletType(String bulletType) {
         this.bulletType = bulletType;
     }
 
