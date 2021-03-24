@@ -180,8 +180,12 @@ public abstract class Person {
     public String toString() {
         return "The persons name is " + this.firstName + " " + this.lastName 
         + "\n The persons age is" + this.age + "\n the persons gender is " + this.gender + "\n the persons race is " + this.race
-        + "\n The persons UUID is " +this.PersonID + "\n The persons address is " + this.address + this.profession + this.height + this. weight
-        + this.skinColor + this.hairColorNatural + this.hairColorUnNatural + this.clothing + this.tattoo + this.tattooDescription + this.shoeSize
-        + this.isUSCitizen + this.crimeOrganization + this.personType; 
+        + "\n The persons UUID is " +this.PersonID + "\n The persons address is " + this.address + "\n the persons professions is " + this.profession 
+        + "\n The persons height is " + this.height + "\n Ther persons weight is " + this. weight
+        + "\n The persons skin color is " + this.skinColor + "\n The persons natural hair color is " + this.hairColorNatural 
+        + "\n The persons unNautural hair color is " + this.hairColorUnNatural + "\n The persons clothin on right now is "+ this.clothing 
+        + "\n Does this person have a tattoo? "+ this.tattoo + "\n The tattoo description is "+ this.tattooDescription + "\n the persons shoe size is "+ this.shoeSize
+        + "\n Is this Person a US Citizen? " + this.isUSCitizen + "\n The criminal organization this person is associated with is " + this.crimeOrganization 
+        + "\n This person is a " + this.personType; 
     }
 }
