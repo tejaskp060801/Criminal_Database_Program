@@ -161,19 +161,19 @@ public class JSONWriter extends JSONconstants {
         for (int i = 0; i < crimes.size(); i++) {
             array.add(crimeConvert(crimes.get(i)));
         }
-        try {
+        /*try {
             FileWriter filewriter = new FileWriter(CRIME_FILE_NAME);
             filewriter.write(array.toJSONString());
             filewriter.close();
         } catch (IOException e) {
             e.printStackTrace();
 
-        }
+        }*/
     }
 
     public static JSONObject crimeConvert(Crime crime) {
         JSONObject ret = new JSONObject();
-        ret.put(CRIME_ID, crime.getcasenumber());
+        ret.put(CRIME_ID, crime.getcasenumber().toString());
         ret.put(CRIME_TITLE, crime.getTitle());
         ret.put(CRIME_SOLVED_FLAG, crime.isSolved());
         JSONArray people = new JSONArray();
@@ -198,7 +198,7 @@ public class JSONWriter extends JSONconstants {
             JSONObject evidence = new JSONObject();
             Evidence tempevid = javaevidence.get(i);
             evidence.put(EVIDENCE_DESCRIPTION, tempevid.getDescription());
-            evidence.put(EVIDENCE_ID, tempevid.getID());
+            evidence.put(EVIDENCE_ID, tempevid.getID().toString());
             String javaevidtype = tempevid.getEvidenceType();
             evidence.put(EVIDENCE_TYPE, javaevidtype);
             if (javaevidtype.equalsIgnoreCase("Bullet")) {
@@ -231,6 +231,7 @@ public class JSONWriter extends JSONconstants {
         JSONArray workingoncase = new JSONArray();
         ArrayList<LawEnforcementUser> workingoncaseids = crime.getWorkingOnCaseArrayList();
         for (int i = 0; i < workingoncaseids.size(); i++) {
+            System.out.println(i);
             String temp = workingoncaseids.get(i).getUsername();
             workingoncase.add(temp);
         }
