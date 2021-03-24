@@ -35,7 +35,7 @@ public class PersonList {
     }
 
     public Person editPerson(Person oldPerson, Person newPerson) {
-        searchPerson(person); 
+        searchPerson(oldPerson); 
         
         return person;
     }

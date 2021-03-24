@@ -34,7 +34,7 @@ public class CrimeList {
 
 
     public Crime editCrime(Crime oldCrime, Crime newCrime) {
-        searchCrime(crime);
+        searchCrime(oldCrime);
         return crime;
     }
 
@@ -61,6 +61,7 @@ public class CrimeList {
 
     public void addEvidence() {
 
+    }
     public void getInformation(Crime crimes){
         crimes.toString();
     }

@@ -55,8 +55,8 @@ public class DataBaseUI {
                     break;
             }
             System.out.println("Would you like to do something else (Y/N)");
-            String choice = scanner.nextLine();
-            if(choice == "Y" || choice == "y")
+            String choice = scanner.nextLine().toLowerCase();
+            if(choice == "y")
                 continue;
             else {
                 //not sure if we should logout here or what
@@ -75,6 +75,7 @@ public class DataBaseUI {
     private void search() {
         System.out.println("What would you like to search for?\n 1. Person\n2. Crime");
         int choice = scanner.nextInt();
+        scanner.nextLine();
         if(choice == 1) {
             System.out.println("Searching for person:\nHow would you like to search for this person?");
             searchPerson();
@@ -98,10 +99,11 @@ public class DataBaseUI {
         ArrayList<String> paramChoiceArrayList = new ArrayList<String>(paramChoiceList);
         
         ArrayList<Object> searchParams = new ArrayList<Object>();
-        for(int i=0; i<7; i++) {
+        for(int i=0; i<paramChoices.length; i++) {
             if(paramChoices[i] == "1") {
                 System.out.println("\nEnter the CaseID of the crime you would like to search");
-                UUID caseID = scanner.nextLine();
+                String caseid = scanner.nextLine();
+                UUID caseID = UUID.fromString(caseid);
                 searchParams.add(caseID);
             }
 
@@ -114,7 +116,11 @@ public class DataBaseUI {
             if(paramChoices[i] == "3") {
                 System.out.println("\nEnter the UUIDs of the people involved separated by a comma (no spaces)");
                 input = scanner.nextLine();
-                UUID[] people = inpus.split(",");
+                String[] p = input.split(",");
+                UUID[] people;
+                for(int t=0; t<p.length; t++) {
+                    people[t] = UUID.fromString(p[t]);
+                }
                 List<String> peopleList = Arrays.asList(people);
                 ArrayList<UUID> peopleInvolved = new ArrayList<UUID>(peopleList);
                 searchParams.add(peopleInvolved);
@@ -141,7 +147,11 @@ public class DataBaseUI {
             if(paramChoices[i] == "7") {
                 System.out.println("Enter the UUIDs of the evidence related to the crime separated by a comma (no spaces)");
                 input = scanner.nextLine();
-                UUID[] evidence = inpus.split(",");
+                String[] e = input.split(",");
+                UUID[] evidence;
+                for(int t=0; t<e.length; t++) {
+                    evidence[t] = UUID.fromString(e[t]);
+                }
                 List<String> evidenceList = Arrays.asList(evidence);
                 ArrayList<UUID> evidenceArrayList = new ArrayList<UUID>(evidenceList);
                 searchParams.add(evidenceArrayList);
@@ -159,7 +169,7 @@ public class DataBaseUI {
         ArrayList<String> paramChoiceArrayList = new ArrayList<String>(paramChoiceList);
         
         ArrayList<Object> searchParams = new ArrayList<Object>();
-        for(int i=0; i<18; i++) {
+        for(int i=0; i<paramChoices.length; i++) {
             if(paramChoices[i] == "1") {
                 System.out.println("\nEnter the first name of the person you would like to search");
                 String firstName = scanner.nextLine();
@@ -175,6 +185,7 @@ public class DataBaseUI {
             if(paramChoices[i] == "3") {
                 System.out.println("\nEnter the age of the person you would like to search");
                 int age = scanner.nextInt();
+                scanner.nextLine();
                 searchParams.add(age);
             }
 
@@ -192,7 +203,8 @@ public class DataBaseUI {
 
             if(paramChoices[i] == "6") {
                 System.out.println("\nEnter the UUID of the person you would like to search");
-                UUID personID = scanner.nextLine();
+                String personid = scanner.nextLine();
+                UUID personID = UUID.fromString(personid);
                 searchParams.add(personID);
             }
 
@@ -210,13 +222,15 @@ public class DataBaseUI {
 
             if(paramChoices[i] == "9") {
                 System.out.println("\nEnter the height of the person you would like to search");
-                double height = scanner.nextLine();
+                double height = scanner.nextDouble();
+                scanner.nextLine();
                 searchParams.add(height);
             }
 
             if(paramChoices[i] == "10") {
                 System.out.println("\nEnter the weight of the person you would like to search");
-                double weight = scanner.nextLine();
+                double weight = scanner.nextDouble();
+                scanner.nextLine();
                 searchParams.add(weight);
             }
 
@@ -252,7 +266,8 @@ public class DataBaseUI {
 
             if(paramChoices[i] == "16") {
                 System.out.println("\nEnter the shoe size of the person you would like to search");
-                double shoeSize = scanner.nextLine();
+                double shoeSize = scanner.nextDouble();
+                scanner.nextLine();
                 searchParams.add(shoeSize);
             }
 
@@ -268,6 +283,7 @@ public class DataBaseUI {
     private void add() {
         System.out.println("What would you like to add?\n 1. Person\n2. Crime");
         int choice = scanner.nextInt();
+        scanner.nextLine();
         if(choice == 1) {
             System.out.println("Adding new person");
             Person temp = addPerson();
@@ -380,7 +396,8 @@ public class DataBaseUI {
                         String bloodType = scanner.nextLine();
 
                         System.out.println("\nEnter the volume of blood in this sample");
-                        double bloodVolume;
+                        double bloodVolume = scanner.nextDouble();
+                        scanner.nextLine();
                         Evidence newBloodSample = new BloodSample(description, bloodType, bloodVolume);
                         evidenceList.add(newBloodSample);
                         break;
@@ -397,6 +414,7 @@ public class DataBaseUI {
 
                         System.out.println("\nEnter the year the gun was manufactured");
                         int yearMade = scanner.nextInt();
+                        scanner.nextLine();
                         Evidence newGun = new Gun(description, gunType, model, bulletType, yearMade);
                         evidenceList.add(newGun);
                         break;
@@ -443,6 +461,7 @@ public class DataBaseUI {
         //find what kind of person they want to add
         System.out.println("Please enter the type of person you would like to add\n1. Victim\n2. Witness\n3. Suspect\n4. Criminal\n5. Family member\n6. Associate");
         int personType = scanner.nextInt();
+        scanner.nextLine();
         
         System.out.println("If there is any information that you are unsure of, press ENTER that pieice of information will be skipped for now");
 
@@ -455,6 +474,7 @@ public class DataBaseUI {
         
         System.out.println("Enter the age of the person");
         int age = scanner.nextInt();
+        scanner.nextLine();
 
         System.out.println("Enter the gender of this person");
         String gender = scanner.nextLine();
@@ -462,7 +482,7 @@ public class DataBaseUI {
         System.out.println("Enter the race of this person");
         String race = scanner.nextLine();
 
-        UUID personID = UUID.randomUUID();
+        UUID personID = null;
 
         System.out.println("Enter the address of the person");
         String address = scanner.nextLine();
@@ -472,9 +492,11 @@ public class DataBaseUI {
 
         System.out.println("Enter the height of the person");
         double height = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.println("Enter the weight of the person");
         double weight = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.println("Enter the skin color of the person");
         String skinColor = scanner.nextLine();
@@ -504,6 +526,7 @@ public class DataBaseUI {
 
         System.out.println("Enter the shoe size of the person");
         double shoeSize = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.println("Is this person a US citizen (Y/N)");
         String cit = scanner.nextLine();
@@ -593,7 +616,8 @@ public class DataBaseUI {
                 ArrayList<FamilyMember> family = new ArrayList<FamilyMember>();
                 while(true) {
                     System.out.println("\nEnter the UUID of the family member you would like to add to this person");
-                    UUID pFamMem = scanner.nextLine();
+                    String fam = scanner.nextLine();
+                    UUID pFamMem = UUID.fromString(fam);
                     ArrayList<String> paramChocies = new ArrayList<String>();
                     paramChocies.add("1");
                     ArrayList<Object> searchParams = new ArrayList<Object>();
@@ -613,7 +637,8 @@ public class DataBaseUI {
                 ArrayList<Assocaite> associates = new Arraylist<Associate>();
                 while(true) {
                     System.out.println("\nEnter the UUID of the associate you would like to add to this person");
-                    UUID pAssociate = scanner.nextLine();
+                    String associ = scanner.nextLine();
+                    UUID pAssociate = UUID.fromString(associ);
                     ArrayList<String> paramChocies = new ArrayList<String>();
                     paramChocies.add("1");
                     ArrayList<Object> searchParams = new ArrayList<Object>();
@@ -659,9 +684,11 @@ public class DataBaseUI {
     private void export() {
         System.out.println("What would you like to export?\n1. Person\n2. Crime?");
         int choice = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Please enter the UUID corresponding to what you would like to export");
-        UUID id = scanner.nextLine();
-        databaseManager.export(choice, id);
+        String id = scanner.nextLine();
+        UUID iD = UUID.fromString(id);
+        databaseManager.export(choice, iD);
         return;
     }
 
@@ -701,6 +728,7 @@ public class DataBaseUI {
     private void edit() {
         System.out.println("What Would you like to add?\n1. Crime\n2. Person");
         int userInput = scanner.nextInt();
+        scanner.nextLine();
         if(userInput == 1)
             editCrime();
         else if(userInput == 2)
@@ -710,7 +738,8 @@ public class DataBaseUI {
 
     private void editPerson() {
         System.out.println("Enter the UUID of the person you would like to edit");
-        UUID personIDEdit = scanner.nextLine();
+        String pIDEdit = scanner.nextLine();
+        UUID personIDEdit = UUID.fromString(pIDEdit);
         /*do a search person with the UUID parameter... return the person and then allow them to edit
         Construct new Person with new attributes
         Edit the person; will be swapping out old person for new person
@@ -746,6 +775,7 @@ public class DataBaseUI {
             if(editChoices[i] == "3") {
                 System.out.println("\nEnter the age of the person you would like to edit");
                 int age = scanner.nextInt();
+                scanner.nextLine();
                 replacement.setAge(age);
             }
 
@@ -763,7 +793,8 @@ public class DataBaseUI {
 
             if(editChoices[i] == "6") {
                 System.out.println("\nEnter the UUID of the person you would like to edit");
-                UUID personID = scanner.nextLine();
+                String pID = scanner.nextLine();
+                UUID personID = UUID.fromString(pID);
                 replacement.setPersonID(personID);
             }
 
@@ -781,13 +812,15 @@ public class DataBaseUI {
 
             if(editChoices[i] == "9") {
                 System.out.println("\nEnter the height of the person you would like to edit");
-                double height = scanner.nextLine();
+                double height = scanner.nextDouble();
+                scanner.nextLine();
                 replacement.setHeight(height);
             }
 
             if(editChoices[i] == "10") {
                 System.out.println("\nEnter the weight of the person you would like to edit");
-                double weight = scanner.nextLine();
+                double weight = scanner.nextDouble();
+                scanner.nextLine();
                 replacement.setWeight(weight);
             }
 
@@ -823,7 +856,8 @@ public class DataBaseUI {
 
             if(editChoices[i] == "16") {
                 System.out.println("\nEnter the shoe size of the person you would like to edit");
-                double shoeSize = scanner.nextLine();
+                double shoeSize = scanner.nextDouble();
+                scanner.nextLine();
                 replacement.setShoeSize(shoeSize);
             }
 
@@ -838,7 +872,8 @@ public class DataBaseUI {
 
     private void editCrime() {
         System.out.println("Enter the UUID of the crime you would like to edit");
-        UUID crimeIDEdit = scanner.nextLine();
+        String cIDEdit = scanner.nextLine();
+        UUID crimeIDEdit = UUID.fromString(cIDEdit);
         /*
             search for crime with UUID parameter... return crime and allow user to edit
         */
@@ -872,10 +907,14 @@ public class DataBaseUI {
             if(editChoices[i] == "3") {
                 System.out.println("\nEnter the UUIDs of the people involved separated by a comma (no spaces)");
                 input = scanner.nextLine();
-                UUID[] people = inpus.split(",");
-                List<String> peopleList = Arrays.asList(people);
+                String[] p1 = input.split(",");
+                UUID[] people1;
+                for(int t=0; t<p1.length; t++) {
+                    people1[t] = UUID.fromString(p1[t]);
+                }
+                List<String> peopleList = Arrays.asList(people1);
                 ArrayList<UUID> peopleInvolved = new ArrayList<UUID>(peopleList);
-                replacement.setPeopleInvolved(people);
+                replacement.setPeopleInvolved(people1);
             }
 
             if(editChoices[i] == "4") {
@@ -899,7 +938,11 @@ public class DataBaseUI {
             if(editChoices[i] == "7") {
                 System.out.println("Enter the UUIDs of the evidence related to the crime separated by a comma (no spaces)");
                 input = scanner.nextLine();
-                UUID[] evidence = inpus.split(",");
+                String[] e = input.split(",");
+                UUID[] evidence;
+                for(int t=0; t<e.length; t++) {
+                    evidence[t] = UUID.fromString(e[t]);
+                }
                 List<String> evidenceList = Arrays.asList(evidence);
                 ArrayList<UUID> evidenceArrayList = new ArrayList<UUID>(evidenceList);
                 replacement.setEvidence(evidence);
