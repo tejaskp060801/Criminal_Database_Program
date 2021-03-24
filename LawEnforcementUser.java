@@ -28,8 +28,24 @@ public class LawEnforcementUser implements Comparable<LawEnforcementUser> {
         this.lawenforcementID = id;
     }
 
+    public UUID getID() {
+        return this.lawenforcementID;
+    }
+
     public String getUsername() {
         return this.username;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public String getFirstName() {
+        return this.firstname;
+    }
+
+    public String getLastName() {
+        return this.lastname;
     }
 
     public int getClearanceLevel() {

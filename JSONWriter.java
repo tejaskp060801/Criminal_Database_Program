@@ -6,13 +6,11 @@
 
 import java.util.UUID;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.io.FileWriter;
 import java.io.IOException;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 public class JSONWriter extends JSONconstants {
     public static void save() {
@@ -22,13 +20,38 @@ public class JSONWriter extends JSONconstants {
     }
 
     public static void saveUsers() {
+        UserSearchTree temp = UserSearchTree.getUserSearchTree();
+        ArrayList<LawEnforcementUser> users = temp.getEnforcementUsers();
+        JSONArray jsonarr = new JSONArray();
+        for (int i = 0; i < users.size(); i++) {
+            jsonarr.add(userConvert(users.get(i)));
+        }
+
+        try {
+            FileWriter filewriter = new FileWriter(USER_FILE_NAME);
+            filewriter.write(jsonarr.toJSONString());
+            filewriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject userConvert(LawEnforcementUser user) {
+        JSONObject ret = new JSONObject();
+        ret.put(USER_ID, user.getID().toString());
+        ret.put(USER_USERNAME, user.getUsername());
+        ret.put(USER_PASSWORD, user.getPassword());
+        ret.put(USER_FIRST_NAME, user.getFirstName());
+        ret.put(USER_LAST_NAME, user.getLastName());
+        ret.put(USER_CLEARANCE, user.getClearanceLevel());
+        return ret;
     }
 
     public static void savePeople() {
         PersonList temp = PersonList.getPersonList();
         ArrayList<Person> people = temp.getPeople();
         JSONArray jsonarr = new JSONArray();
-        for (int i = 0; i < people.size(); ++i) {
+        for (int i = 0; i < people.size(); i++) {
             jsonarr.add(personConvert(people.get(i)));
         }
         try {
