@@ -6,7 +6,6 @@ public class DataBaseManager {
     private UserSearchTree policeBST;
     private CrimeList crimeList;
     private PersonList personList;
-    private double timeSinceUpdate;
     private LawEnforcementUser user;
 /*
     public DataBaseManager() {
@@ -24,8 +23,8 @@ public class DataBaseManager {
         return;
     }
 
-    public void createUser(String username, String pw, int clearanceLevel) {
-        LawEnforcementUser newUser = new LawEnforcementUser(username, pw, clearanceLevel);
+    public void createUser(String username, String pw, int clearanceLevel, String firstName, String lastName) {
+        policeBST.addUser(username, pw, firstName, lastName, clearanceLevel);
         return;
     }
 

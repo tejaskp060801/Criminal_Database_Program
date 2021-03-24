@@ -569,7 +569,14 @@ public class DataBaseUI {
 
             case 3:
                 //construct suspect
-                Person newSuspect = new Suspect(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg);
+                System.out.println("Will this suspect testify (Y/N)");
+                String test2 = scanner.nextLine();
+                boolean willTestify2;
+                if(test == "Y" || test == "y")
+                    willTestify2 = true;
+                else
+                    willTestify2 = false;
+                Person newSuspect = new Suspect(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, willTestify2);
                 return newSuspect;
                 break;
 
@@ -699,7 +706,12 @@ public class DataBaseUI {
             if(c == "Y" || c == "y") {
                 System.out.println("The same username and password you previously entered will be used to create your user account.\nWhat is your clearance level?");
                 int level = scanner.nextInt();
-                databaseManager.createUser(username, password, level);
+                scanner.nextLine();
+                System.out.println("Enter your first name");
+                String f = scanner.nextLine();
+                System.out.println("Enter your last name");
+                String l = scanner.nextLine();
+                databaseManager.createUser(username, password, level, f, l);
             }
             else if(c == "N" || c == "n") {
                 databaseManager.exit();
