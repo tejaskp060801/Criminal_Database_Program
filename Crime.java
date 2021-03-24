@@ -13,17 +13,17 @@ public class Crime {
     protected ArrayList<LawEnforcementUser> workingoncase; 
     protected String crimedescription; 
 
-public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> felonyType, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidenceList, ArrayList<LawEnforcementUser> officers, String description) {
+public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> typeOfCrime, ArrayList<Person> people, String location, String date, ArrayList<Evidence> evidence, ArrayList<LawEnforcementUser> workingoncase, String crimedescription) {
     this.setID(id);
-    this.title = title; 
-    this.people = people; 
-    this.crimedescription = description; 
-    this.date = date; 
-    this.evidence = evidenceList;
-    this.isSolved = isSolved; 
-    this.location = location; 
-    this.typeOfCrime = felonyType; 
-    this.workingoncase = officers; 
+    this.setCrimeDescription(crimedescription);
+    this.setDate(date);
+    this.setEvidence(evidence);
+    this.setIsSolved(isSolved);
+    this.setLocation(location);
+    this.setPeople(people);
+    this.setTitle(title);
+    this.setTypeOfCrime(typeOfCrime);
+    this.setWorkingOnCase(workingoncase);
     }
     
     
@@ -52,6 +52,42 @@ public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> fel
 
     public String getLocation() {
         return this.location;
+    }
+
+    public void setTitle(String title) {
+        this.title = title; 
+    }
+
+    public void setPeople(ArrayList <Person> people){
+        this.people = people; 
+    }
+
+    public void setCrimeDescription(String crimedescription) {
+        this.crimedescription = crimedescription; 
+    }
+
+    public void setDate(String date) {
+        this.date = date; 
+    }
+
+    public void setEvidence(ArrayList<Evidence> evidence) {
+        this.evidence = evidence; 
+    }
+
+    public void setIsSolved(boolean isSolved) {
+        this.isSolved = isSolved; 
+    }
+
+    public void setLocation(String location) {
+        this.location = location; 
+    }
+
+    public void setTypeOfCrime(ArrayList<TypeOfCrime> typeOfCrime) {
+        this.typeOfCrime = typeOfCrime; 
+    }
+
+    public void setWorkingOnCase(ArrayList<LawEnforcementUser> workingoncase) {
+        this.workingoncase = workingoncase; 
     }
 
     public ArrayList<Person> getPOIArray() {
