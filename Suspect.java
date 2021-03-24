@@ -19,7 +19,7 @@ public class Suspect extends PersonOfInterest {
     }
 
     public String toString(){
-        return super.toString();
+        return super.toString() + "\nThe suspect " + this.willTestify +" testify";
     }
 
     public boolean getWillTestify() {
