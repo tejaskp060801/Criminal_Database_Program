@@ -23,7 +23,7 @@ public class Witness extends PersonOfInterest {
         this.willTestify = willTestify; 
     }
     public String toString(){
-        return super.toString() + "\nThe suspect " + this.willTestify +" testify";
+        return super.toString() + "\nThe witness " + this.willTestify +" testify";
     }
     
 }
