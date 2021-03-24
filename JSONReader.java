@@ -243,6 +243,9 @@ public class JSONReader extends JSONconstants {
                     } else if (temp.equalsIgnoreCase("ClassEFelony")) {
                         TypeOfCrime temp2 = TypeOfCrime.CLASSEFELONY;
                         crimetype.add(temp2);
+                    } else if (temp.equalsIgnoreCase("ClassFFelony")) {
+                        TypeOfCrime temp2 = TypeOfCrime.CLASSFFELONY;
+                        crimetype.add(temp2);
                     } else {
                         System.out.println("TypeOfCrime formatted incorrectly. Contact Technical Expert. Data Corrupted.");
                     }
