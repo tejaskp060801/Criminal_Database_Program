@@ -6,13 +6,13 @@ public class Evidence {
     public String evidenceType;
 
     public Evidence(String description, UUID id, String evidencetype) {
-        this.setDescription(description);;
+        this.setDescription(description);
         if (evidenceID == null) {
             this.evidenceID = UUID.randomUUID();
         } else {
             this.setID(id);
         }
-        this.setEvidenceType(evidenceType);
+        this.setEvidenceType(evidencetype);
     }
 
     public String toString(){
