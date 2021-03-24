@@ -7,11 +7,7 @@ public class Evidence {
 
     public Evidence(String description, UUID id, String evidencetype) {
         this.setDescription(description);
-        if (evidenceID == null) {
-            this.evidenceID = UUID.randomUUID();
-        } else {
-            this.setID(id);
-        }
+        this.setID(id);
         this.setEvidenceType(evidencetype);
     }
 
@@ -36,7 +32,11 @@ public class Evidence {
     }
 
     public void setID(UUID id) {
-        this.evidenceID = id;
+        if (id == null) {
+            this.evidenceID = UUID.randomUUID();
+        } else {
+            this.evidenceID = id;
+        }
     }
     public void setEvidenceType(String evidenceType){
         this.evidenceType = evidenceType; 
