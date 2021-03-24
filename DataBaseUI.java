@@ -17,6 +17,8 @@ public class DataBaseUI {
     public static void main(String [] args) {
         /*DataBaseUI ui = new DataBaseUI();
         ui.run();*/
+        CrimeList temp = CrimeList.getCrimeList();
+        JSONWriter.saveCrimes();
     }
 
     public void run() {

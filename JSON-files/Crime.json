@@ -4,7 +4,7 @@
         "title": "Jerome Anderson car accident",
         "isSolved": true,
         "People": [ "16027eb8-8660-11eb-8dcd-0242ac130003" ],
-        "typeofCrime": ["class C felony", "class E felony"],
+        "typeofCrime": ["classCfelony", "classEfelony"],
         "location": "Intersection of Assembly and Blossom",
         "date": "February 19th, 2021 at 15:21",
         "evidence": [
@@ -47,7 +47,7 @@
         "title": "Watermelon murder",
         "isSolved": true,
         "People": [ "1f6f069c-8660-11eb-8dcd-0242ac130003" ],
-        "typeofCrime": [ "class A felony" ],
+        "typeofCrime": [ "classAfelony" ],
         "location": "Corner of Fredrickson and Main",
         "date": "February 2nd, 2020 at 4:02",
         "evidence": [

@@ -146,7 +146,7 @@ public class JSONWriter extends JSONconstants {
             ret.put(FAMILY_RELATIONSHIP_ID, associate.getRelationshipID().toString());
 
         } else {
-            System.out.println("Your files are not in the correct format, please contact a technical expert");
+            System.out.println("Your Person files are not in the correct format, please contact a technical expert");
             return null;
         }
         return ret;
@@ -161,14 +161,14 @@ public class JSONWriter extends JSONconstants {
         for (int i = 0; i < crimes.size(); i++) {
             array.add(crimeConvert(crimes.get(i)));
         }
-        /*try {
+        try {
             FileWriter filewriter = new FileWriter(CRIME_FILE_NAME);
             filewriter.write(array.toJSONString());
             filewriter.close();
         } catch (IOException e) {
             e.printStackTrace();
 
-        }*/
+        }
     }
 
     public static JSONObject crimeConvert(Crime crime) {
@@ -206,19 +206,19 @@ public class JSONWriter extends JSONconstants {
                 evidence.put(BULLET_TYPE, tempevid2.getType());
             } else if (javaevidtype.equalsIgnoreCase("Gun")) {
                 Gun tempevid2 = (Gun) tempevid;
-                ret.put(GUN_TYPE, tempevid2.getGunType());
-                ret.put(GUN_MODEL, tempevid2.getModel());
-                ret.put(GUN_BULLET_TYPE, tempevid2.getBulletType());
-                ret.put(GUN_YEAR_MADE, tempevid2.getYearMade());
+                evidence.put(GUN_TYPE, tempevid2.getGunType());
+                evidence.put(GUN_MODEL, tempevid2.getModel());
+                evidence.put(GUN_BULLET_TYPE, tempevid2.getBulletType());
+                evidence.put(GUN_YEAR_MADE, tempevid2.getYearMade());
             } else if (javaevidtype.equalsIgnoreCase("HairSample")) {
                 HairSample tempevid2 = (HairSample) tempevid;
-                ret.put(HAIR_COLOR, tempevid2.getColor());
-                ret.put(HAIR_LENGTH, tempevid2.getLength());
-                ret.put(HAIR_THICKNESS, tempevid2.getThickness());
+                evidence.put(HAIR_COLOR, tempevid2.getColor());
+                evidence.put(HAIR_LENGTH, tempevid2.getLength());
+                evidence.put(HAIR_THICKNESS, tempevid2.getThickness());
             } else if (javaevidtype.equalsIgnoreCase("BloodSample")) {
                 BloodSample tempevid2 = (BloodSample) tempevid;
-                ret.put(BLOOD_TYPE, tempevid2.getBloodType());
-                ret.put(BLOOD_VOLUME, tempevid2.getBloodAmount());
+                evidence.put(BLOOD_TYPE, tempevid2.getBloodType());
+                evidence.put(BLOOD_VOLUME, Double.toString(tempevid2.getBloodAmount()));
             } else if (javaevidtype.equalsIgnoreCase("normal")) {
 
             } else {
@@ -231,7 +231,6 @@ public class JSONWriter extends JSONconstants {
         JSONArray workingoncase = new JSONArray();
         ArrayList<LawEnforcementUser> workingoncaseids = crime.getWorkingOnCaseArrayList();
         for (int i = 0; i < workingoncaseids.size(); i++) {
-            System.out.println(i);
             String temp = workingoncaseids.get(i).getUsername();
             workingoncase.add(temp);
         }

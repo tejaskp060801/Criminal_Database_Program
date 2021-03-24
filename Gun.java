@@ -12,6 +12,7 @@ public class Gun extends Evidence {
         this.setBulletType(bulletType);
         this.setDescription(description);
         this.setGunType(gunType);
+        this.setModel(model);
         this.setYearMade(yearMade);
     }
 

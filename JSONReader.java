@@ -228,21 +228,23 @@ public class JSONReader extends JSONconstants {
                 ArrayList<TypeOfCrime> crimetype = new ArrayList<TypeOfCrime>();
                 while (typeiterator.hasNext()) {
                     String temp = typeiterator.next();
-                    if (temp.equalsIgnoreCase("Class A Felony")) {
+                    if (temp.equalsIgnoreCase("ClassAFelony")) {
                         TypeOfCrime temp2 = TypeOfCrime.CLASSAFELONY;
                         crimetype.add(temp2);
-                    } else if (temp.equalsIgnoreCase("Class B Felony")) {
+                    } else if (temp.equalsIgnoreCase("ClassBFelony")) {
                         TypeOfCrime temp2 = TypeOfCrime.CLASSBFELONY;
                         crimetype.add(temp2);
-                    } else if (temp.equalsIgnoreCase("Class C Felony")) {
+                    } else if (temp.equalsIgnoreCase("ClassCFelony")) {
                         TypeOfCrime temp2 = TypeOfCrime.CLASSCFELONY;
                         crimetype.add(temp2);
-                    } else if (temp.equalsIgnoreCase("Class D Felony")) {
+                    } else if (temp.equalsIgnoreCase("ClassDFelony")) {
                         TypeOfCrime temp2 = TypeOfCrime.CLASSDFELONY;
                         crimetype.add(temp2);
-                    } else {
+                    } else if (temp.equalsIgnoreCase("ClassEFelony")) {
                         TypeOfCrime temp2 = TypeOfCrime.CLASSEFELONY;
                         crimetype.add(temp2);
+                    } else {
+                        System.out.println("TypeOfCrime formatted incorrectly. Contact Technical Expert. Data Corrupted.");
                     }
                 }
                 String location = (String) object.get(CRIME_LOCATION);
