@@ -159,12 +159,16 @@ public class JSONWriter extends JSONconstants {
         JSONArray array = new JSONArray();
 
         for (int i = 0; i < crimes.size(); i++) {
-            array.add(crimeConvert(crimes.get(i)))
+            array.add(crimeConvert(crimes.get(i)));
         }
+        try {
+            FileWriter filewriter = new FileWriter(CRIME_FILE_NAME);
+            filewriter.write(array.toJSONString());
+            filewriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
 
-        /*FileWriter filewriter = new FileWriter(CRIME_FILE_NAME);
-        filewriter.write(array.toJSONString());
-        filewriter.close();*/
+        }
     }
 
     public static JSONObject crimeConvert(Crime crime) {
@@ -179,7 +183,7 @@ public class JSONWriter extends JSONconstants {
             people.add(temp);
         }
         ret.put(CRIME_PEOPLE_INVOLVED, people);
-        JsonArray typeofcrime = new JSONArray();
+        JSONArray typeofcrime = new JSONArray();
         ArrayList<TypeOfCrime> typeofcrimeids = crime.getTypeOfCrime();
         for (int i = 0; i < typeofcrimeids.size(); i++) {
             String temp = typeofcrimeids.get(i).toString();

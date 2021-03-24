@@ -12,7 +12,7 @@ public class Evidence {
         } else {
             this.setID(id);
         }
-        this.setEvidenceType(evidenceType);
+        this.setEvidenceType(evidencetype);
     }
 
     public String toString(){

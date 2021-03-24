@@ -15,8 +15,14 @@ public class DataBaseUI {
 
 
     public static void main(String [] args) {
-        DataBaseUI ui = new DataBaseUI();
-        ui.run();
+        /*DataBaseUI ui = new DataBaseUI();
+        ui.run();*/
+        CrimeList temp = CrimeList.getCrimeList();
+        ArrayList<Crime> temp2 = temp.getCrimes();
+        ArrayList<Evidence> temp3 = temp2.get(0).getEvidence();
+        for (int i = 0; i < temp3.size(); i++) {
+            System.out.println(temp3.get(i).getEvidenceType());
+        }
     }
 
     public void run() {
