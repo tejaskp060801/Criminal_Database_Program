@@ -41,28 +41,18 @@ public class PersonList {
     }
 
     public Person searchPerson(Person person) {
-        boolean found = false; 
-        for(int i = 0; i<people.size(); i++) {
-            if(people.get(i).getPersonID() == person.getPersonID()) {
-                found = true;  
-            }
-        }
-
-        if(found == false) {
-            System.out.println("Sorry this person does not exist");  
-        }
-        return person; 
+        return searchPerson(person.getPersonID());
     }
 
     public Person searchPerson(UUID id) {
-
         Iterator<Person> iterator = people.iterator();
         while (iterator.hasNext()) {
             Person temp = iterator.next();
-            if (temp.getPersonID() == id) {
+            if (temp.getPersonID().compareTo(id) == 0) {
                 return temp;
             }
         }
+        System.out.println("Sorry this person does not exist");
         return null;
     }
 

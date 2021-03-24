@@ -51,7 +51,7 @@ public class JSONReader extends JSONconstants {
     }
 
     public static ArrayList<Person> getPeople() {
-        //UserSearchTree users = UserSearchTree.getUserSearchTree();
+        UserSearchTree users = UserSearchTree.getUserSearchTree();
         ArrayList<Person> ret = new ArrayList<Person>();
         
         try { 
@@ -301,7 +301,8 @@ public class JSONReader extends JSONconstants {
                     workingoncase.add(templaw);
                 }
                 String crimedesc = (String) object.get(CRIME_DESCRIPTION);
-                Crime temp = new Crime();  //  TODO add parameterized constructor
+                Crime temp = new Crime(crimeid, title, issolved, crimetype, peoplearr, location,
+                    date, evidence, workingoncase, crimedesc);
                 ret.add(temp);
             } 
         } catch(Exception e) {

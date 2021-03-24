@@ -1,5 +1,7 @@
 
 
+import java.util.ArrayList;
+
 public class BinarySearchTree <T extends Comparable<T>> {
    
     private class Node {
@@ -32,7 +34,7 @@ public class BinarySearchTree <T extends Comparable<T>> {
         else if(data.compareTo(node.data) < 0)
             node.leftChild = add(node.leftChild, data);
         else if(data.compareTo(node.data) > 0)
-            node.rightChild = add(node, data);
+            node.rightChild = add(node.rightChild, data);
         return node;
     }
 
@@ -96,5 +98,21 @@ public class BinarySearchTree <T extends Comparable<T>> {
 		System.out.println(aNode.data);
 		printInOrder(aNode.rightChild); 
 	}
+
+    public ArrayList<T> getarraylist() {
+        ArrayList<T> ret = new ArrayList<T>();
+        getArrayList(ret, root);
+
+        return ret;  //  TODO add functionality
+    }
+
+    private void getArrayList(ArrayList<T> ret, Node aNode) {
+        if (aNode == null) {
+            return;
+        }
+        getArrayList(ret, aNode.leftChild);
+        ret.add(aNode.data);
+        getArrayList(ret, aNode.rightChild);
+    }
 
 }

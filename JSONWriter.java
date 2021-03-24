@@ -15,7 +15,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class JSONWriter extends JSONconstants {
-    public static void DataWriter() {
+    public static void save() {
         saveUsers();
         savePeople();
         saveCrimes();
@@ -161,13 +161,77 @@ public class JSONWriter extends JSONconstants {
         for (int i = 0; i < crimes.size(); i++) {
             array.add(crimeConvert(crimes.get(i)))
         }
+
+        /*FileWriter filewriter = new FileWriter(CRIME_FILE_NAME);
+        filewriter.write(array.toJSONString());
+        filewriter.close();*/
     }
 
     public static JSONObject crimeConvert(Crime crime) {
         JSONObject ret = new JSONObject();
+        ret.put(CRIME_ID, crime.getcasenumber());
+        ret.put(CRIME_TITLE, crime.getTitle());
+        ret.put(CRIME_SOLVED_FLAG, crime.isSolved());
+        JSONArray people = new JSONArray();
+        ArrayList<Person> peopleid = crime.getPeople();
+        for (int i = 0; i < peopleid.size(); i++) {
+            String temp = peopleid.get(i).getPersonID().toString();
+            people.add(temp);
+        }
+        ret.put(CRIME_PEOPLE_INVOLVED, people);
+        JsonArray typeofcrime = new JSONArray();
+        ArrayList<TypeOfCrime> typeofcrimeids = crime.getTypeOfCrime();
+        for (int i = 0; i < typeofcrimeids.size(); i++) {
+            String temp = typeofcrimeids.get(i).toString();
+            typeofcrime.add(temp);
+        }
+        ret.put(CRIME_TYPE_OF_CRIME, typeofcrime);
+        ret.put(CRIME_LOCATION, crime.getLocation());
+        ret.put(CRIME_DATE, crime.getDate());
+        JSONArray evidencearr = new JSONArray();
+        ArrayList<Evidence> javaevidence = crime.getEvidence();
+        for (int i = 0; i < javaevidence.size(); i++) {
+            JSONObject evidence = new JSONObject();
+            Evidence tempevid = javaevidence.get(i);
+            evidence.put(EVIDENCE_DESCRIPTION, tempevid.getDescription());
+            evidence.put(EVIDENCE_ID, tempevid.getID());
+            String javaevidtype = tempevid.getEvidenceType();
+            evidence.put(EVIDENCE_TYPE, javaevidtype);
+            if (javaevidtype.equalsIgnoreCase("Bullet")) {
+                Bullet tempevid2 = (Bullet) tempevid;
+                evidence.put(BULLET_TYPE, tempevid2.getType());
+            } else if (javaevidtype.equalsIgnoreCase("Gun")) {
+                Gun tempevid2 = (Gun) tempevid;
+                ret.put(GUN_TYPE, tempevid2.getGunType());
+                ret.put(GUN_MODEL, tempevid2.getModel());
+                ret.put(GUN_BULLET_TYPE, tempevid2.getBulletType());
+                ret.put(GUN_YEAR_MADE, tempevid2.getYearMade());
+            } else if (javaevidtype.equalsIgnoreCase("HairSample")) {
+                HairSample tempevid2 = (HairSample) tempevid;
+                ret.put(HAIR_COLOR, tempevid2.getColor());
+                ret.put(HAIR_LENGTH, tempevid2.getLength());
+                ret.put(HAIR_THICKNESS, tempevid2.getThickness());
+            } else if (javaevidtype.equalsIgnoreCase("BloodSample")) {
+                BloodSample tempevid2 = (BloodSample) tempevid;
+                ret.put(BLOOD_TYPE, tempevid2.getBloodType());
+                ret.put(BLOOD_VOLUME, tempevid2.getBloodAmount());
+            } else if (javaevidtype.equalsIgnoreCase("normal")) {
 
-
-
-
+            } else {
+                System.out.println("Evidence Type format in java structure invalid. Contact Technical Expert");
+                return null;
+            }
+            evidencearr.add(evidence);
+        }
+        ret.put(CRIME_EVIDENCE, evidencearr);
+        JSONArray workingoncase = new JSONArray();
+        ArrayList<LawEnforcementUser> workingoncaseids = crime.getWorkingOnCaseArrayList();
+        for (int i = 0; i < workingoncaseids.size(); i++) {
+            String temp = workingoncaseids.get(i).getUsername();
+            workingoncase.add(temp);
+        }
+        ret.put(CRIME_WORKING_ON_CASE, workingoncase);
+        ret.put(CRIME_DESCRIPTION, crime.getCrimeDescription());
         return ret;
     }
+}

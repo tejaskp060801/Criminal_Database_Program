@@ -57,12 +57,10 @@ public abstract class JSONconstants {
     public static final String CRIME_SOLVED_FLAG = "isSolved";
     public static final String CRIME_PEOPLE_INVOLVED =  "People";
     public static final String CRIME_TYPE_OF_CRIME = "typeofCrime";
-    public static final String CRIME_PERSON_INVOLVED = "PersonID";
     public static final String CRIME_LOCATION = "location";
     public static final String CRIME_DATE = "date";
     public static final String CRIME_EVIDENCE = "evidence";
     public static final String CRIME_WORKING_ON_CASE = "workingOnCase";
-    public static final String CRIME_ID_WORKING_ON_CASE = "LawEnforcementID";
     public static final String CRIME_DESCRIPTION = "crimeDescription";
 
     public static final String EVIDENCE_DESCRIPTION = "eviddescription";

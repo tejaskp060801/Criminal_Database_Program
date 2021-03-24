@@ -27,6 +27,10 @@ public class Evidence {
         return this.evidenceID;
     }
 
+    public String getEvidenceType() {
+        return this.evidenceType;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
