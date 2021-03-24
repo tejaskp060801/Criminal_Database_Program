@@ -2,7 +2,7 @@ import java.util.UUID;
 import java.util.ArrayList;
 
 public class Suspect extends PersonOfInterest {
-    protected boolean willtestify;
+    protected boolean willTestify;
 
     public Suspect(String firstName, String lastName, int age, String gender, String race,
         UUID id,String address, String profession, double height, double weight,
@@ -14,7 +14,7 @@ public class Suspect extends PersonOfInterest {
             height, weight, skinColor, natHair, unNatHair, clothing,
             hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg,
             crimes, relations, statement);
-        this.willtestify = willTestify;
+        this.willTestify = willTestify;
         this.personType = "Suspect";
     }
 
@@ -23,7 +23,7 @@ public class Suspect extends PersonOfInterest {
     }
 
     public boolean getWillTestify() {
-        return this.willtestify;
+        return this.willTestify;
     }
     
 }
