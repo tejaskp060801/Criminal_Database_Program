@@ -69,12 +69,11 @@ public class BinarySearchTree <T extends Comparable<T>> {
         else return findMin(node.leftChild);
     }
 
-    public boolean search(T data)
-	{
+    public boolean search(T data) {
 		return recursiveSearch(root, data);
 	}
-	private boolean recursiveSearch(Node node, T data)
-	{
+
+	private boolean recursiveSearch(Node node, T data) {
 		if(node == null)	//if the node is a leaf
 			return false;
 		if(node.data.compareTo(data) == 0)
@@ -84,12 +83,27 @@ public class BinarySearchTree <T extends Comparable<T>> {
 		else 
 			return recursiveSearch(node.rightChild, data);
 	}
-    public void printInOrder()
-	{
+
+    public T get(T data) {
+        return recursiveGet(root, data);
+    }
+
+    private T recursiveGet(Node aNode, T data) {
+    if(aNode == null)	//if the node is a leaf
+        return null;
+    if(aNode.data.compareTo(data) == 0)
+        return aNode.data;
+    else if(data.compareTo(aNode.data) < 0)
+        return recursiveGet(aNode.leftChild, data);
+    else 
+        return recursiveGet(aNode.rightChild, data);
+    }
+
+    public void printInOrder() {
 		printInOrder(root); 
 	}
-	private void printInOrder(Node aNode)
-	{
+
+	private void printInOrder(Node aNode) {
 		if(aNode == null)
 		{
 			return; 

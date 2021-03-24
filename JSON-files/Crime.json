@@ -11,7 +11,7 @@
             {
                 "eviddescription": "This is a counterfeit cigarette, clearly made without the proper licensing",
                 "evidenceId": "ead6e722-8675-11eb-8dcd-0242ac130003",
-                "evidenceType": null
+                "evidenceType": "normal"
             }, {
                 "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
                 "evidenceId": "f302aeea-8675-11eb-8dcd-0242ac130003",
@@ -40,7 +40,7 @@
                 "Type": "12 grain"
             }
         ],
-        "workingOnCase": [ "8637eec8-865d-11eb-8dcd-0242ac130003", "8c60225c-865d-11eb-8dcd-0242ac130003" ],
+        "workingOnCase": [ "asnelling", "bigRex31" ],
         "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
     }, {
         "caseNumber": "c0a98718-8664-11eb-8dcd-0242ac130003",
@@ -57,7 +57,7 @@
                 "evidenceType": "normal"
             }
         ],
-        "workingOnCase": [ "8637eec8-865d-11eb-8dcd-0242ac130003", "8c60225c-865d-11eb-8dcd-0242ac130003" ],
+        "workingOnCase": [ "asnelling3", "weewoo" ],
         "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
     }
 ]

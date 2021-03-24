@@ -32,8 +32,7 @@ public class UserSearchTree {
 
     public LawEnforcementUser search(String username) {
         LawEnforcementUser user = new LawEnforcementUser(username,"","", "", 1); 
-        users.search(user);
-        return user; 
+        return users.get(user);
     }
 
     public void printUserNamesInOrder() {
