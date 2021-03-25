@@ -59,7 +59,7 @@ public class DataBaseManager {
     }
 
     public void save() {
-        DataWriter.save(crimeList.getCrimeArrayList(), personList.getPersonArrayList());
+        JSONWriter.save();
     }
 
     public void exit() {
