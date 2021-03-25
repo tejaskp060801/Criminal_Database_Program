@@ -24,6 +24,8 @@ public class BloodSample extends Evidence {
         this.bloodVolume = bloodVolume; 
     }
     public String toString() {
-        return super.toString() + this.bloodType + this.bloodVolume; 
+        return super.toString() 
+        + "\n The blood type of this sample is " +this.bloodType 
+        + "\n the amount of blood is " +this.bloodVolume; 
     }
 }
