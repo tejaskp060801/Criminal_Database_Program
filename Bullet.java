@@ -15,6 +15,7 @@ public class Bullet extends Evidence {
         this.type = type; 
     }
     public String toString(){
-        return super.toString() + this.type; 
+        return super.toString() 
+        + "\n The type of bullet is " + this.type; 
     }
 }
