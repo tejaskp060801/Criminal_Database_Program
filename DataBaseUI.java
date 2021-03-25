@@ -338,27 +338,27 @@ public class DataBaseUI {
         ArrayList<TypeOfCrime> felonyType = new ArrayList<TypeOfCrime>();
         for(int i=0; i<6; i++) {
             if(inputArr[i] == "1") {
-                felonyType.add(typeOfCrime.CLASSAFELONY);
+                felonyType.add(TypeOfCrime.CLASSAFELONY);
             }
 
             if(inputArr[i] == "2") {
-                felonyType.add(CLASSBFELONY);
+                felonyType.add(TypeOfCrime.CLASSBFELONY);
             }
 
             if(inputArr[i] == "3") {
-                felonyType.add(CLASSCFELONY);
+                felonyType.add(TypeOfCrime.CLASSCFELONY);
             }
 
             if(inputArr[i] == "4") {
-                felonyType.add(CLASSDFELONY);
+                felonyType.add(TypeOfCrime.CLASSDFELONY);
             }
 
             if(inputArr[i] == "5") {
-                felonyType.add(CLASSEFELONY);
+                felonyType.add(TypeOfCrime.CLASSEFELONY);
             }
 
             if(inputArr[i] == "6") {
-                felonyType.add(CLASSFFELONY);   
+                felonyType.add(TypeOfCrime.CLASSFFELONY);   
             }
         }
 
