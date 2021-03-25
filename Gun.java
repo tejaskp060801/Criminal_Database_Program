@@ -49,8 +49,11 @@ public class Gun extends Evidence {
     }   
 
     public String toString() {
-        return super.toString() + this.gunType + this.model +
-        this.bulletType + this.yearMade;
+        return super.toString() 
+        + "\n The gunType is " + this.gunType 
+        + "\n The model of this gun is " + this.model 
+        + "\n The bullet Type inside this gun is " + this.bulletType 
+        + "\n this gun was made in the year " + this.yearMade;
     }
 
 
