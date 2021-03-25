@@ -127,7 +127,7 @@ public class CrimeList {
     }
 
     public ArrayList<Crime> getCrimes() {
-        return this.crimes;
+        return (ArrayList) this.crimes.clone();  //  PassbyRef
     }
 }
     

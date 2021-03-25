@@ -215,6 +215,6 @@ public class PersonList {
     }
 
     public ArrayList<Person> getPeople() {
-        return this.people;
+        return (ArrayList) this.people.clone();  //  Changes made to objects inside this arraylist will be reflected in PersonList -- passbyref
     }
 }
