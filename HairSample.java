@@ -31,7 +31,9 @@ public class HairSample extends Evidence {
         this.thickness = thickness; 
     }
     public String toString() {
-        return super.toString() + this.color + this.length +
-        this.thickness;
+        return super.toString() 
+        + "\n The hair sample color is " +  this.color 
+        + "\n The length of the hair sample is " + this.length 
+        + "\n The thickness of this hair is " + this.thickness;
     }
 }
