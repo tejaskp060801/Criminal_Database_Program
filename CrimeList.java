@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 import java.util.Iterator;
 
+
 public class CrimeList {
     private static CrimeList crimelist;
     private ArrayList<Crime> crimes;
@@ -32,7 +33,6 @@ public class CrimeList {
         return false;
     }
 
-
     public Crime editCrime(Crime oldCrime, Crime newCrime) {
         Crime temp = searchCrime(oldCrime);
         if (temp == null) {
@@ -57,13 +57,71 @@ public class CrimeList {
         return null;
     }
 
-    public Crime searchCrime(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {
-        return Crime;
+    public Crime searchCrime(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters)
+    {
+        for(int i = 0; i < crimes.size(); i++)
+        {
+            Crime temp = crimes.get(i);
+            for(int j =0; j < searchParameters.size(); j++)
+            {
+                
+                if(parameterChoices.get(j) == "1")
+                {
+
+                    if(searchParameters.get(j) == temp.getcasenumber())
+                    {
+                        return temp;
+                    }
+                }
+                if(parameterChoices.get(j) == "2")
+                {
+
+                    if(searchParameters.get(j) == temp.getTitle())
+                    {
+                        return temp;
+                    }
+                }
+                if(parameterChoices.get(j) == "3")
+                {
+                    if(searchParameters.get(j) == temp.getWorkingOnCaseArrayList())
+                    {
+                        return temp;
+                    }
+                }
+                if(parameterChoices.get(j) == "4")
+                {
+                    if(searchParameters.get(j) == temp.getLocation())
+                    {
+                        return temp;
+                    }
+                }
+                if(parameterChoices.get(j) == "5")
+                {
+                    if(searchParameters.get(j) == temp.getTypeOfCrime())
+                    {
+                        return temp;
+                    }
+                }
+                if(parameterChoices.get(j) == "6")
+                {
+                    if(searchParameters.get(j) ==  temp.getDate())
+                    {
+                        return temp;
+                    }
+                }
+                if(parameterChoices.get(j) == "7")
+                {
+                    if(searchParameters.get(j) == temp.getEvidence())
+                    {
+                        return temp;
+                    }
+                 }
+             }
+         }
+        return null;
     }
 
-    public void addEvidence() {
-
-    }
+   
     public void getInformation(Crime crimes){
         crimes.toString();
     }
@@ -72,4 +130,13 @@ public class CrimeList {
         return this.crimes;
     }
 }
+    
+
+
+
+
+
+
+
+
 
