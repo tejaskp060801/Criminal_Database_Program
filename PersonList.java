@@ -89,7 +89,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j) == "3")
                 {
-                    if(searchParameters.get(j) = temp.getAge()) 
+                    if(searchParameters.get(j) == temp.getAge()) 
                     {
                         return temp;
                     }
@@ -131,14 +131,14 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j) == "9")
                 {
-                    if(searchParameters.get(j) = temp.getHeight()) //double
+                    if(searchParameters.get(j) == temp.getHeight()) //double
                     {
                         return temp;
                     }
                 }
                 if(parameterChoices.get(j) == "10")
                 {
-                    if(searchParameters.get(j) = temp.getWeight()) //double
+                    if(searchParameters.get(j) == temp.getWeight()) //double
                     {
                         return temp;
                     }
@@ -173,21 +173,21 @@ public class PersonList {
                 }
                 if(parameterChoices[j] == "15")
                 {
-                    if(searchParameters.get(j) = temp.getTattoo())    //boolean
+                    if(searchParameters.get(j) == temp.getTattoo())    //boolean
                     {
                         return temp;
                     }
                 }
                 if(parameterChoices.get(j) == "16")
                 {
-                    if(searchParameters.get(j) = temp.getShoeSize())  ///double
+                    if(searchParameters.get(j) == temp.getShoeSize())  ///double
                     {
                         return temp;
                     }
                 }
                 if(parameterChoices.get(j) == "17")
                 {
-                    if(searchParameters.get(j) = temp.getIsUSCitizen())  ////boolean
+                    if(searchParameters.get(j) == temp.getIsUSCitizen())  ////boolean
                     {
                         return temp;
                     }

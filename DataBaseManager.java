@@ -1,6 +1,7 @@
 
 
 import java.util.*;
+import java.io.*;
 
 public class DataBaseManager {
     private UserSearchTree policeBST;
@@ -47,14 +48,63 @@ public class DataBaseManager {
     }
 
     public void export(int option, UUID id) {
-        /*
-            Maybe should export to text file instead of just println
-        */
-        if(option == 1) {
-            System.out.println(personList.searchPerson(id));
+        try {
+            //user will select the directory they want to save the file to
+            System.out.println("Enter the directory you would like to export the file to");
+            Scanner scanner = new Scanner(System.in);
+            String directory = scanner.nextLine();
+            scanner.close();
+            File d = new File(directory);
+            
+            //exporting a person file
+            if(option == 1) {
+                Person temp = personList.searchPerson(id);
+                String fileName = temp.getFirstName() + temp.getLastName() + ".txt";
+                File personFile = new File(d, fileName);
+                if(personFile.createNewFile()) {
+                    FileWriter personWriter = new FileWriter(fileName);
+                    personWriter.write(temp.toString());
+                    personWriter.close();
+                    System.out.println("Successfully exported the person's data to a text file");
+                }
+                //file already existed, so delete old file and make new one
+                else {
+                    personFile.delete();
+                    File personFileUpdate = new File(d, fileName);
+                    FileWriter personWriterUpdate = new FileWriter(fileName);
+                    personWriterUpdate.write(temp.toString());
+                    personWriterUpdate.close();
+                    System.out.println("Successfully updated the text file");
+
+                }
+            }
+            //exporting a crime file
+            else if(option == 2) {
+                Crime temp = crimeList.searchCrime(id);
+                String fileName = temp.getTitle() + ".txt";
+                File crimeFile = new File(d, fileName);
+                if(crimeFile.createNewFile()) {
+                    FileWriter crimeWriter = new FileWriter(fileName);
+                    crimeWriter.write(temp.toString());
+                    crimeWriter.close();
+                    System.out.println("Successfully exported the crime's data to a text file");
+                }
+                //file already existed, so delete old file and make new one
+                else {
+                    crimeFile.delete();
+                    File crimeFileUpdate = new File(d, fileName);
+                    FileWriter crimeWriterUpdate = new FileWriter(fileName);
+                    crimeWriterUpdate.write(temp.toString());
+                    crimeWriterUpdate.close();
+                    System.out.println("Successfully updated the text file");
+
+                }
+            }
         }
-        else if(option == 2) {
-            System.out.println(crimeList.searchCrime(id));
+
+        catch (IOException e) {
+            System.out.println("An error occurred when exporting to a file");
+            e.printStackTrace();
         }
     }
 
