@@ -31,7 +31,10 @@ public abstract class PersonOfInterest extends Person{
         return this.statement; 
     }
     public String toString(){
-        return super.toString()+this.crimes+this.relations+this.statement;
+        return super.toString()+ 
+        "\n The crimes this person is involved in is " + this.crimes 
+        + "\n The relations this person has are " + this.relations
+        + "\n the statement this person has to make is " + this.statement;
     }
 
      
