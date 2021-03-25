@@ -62,7 +62,12 @@ public class Criminal extends Person {
         this.associates = assoc; 
     }
     public String toString() {
-        return super.toString() + this.Deceased + this.associates + this.crimes + this.family + this.isInJail; 
+        return super.toString() 
+        + "\n Is this person Deceased? " +this.Deceased 
+        + "\n The assosciates associated with this criminal are " + this.associates 
+        + "\n The crimes this person has commited are " + this.crimes 
+        + "\n The family members associated with this criminal are " + this.family 
+        + "\n Is this person in Jail? " + this.isInJail; 
     }
     
 }
