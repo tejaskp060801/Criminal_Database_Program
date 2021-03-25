@@ -338,7 +338,7 @@ public class DataBaseUI {
         ArrayList<TypeOfCrime> felonyType = new ArrayList<TypeOfCrime>();
         for(int i=0; i<6; i++) {
             if(inputArr[i] == "1") {
-                felonyType.add(CLASSAFELONY);
+                felonyType.add(typeOfCrime.CLASSAFELONY);
             }
 
             if(inputArr[i] == "2") {
@@ -383,10 +383,12 @@ public class DataBaseUI {
                         String color = scanner.nextLine();
                         
                         System.out.println("\nEnter the length of the hair sample");
-                        double length = scanner.nextLine();
+                        double length = scanner.nextDouble();
+                        scanner.nextLine();
 
                         System.out.println("\nEnter the thickness of the hair sample");
-                        double thickness = scanner.nextLine();
+                        double thickness = scanner.nextDouble();
+                        scanner.nextLine();
                         Evidence newHairSample = new HairSample(description, color, length, thickness);
                         evidenceList.add(newHairSample);
                         break;
