@@ -27,7 +27,9 @@ public class Associate extends Person{
         this.relationshipID = relationshipID; 
     }
     public String toString(){
-        return super.toString() + this.relationship + this.relationshipID;
+        return super.toString() 
+        + "\n the relationship between criminal and associate is " + this.relationship 
+        + "\n the Relationship ID is "  + this.relationshipID;
     }
 
 
