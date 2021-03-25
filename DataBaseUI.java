@@ -98,13 +98,12 @@ public class DataBaseUI {
         List<String> paramChoiceList = Arrays.asList(paramChoices);
         ArrayList<String> paramChoiceArrayList = new ArrayList<String>(paramChoiceList);
         
-        ArrayList<Object> searchParams = new ArrayList<Object>();
+        ArrayList<String> searchParams = new ArrayList<String>();
         for(int i=0; i<paramChoices.length; i++) {
             if(paramChoices[i] == "1") {
                 System.out.println("\nEnter the CaseID of the crime you would like to search");
                 String caseid = scanner.nextLine();
-                UUID caseID = UUID.fromString(caseid);
-                searchParams.add(caseID);
+                searchParams.add(caseid);
             }
 
             if(paramChoices[i] == "2") {
@@ -114,16 +113,9 @@ public class DataBaseUI {
             }
 
             if(paramChoices[i] == "3") {
-                System.out.println("\nEnter the UUIDs of the people involved separated by a comma (no spaces)");
-                input = scanner.nextLine();
-                String[] p = input.split(",");
-                UUID[] people = new UUID[p.length];
-                for(int t=0; t<p.length; t++) {
-                    people[t] = UUID.fromString(p[t]);
-                }
-                List<UUID> peopleList = Arrays.asList(people);
-                ArrayList<UUID> peopleInvolved = new ArrayList<UUID>(peopleList);
-                searchParams.add(peopleInvolved);
+                System.out.println("\nEnter the UUID of a person who was involved in the crime");
+                String personInvolvedID = scanner.nextLine();
+                searchParams.add(personInvolvedID);
             }
 
             if(paramChoices[i] == "4") {
@@ -145,16 +137,9 @@ public class DataBaseUI {
             }
 
             if(paramChoices[i] == "7") {
-                System.out.println("Enter the UUIDs of the evidence related to the crime separated by a comma (no spaces)");
-                input = scanner.nextLine();
-                String[] e = input.split(",");
-                UUID[] evidence = new UUID[e.length];
-                for(int t=0; t<e.length; t++) {
-                    evidence[t] = UUID.fromString(e[t]);
-                }
-                List<UUID> evidenceList = Arrays.asList(evidence);
-                ArrayList<UUID> evidenceArrayList = new ArrayList<UUID>(evidenceList);
-                searchParams.add(evidenceArrayList);
+                System.out.println("Enter the UUID of a piece of evidence related to the crime.");
+                String evidenceID = scanner.nextLine();
+                searchParams.add(evidenceID);
             }
         }
         databaseManager.searchCrime(paramChoiceArrayList, searchParams);
@@ -168,7 +153,7 @@ public class DataBaseUI {
         List<String> paramChoiceList = Arrays.asList(paramChoices);
         ArrayList<String> paramChoiceArrayList = new ArrayList<String>(paramChoiceList);
         
-        ArrayList<Object> searchParams = new ArrayList<Object>();
+        ArrayList<String> searchParams = new ArrayList<String>();
         for(int i=0; i<paramChoices.length; i++) {
             if(paramChoices[i] == "1") {
                 System.out.println("\nEnter the first name of the person you would like to search");
@@ -184,7 +169,7 @@ public class DataBaseUI {
 
             if(paramChoices[i] == "3") {
                 System.out.println("\nEnter the age of the person you would like to search");
-                int age = scanner.nextInt();
+                String age = scanner.nextInt();
                 scanner.nextLine();
                 searchParams.add(age);
             }
@@ -204,8 +189,7 @@ public class DataBaseUI {
             if(paramChoices[i] == "6") {
                 System.out.println("\nEnter the UUID of the person you would like to search");
                 String personid = scanner.nextLine();
-                UUID personID = UUID.fromString(personid);
-                searchParams.add(personID);
+                searchParams.add(personid);
             }
 
             if(paramChoices[i] == "7") {
@@ -222,15 +206,13 @@ public class DataBaseUI {
 
             if(paramChoices[i] == "9") {
                 System.out.println("\nEnter the height of the person you would like to search");
-                double height = scanner.nextDouble();
-                scanner.nextLine();
+                String height = scanner.nextLine();
                 searchParams.add(height);
             }
 
             if(paramChoices[i] == "10") {
                 System.out.println("\nEnter the weight of the person you would like to search");
-                double weight = scanner.nextDouble();
-                scanner.nextLine();
+                String weight = scanner.nextLine();
                 searchParams.add(weight);
             }
 
@@ -266,8 +248,7 @@ public class DataBaseUI {
 
             if(paramChoices[i] == "16") {
                 System.out.println("\nEnter the shoe size of the person you would like to search");
-                double shoeSize = scanner.nextDouble();
-                scanner.nextLine();
+                String shoeSize = scanner.nextLine();
                 searchParams.add(shoeSize);
             }
 
@@ -373,7 +354,7 @@ public class DataBaseUI {
             System.out.println("Would you like to add evidence? (Y/N)");
             String aChoice = scanner.nextLine();
             if(aChoice == "Y" || aChoice == "y") {
-                System.out.println("\nEnter the type of evidence you would like to add.\n1. Hair sample\n2. Blood sample\n3. Gun\n4. Bullet"); // TODO add normal
+                System.out.println("\nEnter the type of evidence you would like to add.\n1. Hair sample\n2. Blood sample\n3. Gun\n4. Bullet\n5. Normal/other"); 
                 String input1 = scanner.nextLine();
                 int selector = Integer.parseInt(input1);
                 System.out.println("\nEnter the description of the evidence");
@@ -427,6 +408,11 @@ public class DataBaseUI {
                         String type = scanner.nextLine();
                         Evidence newBullet = new Bullet(description, null, "Bullet", type);
                         evidenceList.add(newBullet);
+                        break;
+
+                    case 5:
+                        Evidence newNormal = new Evidence(description, null, "Other");
+                        evidenceList.add(newNormal);
                         break;
                 }
             }
@@ -515,7 +501,7 @@ public class DataBaseUI {
         System.out.println("Enter the clothing that the person was wearing");
         String clothing = scanner.nextLine();
 
-        System.out.println("Was this person wearing a tatoo? (Y/N)");
+        System.out.println("Did this person have a tattoo? (Y/N)");
         String tat = scanner.nextLine();
         boolean hasTattoo;
         String tatDescription;
@@ -534,51 +520,53 @@ public class DataBaseUI {
         scanner.nextLine();
 
         ArrayList<UUID> crimes = new ArrayList<UUID>();
-        System.out.println("Would you like to add Crimes to the Person? Enter Y / N");  
-        String choice1 = scanner.nextLine();
-        boolean crimescheck = false;
-        if (choice1.equalsIgnoreCase("y"))
-            crimescheck = true;
-        while (crimescheck) {
-            System.out.println("Please enter the UUID of the crime to be added");
-            String idstr = scanner.nextLine();
-            UUID temp = UUID.fromString(idstr);
-            crimes.add(temp);
-            System.out.println("Would you like to add more Crimes to the Person? Enter Y / N");  
-            String choice = scanner.nextLine();
-            if(choice == "Y" || choice == "y") {
-                continue;
-            } 
-            else {
-                break;
-            }
-        }
-
         ArrayList<UUID> relations = new ArrayList<UUID>();
-        System.out.println("Would you like to add Relations to the Person? Enter Y / N");  
-        String choice2 = scanner.nextLine();
-        boolean relationscheck = false;
-        if (choice2.equalsIgnoreCase("y"))
-            relationscheck = true;
-        while (relationscheck) {
-            System.out.println("Please enter the UUID of the Person to be added");
-            String idstr = scanner.nextLine();
-            UUID temp = UUID.fromString(idstr);
-            relations.add(temp);
-            System.out.println("Would you like to add more relations to the Person?");  
-            String choice = scanner.nextLine();
-            if(choice == "Y" || choice == "y") {
-                continue;
-            } 
-            else {
-                break;
+        String statement;
+        if(personType == 1 || personType == 2 || personType == 3) {
+            System.out.println("Would you like to add Crimes to the Person? Enter Y / N");  
+            String choice1 = scanner.nextLine();
+            boolean crimescheck = false;
+            if (choice1.equalsIgnoreCase("y"))
+                crimescheck = true;
+            while (crimescheck) {
+                System.out.println("Please enter the UUID of the crime to be added");
+                String idstr = scanner.nextLine();
+                UUID temp = UUID.fromString(idstr);
+                crimes.add(temp);
+                System.out.println("Would you like to add more Crimes to the Person? Enter Y / N");  
+                String choice = scanner.nextLine();
+                if(choice == "Y" || choice == "y") {
+                    continue;
+                } 
+                else {
+                    break;
+                }
             }
+
+            
+            System.out.println("Would you like to add Relations to the Person? Enter Y / N");  
+            String choice2 = scanner.nextLine();
+            boolean relationscheck = false;
+            if (choice2.equalsIgnoreCase("y"))
+                relationscheck = true;
+            while (relationscheck) {
+                System.out.println("Please enter the UUID of the Person to be added");
+                String idstr = scanner.nextLine();
+                UUID temp = UUID.fromString(idstr);
+                relations.add(temp);
+                System.out.println("Would you like to add more relations to the Person?");  
+                String choice = scanner.nextLine();
+                if(choice == "Y" || choice == "y") {
+                    continue;
+                } 
+                else {
+                    break;
+                }
+            }
+
+            System.out.println("Please enter the statement for the Person of Interest, if none, simply hit enter");
+            statement = scanner.nextLine();
         }
-
-        System.out.println("Please enter the statement for the Person of Interest, if none, simply hit enter");
-        String statement = scanner.nextLine();
-
-
 
         System.out.println("Is this person a US citizen (Y/N)");
         String cit = scanner.nextLine();
@@ -652,11 +640,12 @@ public class DataBaseUI {
                 /*
                     NEED TO ADD ARRAY LISTS OF CRIMES, FAMILY, ASSOCIATES
                 */
-                ArrayList<UUID> crimes = new ArrayList<UUID>();
+                
+                ArrayList<UUID> crimesCriminal = new ArrayList<UUID>();
                 while(true) {
                     System.out.println("\nEnter the UUID of the cime you would like to add to this person");
                     UUID pCrime = UUID.fromString(scanner.nextLine());
-                    crimes.add(pCrime);
+                    crimesCriminal.add(pCrime);
                     System.out.println("\nWould you like to add another crime to this person? (Y/N)");
                     String choice = scanner.nextLine();
                     if(choice == "Y" || choice == "y") {
@@ -666,6 +655,7 @@ public class DataBaseUI {
                         break;
                     }
                 }
+                
 
                 ArrayList<UUID> family = new ArrayList<UUID>();
                 while(true) {
@@ -698,8 +688,9 @@ public class DataBaseUI {
                         break;
                     }
                 }
+                
                 //construct criminal
-                Person newCriminal = new Criminal(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, isInJail, isDeceased, crimes, family, associates);
+                Person newCriminal = new Criminal(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, isInJail, isDeceased, crimesCriminal, family, associates);
                 return newCriminal;
                 break;
 
@@ -794,14 +785,9 @@ public class DataBaseUI {
         Edit the person; will be swapping out old person for new person
         databaseManager.editPerson(old, newPerson);
         */
-        ArrayList<String> paramChoices = new ArrayList<String>();
-        //putting "6" in paramChocies arrayList so we are specifying we will search by UUID
-        paramChoices.add("6");
-        ArrayList<Object> searchParams = new ArrayList<Object>();
-        searchParams.add(personIDEdit);
 
         //this should put the person that they searched for into Person temp
-        Person temp = databaseManager.searchPerson(paramChoices, searchParams);    //  TODO return type arraylist of people
+        Person temp = databaseManager.searchPerson(personIDEdit);
         Person replacement = temp;
 
         System.out.println("What attributes of this person would you like to edit?\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Tattoo Description\n16. ShoeSize\n17. crimeOrganization\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma (no space).\n");
@@ -926,14 +912,9 @@ public class DataBaseUI {
         /*
             search for crime with UUID parameter... return crime and allow user to edit
         */
-        ArrayList<String> paramChoices = new ArrayList<String>();
-        //putting "1" in paramChocies arrayList so we are specifying we will search by UUID
-        paramChoices.add("1");
-        ArrayList<Object> searchParams = new ArrayList<Object>();
-        searchParams.add(crimeIDEdit);
-
+       
         //this should put the person that they searched for into Person temp
-        Crime temp = databaseManager.searchCrime(paramChoices, searchParams);  //  TODO return type ArrayList
+        Crime temp = databaseManager.searchCrime(crimeIDEdit); 
         Crime replacement = temp;
 
         System.out.println("What attributes of this crime would you like to edit?\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Tattoo Description\n16. ShoeSize\n17. crimeOrganization\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma (no space).\n");
@@ -1017,16 +998,169 @@ public class DataBaseUI {
             }
 
             if(editChoices[i] == "7") {
-                System.out.println("Enter the UUIDs of the evidence related to the crime separated by a comma (no spaces)");
-                input = scanner.nextLine();
-                String[] e = input.split(",");
-                UUID[] evidence;
-                for(int t=0; t<e.length; t++) {
-                    evidence[t] = UUID.fromString(e[t]);
+                ArrayList<Evidence> evidence = temp.getEvidence();
+                for(int j=0; j<evidence.size(); j++) {
+                    Evidence tempEvidence = evidence.get(j);
+                    System.out.println("Would you like to edit the following piece of evidence:\n" + tempEvidence.toString() + "\nEnter \"Y\" if you would like to edit this evidence");
+                    String in = scanner.nextLine();
+                    if(in == "Y" || in == "y") {
+                        String type = tempEvidence.getEvidenceType();
+                        System.out.println("Would you like to edit the description? (Y/N)");
+                        in = scanner.nextLine();
+                        if(in == "Y" || in == "y") {
+                            String description = scanner.nextLine();
+                            tempEvidence.setDescription(description);
+                        }
+                        if(type == "HairSample") {
+                            System.out.println("Would you like to edit the color? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                String color = scanner.nextLine();
+                                tempEvidence.setColor(color);
+                            }
+
+                            System.out.println("Would you like to edit the length? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                double length = scanner.nextLine();
+                                tempEvidence.setLength(length);
+                            }
+
+                            System.out.println("Would you like to edit the thickness? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                double thickness = scanner.nextLine();
+                                tempEvidence.setThickness(thickness);
+                            }
+                        }
+
+                        if(type == "BloodSample") {
+                            System.out.println("Would you like to edit the blood type? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                String bloodType = scanner.nextLine();
+                                tempEvidence.setBloodType(bloodType);
+                            }
+
+                            System.out.println("Would you like to edit the blood volume? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                double vol = scanner.nextLine();
+                                tempEvidence.setBloodVolume(vol);
+                            }
+                        }
+
+                        if(type == "Gun") {
+                            System.out.println("Would you like to edit the gun type? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                String gunType = scanner.nextLine();
+                                tempEvidence.setGunType(gunType);
+                            }
+
+                            System.out.println("Would you like to edit the gun model? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                String model = scanner.nextLine();
+                                tempEvidence.setModel(model);
+                            }
+
+                            System.out.println("Would you like to edit the bullet type? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                String bulletType = scanner.nextLine();
+                                tempEvidence.setBulletType(bulletType);
+                            }
+
+                            System.out.println("Would you like to edit the year made? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                int year = scanner.nextLine();
+                                tempEvidence.setYear(year);
+                            }
+                        }
+
+                        if(type == "Bullet") {
+                            System.out.println("Would you like to edit the bullet type? (Y/N)");
+                            in = scanner.nextLine();
+                            if(in == "Y" || in == "y") {
+                                String bulletT = scanner.nextLine();
+                                tempEvidence.setType(bulletT);
+                            }
+                        }
+                        evidence.set(j, tempEvidence);
+                    }
                 }
-                List<UUID> evidenceList = Arrays.asList(evidence);
-                ArrayList<UUID> evidenceArrayList = new ArrayList<UUID>(evidenceList);
-                replacement.setEvidence(evidence);     //  TODO fix the type for this, no idea how to retrieve evidence based on UUID, might be better to construct new evidence
+                while(true) {
+                    System.out.println("Would you like to add more evidence to this crime? (Y/N)");
+                    String n = scanner.nextLine();
+                    if(n == "Y" || n == "y")
+                        continue;
+                    else
+                        break;
+                    System.out.println("\nEnter the type of evidence you would like to add.\n1. Hair sample\n2. Blood sample\n3. Gun\n4. Bullet\n5. Normal/other"); 
+                    String input1 = scanner.nextLine();
+                    int select = Integer.parseInt(input1);
+                    System.out.println("\nEnter the description of the evidence");
+                    String description = scanner.nextLine();
+                    switch(select) {
+                        case 1:
+                            System.out.println("\nEnter the color of the hair sample");
+                            String color = scanner.nextLine();
+                                
+                            System.out.println("\nEnter the length of the hair sample");
+                            double length = scanner.nextDouble();
+                            scanner.nextLine();
+        
+                            System.out.println("\nEnter the thickness of the hair sample");
+                            double thickness = scanner.nextDouble();
+                            scanner.nextLine();
+                            Evidence newHairSample = new HairSample(description, null, "HairSample", color, length, thickness);
+                            evidence.add(newHairSample);
+                            break;
+                            
+                        case 2:
+                            System.out.println("\nEnter the blood type");
+                            String bloodType = scanner.nextLine();
+        
+                            System.out.println("\nEnter the volume of blood in this sample");
+                            double bloodVolume = scanner.nextDouble();
+                            scanner.nextLine();
+                            Evidence newBloodSample = new BloodSample(description, null, "BloodSample", bloodType, bloodVolume);
+                            evidence.add(newBloodSample);
+                            break;
+        
+                        case 3:
+                            System.out.println("\nEnter the type of gun");
+                            String gunType = scanner.nextLine();
+        
+                            System.out.println("\nEnter the model of the gun");
+                            String model = scanner.nextLine();
+        
+                            System.out.println("\nEnter the type of bullet");
+                            String bulletType = scanner.nextLine();
+        
+                            System.out.println("\nEnter the year the gun was manufactured");
+                            int yearMade = scanner.nextInt();
+                            scanner.nextLine();
+                            Evidence newGun = new Gun(description, null, "Gun", gunType, model, bulletType, yearMade);
+                            evidence.add(newGun);
+                            break;
+        
+                        case 4:
+                            System.out.println("\nEnter the type of bullet");
+                            String type = scanner.nextLine();
+                            Evidence newBullet = new Bullet(description, null, "Bullet", type);
+                            evidenceList.add(newBullet);
+                            break;
+        
+                        case 5:
+                            Evidence newNormal = new Evidence(description, null, "Other");
+                            evidence.add(newNormal);
+                            break;
+                        }
+                }
+                replacement.setEvidence(evidence);
             }
         }
         databaseManager.editCrime(temp, replacement);

@@ -29,12 +29,20 @@ public class DataBaseManager {
         return;
     }
 
-    public void searchCrime(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {  
+    public void searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {  
         crimeList.searchCrime(parameterChoices, searchParameters);
     }
 
-    public void searchPerson(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {
+    public void searchPerson(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {
         personList.searchPerson(parameterChoices, searchParameters);
+    }
+
+    public void searchCrime(UUID id) {
+        crimeList.searchCrime(id);
+    }
+
+    public void searchPerson(UUID id) {
+        personList.searchPerson(id);
     }
 
     public boolean loginUser(String username, String password) {
