@@ -81,15 +81,12 @@ public class DataBaseUI {
         if(choice == 1) {
             System.out.println("Searching for person:\nHow would you like to search for this person?");
             searchPerson();
-            
         }
         if(choice == 2) {
             System.out.println("Searching for crime\nHow would you like to search for this crime?");
             searchCrime();
-           }
-        else  
-            System.out.println("Invalid input");
-        return;
+        }
+        
     }
 
     private void searchCrime() {
@@ -143,7 +140,21 @@ public class DataBaseUI {
                 searchParams.add(evidenceID);
             }
         }
-        databaseManager.searchCrime(paramChoiceArrayList, searchParams);
+        ArrayList<Crime> crimes = databaseManager.searchCrime(paramChoiceArrayList, searchParams);
+        for(Crime c : crimes) {
+            System.out.println("Crime title: " + c.getTitle() + "\nDescription: " + c.getCrimeDescription() + "\nDate: " + c.getDate() + "\nCrime is solved: " + c.isSolved());
+            System.out.println("Would you like to display all of this crime's information? (Y/N)");
+            String q = scanner.nextLine();
+            if(q == "Y" || q == "y") {
+                System.out.println(c.toString());
+            }
+
+            System.out.println("Would you like to export this crime's information to a text file? (Y/N)");
+            q = scanner.nextLine();
+            if(q =="Y" || q == "y") {
+                databaseManager.export(1, c.getcasenumber());
+            }
+        }
     }
 
     private void searchPerson() {
@@ -257,7 +268,21 @@ public class DataBaseUI {
                 searchParams.add(crimeOrganization);
             }
         }
-        databaseManager.searchPerson(paramChoiceArrayList, searchParams);
+        ArrayList<Person> persons = databaseManager.searchPerson(paramChoiceArrayList, searchParams);
+        for(Person p : persons) {
+            System.out.println("First name: " + p.getFirstName() + "\nLast name: " + p.getLastName() + "\nAge: " + p.getAge() + "\nAddress: " + p.getAddress());
+            System.out.println("Would you like to display all of this person's information? (Y/N)");
+            String c = scanner.nextLine();
+            if(c == "Y" || c == "y") {
+                System.out.println(p.toString());
+            }
+
+            System.out.println("Would you like to export this person's information to a text file? (Y/N)");
+            c = scanner.nextLine();
+            if(c =="Y" || c == "y") {
+                databaseManager.export(1, p.getPersonID());
+            }
+        }
     }
 
     private void add() {
@@ -275,8 +300,6 @@ public class DataBaseUI {
             addCrime();
             System.out.println("The crime has been added to the database");
         }
-        else  
-            System.out.println("Invalid input");
     }
 
     private void addCrime() {
