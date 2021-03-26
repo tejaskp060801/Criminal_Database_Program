@@ -70,7 +70,7 @@ public class PersonList {
             for(int j = 0; j < searchParameters.size(); j++)
             {
                 
-                if(parameterChoices.get(j) == "1")
+                if(parameterChoices.get(j).equals("1"))
                 {
                     if(searchParameters.get(j) != current.getFirstName())
                     {
@@ -78,7 +78,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "2")
+                if(parameterChoices.get(j).equals("2"))
                 {
 
                     if(searchParameters.get(j) != current.getLastName())
@@ -87,7 +87,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "3")
+                if(parameterChoices.get(j).equals("3"))
                 {
                     int age = Integer.parseInt(searchParameters.get(j));
                     if(age != current.getAge()) 
@@ -96,7 +96,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "4")
+                if(parameterChoices.get(j).equals("4"))
                 {
                     if(searchParameters.get(j) != current.getGender())
                     {
@@ -104,7 +104,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "5")
+                if(parameterChoices.get(j).equals("5"))
                 {
                     if(searchParameters.get(j) != current.getRace())
                     {
@@ -112,7 +112,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "6")
+                if(parameterChoices.get(j).equals("6"))
                 {
                     UUID id = UUID.fromString(searchParameters.get(j));
                     if(id !=  current.getPersonID())
@@ -121,7 +121,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "7")
+                if(parameterChoices.get(j).equals("7"))
                 {
                     if(searchParameters.get(j) != current.getAddress())
                     {
@@ -129,7 +129,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "8")
+                if(parameterChoices.get(j).equals("8"))
                 {
                     if(searchParameters.get(j) != current.getProfession())
                     {
@@ -137,7 +137,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "9")
+                if(parameterChoices.get(j).equals("9"))
                 {
                     double height = Double.parseDouble(searchParameters.get(j));
                     if(height != current.getHeight()) //double
@@ -146,7 +146,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "10")
+                if(parameterChoices.get(j).equals("10"))
                 {
                     double weight = Double.parseDouble(searchParameters.get(j));
                     if(weight != current.getWeight()) //double
@@ -155,7 +155,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "11")
+                if(parameterChoices.get(j).equals("15"))
                 {
                     if(searchParameters.get(j) != current.getSkinColor())
                     {
@@ -163,7 +163,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "12")
+                if(parameterChoices.get(j).equals("16"))
                 {
                     if(searchParameters.get(j) != current.getHairColorNatural())
                     {
@@ -171,7 +171,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "13")
+                if(parameterChoices.get(j).equals("15"))
                 {
                     if(searchParameters.get(j) != current.getHairColorUnNatural())
                     {
@@ -179,7 +179,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "14")
+                if(parameterChoices.get(j).equals("14"))
                 {
                     String search = searchParameters.get(j);
                     if(current.getClothing().contains(search))
@@ -189,7 +189,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "15")
+                if(parameterChoices.get(j).equals("15"))
                 {
                     String search = searchParameters.get(j);
                     if(current.getTattooDescription().contains(search)) 
@@ -199,7 +199,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "16")
+                if(parameterChoices.get(j).equals("16"))
                 {
                     double shoeSize = Double.parseDouble(searchParameters.get(j));
                     if(shoeSize != current.getShoeSize())  
@@ -208,7 +208,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j) == "17")
+                if(parameterChoices.get(j).equals("17"))
                 {
                     String search = searchParameters.get(j);
                     if(current.getOrganization().contains(search))
