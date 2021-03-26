@@ -1,0 +1,24 @@
+The persons name is Michael Mitchell
+ The persons age is24
+ the persons gender is male
+ the persons race is caucasian
+ The persons UUID is 16027eb8-8660-11eb-8dcd-0242ac130003
+ The persons address is 300 Main Columbia, SC
+ the persons professions is Janitor
+ The persons height is 6.2
+ Ther persons weight is 164.0
+ The persons skin color is white
+ The persons natural hair color is brown
+ The persons unNautural hair color is yellow
+ The persons clothin on right now is black hoodie with blue jeans
+ Does this person have a tattoo? false
+ The tattoo description is null
+ the persons shoe size is 10.5
+ Is this Person a US Citizen? true
+ The criminal organization this person is associated with is null
+ This person is a Criminal
+ Is this person Deceased? false
+ The assosciates associated with this criminal are []
+ The crimes this person has commited are [ab4639e8-8664-11eb-8dcd-0242ac130003]
+ The family members associated with this criminal are []
+ Is this person in Jail? false

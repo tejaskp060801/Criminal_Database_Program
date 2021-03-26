@@ -55,8 +55,8 @@ public class DataBaseUI {
                     break;
             }
             System.out.println("Would you like to do something else (Y/N)");
-            String choice = scanner.nextLine().toLowerCase();
-            if(choice == "y")
+            String choice = scanner.nextLine();
+            if(choice.equalsIgnoreCase("y"))
                 continue;
             else {
                 //not sure if we should logout here or what
