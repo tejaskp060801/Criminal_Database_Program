@@ -121,8 +121,8 @@ public class CrimeList {
 
                 if(parameterChoices.get(j) == "5") 
                 {
-                    UUID id = UUID.fromString(searchParameters.get(j));                    
-                    if(id != current.getTypeOfCrime()) {
+                   String crimeType = UUID.fromString(searchParameters.get(j));                    
+                    if(crimeType != current.getTypeOfCrime()) {
                         temp.remove(current);
                         break;
                     }
@@ -152,12 +152,18 @@ public class CrimeList {
 
                 if(parameterChoices.get(j) == "7")
                 {
-                    UUID id = UUID.fromString(searchParameters.get(j));                    
-                    if(id != current.getEvidence()) {
+                    UUID id = UUID.fromString(searchParameters.get(j));  
+                    ArrayList<Evidence> e = current.getEvidence();
+                    for(int t=0; t<e.size(); t++) {
+                        Evidence ev = e.get(t);
+                        if(ev.getID() != id) {
+                            e.remove(ev);
+                        }
+                    }
+                    if(e.isEmpty()) {
                         temp.remove(current);
                         break;
-                    }
-                    
+                    }                    
                 }
 
 
