@@ -292,7 +292,7 @@ public class DataBaseUI {
     }
 
     private void add() {
-        System.out.println("What would you like to add?\n 1. Person\n2. Crime");
+        System.out.println("What would you like to add?\n1. Person\n2. Crime");
         int choice = scanner.nextInt();
         scanner.nextLine();
         if(choice == 1) {
@@ -312,30 +312,30 @@ public class DataBaseUI {
         System.out.println("Enter a title for the crime");
         String title = scanner.nextLine();
 
-        System.out.println("Is this crime solved (Y/N");
+        System.out.println("Is this crime solved (Y/N)");
         String solved = scanner.nextLine();
         boolean isSolved;
-        if(solved == "Y" || solved == "y");
+        if(solved.equalsIgnoreCase("y"));
             isSolved = true;
-        if(solved == "N" || solved == "n");
+        if(solved.equalsIgnoreCase("n"));
             isSolved = false;
         
         ArrayList<Person> people = new ArrayList<Person>();
         System.out.println("Would you like to add a person to this crime? (Y/N)");
         String s = scanner.nextLine();
-        if(s == "Y" || s == "y") {
+        if(s.equalsIgnoreCase("y")) {
             Person temp = addPerson();
             people.add(temp);
         }
         while(true) {
             System.out.println("Would you like to add another person? (Y/N)");
             String more = scanner.nextLine();
-            if(more == "Y" || more == "y") {
+            if(more.equalsIgnoreCase("y")) {
                 Person temp = addPerson();
                 people.add(temp);
                 continue;
             }
-            if(more == "N" || more == "n")
+            if(more.equalsIgnoreCase("n"))
                 break;
             else
                 break;
@@ -381,7 +381,7 @@ public class DataBaseUI {
         while(true) { 
             System.out.println("Would you like to add evidence? (Y/N)");
             String aChoice = scanner.nextLine();
-            if(aChoice == "Y" || aChoice == "y") {
+            if(aChoice.equalsIgnoreCase("y")) {
                 System.out.println("\nEnter the type of evidence you would like to add.\n1. Hair sample\n2. Blood sample\n3. Gun\n4. Bullet\n5. Normal/other"); 
                 String input1 = scanner.nextLine();
                 int selector = Integer.parseInt(input1);
@@ -446,7 +446,7 @@ public class DataBaseUI {
             }
             System.out.println("Would you like to add more evidence to the crime?");  
             String choice = scanner.nextLine();
-            if(choice == "Y" || choice == "y") {
+            if(choice.equalsIgnoreCase("y")) {
                 continue;
             } 
             else {
@@ -533,7 +533,7 @@ public class DataBaseUI {
         String tat = scanner.nextLine();
         boolean hasTattoo;
         String tatDescription;
-        if(tat == "Y" || tat == "y") {
+        if(tat.equalsIgnoreCase("y")) {
             hasTattoo = true;
             System.out.println("Enter the tattoo description");
             tatDescription = scanner.nextLine();
@@ -550,7 +550,7 @@ public class DataBaseUI {
         System.out.println("Is this person a US citizen (Y/N)");
         String cit = scanner.nextLine();
         boolean isUSCitizen;
-        if(cit == "Y" || cit == "y")
+        if(cit.equalsIgnoreCase("y"))
             isUSCitizen = true;
         else
             isUSCitizen = false;
@@ -573,7 +573,7 @@ public class DataBaseUI {
                 crimes.add(temp);
                 System.out.println("Would you like to add more Crimes to the Person? Enter Y / N");  
                 String choice = scanner.nextLine();
-                if(choice == "Y" || choice == "y") {
+                if(choice.equalsIgnoreCase("y")) {
                     continue;
                 } 
                 else {
@@ -594,7 +594,7 @@ public class DataBaseUI {
                 relations.add(temp);
                 System.out.println("Would you like to add more relations to the Person?");  
                 String choice = scanner.nextLine();
-                if(choice == "Y" || choice == "y") {
+                if(choice.equalsIgnoreCase("y")) {
                     continue;
                 } 
                 else {
@@ -608,7 +608,7 @@ public class DataBaseUI {
                 System.out.println("Will this victim testify (Y/N)");
                 String test = scanner.nextLine();
                 boolean willTestify;
-                if(test == "Y" || test == "y")
+                if(test.equalsIgnoreCase("y"))
                     willTestify = true;
                 else
                     willTestify = false;
@@ -622,7 +622,7 @@ public class DataBaseUI {
                 System.out.println("Will this Witness testify (Y/N)");
                 String test1 = scanner.nextLine();
                 boolean willTestify1;
-                if(test1 == "Y" || test1 == "y")
+                if(test1.equalsIgnoreCase("y"))
                     willTestify1 = true;
                 else
                     willTestify1 = false;
@@ -637,7 +637,7 @@ public class DataBaseUI {
                 System.out.println("Will this suspect testify (Y/N)");
                 String test2 = scanner.nextLine();
                 boolean willTestify2;
-                if(test2 == "Y" || test2 == "y")
+                if(test2.equalsIgnoreCase("y"))
                     willTestify2 = true;
                 else
                     willTestify2 = false;
@@ -647,18 +647,18 @@ public class DataBaseUI {
                 return newSuspect;
 
             case 4:
-                System.out.println("Is this person in jail? (Y/N");
+                System.out.println("Is this person in jail? (Y/N)");
                 String inJail = scanner.nextLine();
                 boolean isInJail;
-                if(inJail == "Y" || inJail == "y")
+                if(inJail.equalsIgnoreCase("y"))
                     isInJail = true;
                 else
                     isInJail = false;
                     
-                System.out.println("Is this person deceased? (Y/N");
+                System.out.println("Is this person deceased? (Y/N)");
                 String deceased = scanner.nextLine();
                 boolean isDeceased;
-                if(deceased == "Y" || deceased == "y")
+                if(deceased.equalsIgnoreCase("y"))
                     isDeceased = true;
                 else
                     isDeceased = false;
@@ -674,7 +674,7 @@ public class DataBaseUI {
                     crimesCriminal.add(pCrime);
                     System.out.println("\nWould you like to add another crime to this person? (Y/N)");
                     String choice = scanner.nextLine();
-                    if(choice == "Y" || choice == "y") {
+                    if(choice.equalsIgnoreCase("y")) {
                         continue;
                     }
                     else {
@@ -691,7 +691,7 @@ public class DataBaseUI {
                     family.add(pFamMem);
                     System.out.println("\nWould you like to add another family member to this person? (Y/N)");
                     String choice = scanner.nextLine();
-                    if(choice == "Y" || choice == "y") {
+                    if(choice.equalsIgnoreCase("y")) {
                         continue;
                     }
                     else {
@@ -707,7 +707,7 @@ public class DataBaseUI {
                     associates.add(pAssociate);
                     System.out.println("\nWould you like to add another associate to this person? (Y/N)");
                     String choice = scanner.nextLine();
-                    if(choice == "Y" || choice == "y") {
+                    if(choice.equalsIgnoreCase("y")) {
                         continue;
                     }
                     else {
@@ -755,7 +755,7 @@ public class DataBaseUI {
         if (!databaseManager.loginUser(username, password)) {
             System.out.println("There is no user with that username and password.\nWould you like to create a user? (Y/N)");
             String c = scanner.nextLine();
-            if(c == "Y" || c == "y") {
+            if(c.equalsIgnoreCase("y")) {
                 System.out.println("The same username and password you previously entered will be used to create your user account.\nWhat is your clearance level?");
                 int level = scanner.nextInt();
                 scanner.nextLine();
@@ -765,7 +765,7 @@ public class DataBaseUI {
                 String l = scanner.nextLine();
                 databaseManager.createUser(username, password, level, f, l);
             }
-            else if(c == "N" || c == "n") {
+            else if(c.equalsIgnoreCase("n")) {
                 databaseManager.exit();
             }
         }
@@ -1027,11 +1027,11 @@ public class DataBaseUI {
                     Evidence tempEvidence = evidence.get(j);
                     System.out.println("Would you like to edit the following piece of evidence:\n" + tempEvidence.toString() + "\nEnter \"Y\" if you would like to edit this evidence");
                     String in = scanner.nextLine();
-                    if(in == "Y" || in == "y") {
+                    if(in.equalsIgnoreCase("y")) {
                         String type = tempEvidence.getEvidenceType();
                         System.out.println("Would you like to edit the description? (Y/N)");
                         in = scanner.nextLine();
-                        if(in == "Y" || in == "y") {
+                        if(in.equalsIgnoreCase("y")) {
                             String description = scanner.nextLine();
                             tempEvidence.setDescription(description);
                         }
@@ -1039,7 +1039,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the color? (Y/N)");
                             in = scanner.nextLine();
                             HairSample tempEvidence2 = (HairSample) tempEvidence;
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 String color = scanner.nextLine();
                                 tempEvidence2.setColor(color);
                             }
@@ -1047,7 +1047,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the length? (Y/N)");
                             in = scanner.nextLine();
                             HairSample tempEvidence3 = (HairSample) tempEvidence; 
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 double length = scanner.nextDouble();
                                 tempEvidence3.setLength(length);
                             }
@@ -1055,7 +1055,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the thickness? (Y/N)");
                             in = scanner.nextLine();
                             HairSample tempEvidence4 = (HairSample) tempEvidence; 
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 double thickness = scanner.nextDouble();
                                 tempEvidence4.setThickness(thickness);
                             }
@@ -1065,7 +1065,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the blood type? (Y/N)");
                             in = scanner.nextLine();
                             BloodSample tempEvidence5 = (BloodSample) tempEvidence; 
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 String bloodType = scanner.nextLine();
                                 tempEvidence5.setType(bloodType);
                             }
@@ -1073,7 +1073,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the blood volume? (Y/N)");
                             in = scanner.nextLine();
                             BloodSample tempEvidence6 = (BloodSample) tempEvidence; 
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 double vol = scanner.nextDouble();
                                 tempEvidence6.setBloodVolume(vol);
                             }
@@ -1083,7 +1083,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the gun type? (Y/N)");
                             in = scanner.nextLine();
                             Gun tempEvidence7 = (Gun) tempEvidence; 
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 String gunType = scanner.nextLine();
                                 tempEvidence7.setGunType(gunType);
                             }
@@ -1091,7 +1091,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the gun model? (Y/N)");
                             in = scanner.nextLine();
                             Gun tempEvidence8 = (Gun) tempEvidence; 
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 String model = scanner.nextLine();
                                 tempEvidence8.setModel(model);
                             }
@@ -1099,7 +1099,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the bullet type? (Y/N)");
                             in = scanner.nextLine();
                             Gun tempEvidence9 = (Gun) tempEvidence; 
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 String bulletType = scanner.nextLine();
                                 tempEvidence9.setBulletType(bulletType);
                             }
@@ -1107,7 +1107,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the year made? (Y/N)");
                             in = scanner.nextLine();
                             Gun tempEvidence10 = (Gun) tempEvidence; 
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 int year = scanner.nextInt();
                                 tempEvidence10.setYearMade(year);
                             }
@@ -1117,7 +1117,7 @@ public class DataBaseUI {
                             System.out.println("Would you like to edit the bullet type? (Y/N)");
                             in = scanner.nextLine();
                             Bullet tempEvidence11 = (Bullet) tempEvidence; 
-                            if(in == "Y" || in == "y") {
+                            if(in.equalsIgnoreCase("y")) {
                                 String bulletT = scanner.nextLine();
                                 tempEvidence11.setType(bulletT);
                             }
@@ -1128,7 +1128,7 @@ public class DataBaseUI {
                 while(true) {
                     System.out.println("Would you like to add more evidence to this crime? (Y/N)");
                     String n = scanner.nextLine();
-                    if(n != "Y" || n != "y")
+                    if(n.equalsIgnoreCase("n"))
                         break;
                     System.out.println("\nEnter the type of evidence you would like to add.\n1. Hair sample\n2. Blood sample\n3. Gun\n4. Bullet\n5. Normal/other"); 
                     String input1 = scanner.nextLine();
