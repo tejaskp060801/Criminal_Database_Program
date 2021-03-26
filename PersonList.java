@@ -91,7 +91,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j) == "3")
                 {
-                    int age = Integer.paraseInt(searchParameters.get(j));
+                    int age = Integer.parseInt(searchParameters.get(j));
                     if(age != current.getAge()) 
                     {
                         temp.remove(current);
