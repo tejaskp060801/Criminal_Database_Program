@@ -147,7 +147,7 @@ public class DataBaseUI {
             System.out.println("Crime title: " + c.getTitle() + "\nDescription: " + c.getCrimeDescription() + "\nDate: " + c.getDate() + "\nCrime is solved: " + c.isSolved());
             System.out.println("Would you like to display all of this crime's information? (Y/N)");
             String q = scanner.nextLine();
-            if(c == "Y" || q == "y") {
+            if(q == "Y" || q == "y") {
                 System.out.println(p.toString());
             }
 
