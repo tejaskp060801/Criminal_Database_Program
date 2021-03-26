@@ -121,8 +121,15 @@ public class CrimeList {
 
                 if(parameterChoices.get(j) == "5") 
                 {
-                   String crimeType = searchParameters.get(j);                    
-                    if(crimeType != current.getTypeOfCrime()) {
+                   String crimeType = searchParameters.get(j);
+                   ArrayList<TypeOfCrime> crimeTypeList = current.getTypeOfCrime();
+                   for(int t=0; t<crimeTypeList.size(); t++) {
+                        TypeOfCrime a = crimeTypeList.get(t);
+                        if(a.toString() == crimeType) {
+                            crimeTypeList.remove(a);
+                        }
+                   }                    
+                    if(crimeTypeList.isEmpty()) {
                         temp.remove(current);
                         break;
                     }
