@@ -144,15 +144,6 @@ public class CrimeList {
                         temp.remove(current);
                         break;
                     }
-                    /*
-                    String search = searchParameters.get(j);
-                    if(current.getDate().contains(search))
-                        break;
-                    else{
-                        temp.remove(current);
-                        break;
-                    }
-                    */
 
                     
                 }
@@ -194,7 +185,6 @@ public class CrimeList {
         return (ArrayList) this.crimes.clone();  //  PassbyRef
     }
 }
-    
 
 
 
