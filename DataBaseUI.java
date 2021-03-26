@@ -504,11 +504,11 @@ public class DataBaseUI {
         System.out.println("Enter the profession of the person");
         String profession = scanner.nextLine();
 
-        System.out.println("Enter the height of the person");
+        System.out.println("Enter the height of the person (Enter feet, followed by a \".\" , followed by inches");
         double height = scanner.nextDouble();
         scanner.nextLine();
 
-        System.out.println("Enter the weight of the person");
+        System.out.println("Enter the weight of the person in pounds");
         double weight = scanner.nextDouble();
         scanner.nextLine();
 
@@ -865,14 +865,14 @@ public class DataBaseUI {
             }
 
             if(editChoices[i].equals("9")) {
-                System.out.println("\nEnter the height of the person you would like to edit");
+                System.out.println("\nEnter the height of the person you would like to edit. Enter feet followed by \".\" , followed by inches");
                 double height = scanner.nextDouble();
                 scanner.nextLine();
                 replacement.setHeight(height);
             }
 
             if(editChoices[i].equals("10")) {
-                System.out.println("\nEnter the weight of the person you would like to edit");
+                System.out.println("\nEnter the weight of the person you would like to edit in pounds");
                 double weight = scanner.nextDouble();
                 scanner.nextLine();
                 replacement.setWeight(weight);
