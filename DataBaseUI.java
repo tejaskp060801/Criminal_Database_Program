@@ -29,6 +29,7 @@ public class DataBaseUI {
         while(true) {
             DisplayMenu();
             int userInput = scanner.nextInt();
+            scanner.nextLine();
             switch(userInput) {
                 case 1: //search
                     search();
