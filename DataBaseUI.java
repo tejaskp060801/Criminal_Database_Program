@@ -169,8 +169,7 @@ public class DataBaseUI {
 
             if(paramChoices[i] == "3") {
                 System.out.println("\nEnter the age of the person you would like to search");
-                String age = scanner.nextInt();
-                scanner.nextLine();
+                String age = scanner.nextLine();
                 searchParams.add(age);
             }
 
@@ -592,7 +591,6 @@ public class DataBaseUI {
                 //construct victim
                 Person newVictim = new Victim(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement, willTestify);
                 return newVictim;
-                break;
 
             case 2:
                 System.out.println("Will this Witness testify (Y/N)");
@@ -605,20 +603,18 @@ public class DataBaseUI {
                  //construct witness
                 Person newWitness= new Witness(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement, willTestify1);
                 return newWitness;
-                break;
 
             case 3:
                 //construct suspect
                 System.out.println("Will this suspect testify (Y/N)");
                 String test2 = scanner.nextLine();
                 boolean willTestify2;
-                if(test == "Y" || test == "y")
+                if(test2 == "Y" || test2 == "y")
                     willTestify2 = true;
                 else
                     willTestify2 = false;
                 Person newSuspect = new Suspect(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement, willTestify2);
                 return newSuspect;
-                break;
 
             case 4:
                 System.out.println("Is this person in jail? (Y/N");
@@ -692,7 +688,6 @@ public class DataBaseUI {
                 //construct criminal
                 Person newCriminal = new Criminal(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, isInJail, isDeceased, crimesCriminal, family, associates);
                 return newCriminal;
-                break;
 
             case 5:
                 System.out.println("What is the relationship of this person to the criminal?");
@@ -702,7 +697,6 @@ public class DataBaseUI {
 
                 Person newFamilyMember = new FamilyMember(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, relationship, relationshipID);
                 return newFamilyMember;
-                break;
             
             case 6:
                 System.out.println("What is the relationship of this person to the criminal?");
@@ -712,8 +706,8 @@ public class DataBaseUI {
 
                 Person newAssociate = new Associate(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, relationship1, relationshipID1);
                 return newAssociate;
-                break;
         }
+        return null; 
     }
 
     private void export() {
@@ -1022,71 +1016,80 @@ public class DataBaseUI {
 
                             System.out.println("Would you like to edit the length? (Y/N)");
                             in = scanner.nextLine();
+                            HairSample tempEvidence3 = (HairSample) tempEvidence; 
                             if(in == "Y" || in == "y") {
-                                double length = scanner.nextLine();
-                                tempEvidence.setLength(length);
+                                double length = scanner.nextDouble();
+                                tempEvidence3.setLength(length);
                             }
 
                             System.out.println("Would you like to edit the thickness? (Y/N)");
                             in = scanner.nextLine();
+                            HairSample tempEvidence4 = (HairSample) tempEvidence; 
                             if(in == "Y" || in == "y") {
-                                double thickness = scanner.nextLine();
-                                tempEvidence.setThickness(thickness);
+                                double thickness = scanner.nextDouble();
+                                tempEvidence4.setThickness(thickness);
                             }
                         }
 
                         if(type == "BloodSample") {
                             System.out.println("Would you like to edit the blood type? (Y/N)");
                             in = scanner.nextLine();
+                            BloodSample tempEvidence5 = (BloodSample) tempEvidence; 
                             if(in == "Y" || in == "y") {
                                 String bloodType = scanner.nextLine();
-                                tempEvidence.setBloodType(bloodType);
+                                tempEvidence5.setType(bloodType);
                             }
 
                             System.out.println("Would you like to edit the blood volume? (Y/N)");
                             in = scanner.nextLine();
+                            BloodSample tempEvidence6 = (BloodSample) tempEvidence; 
                             if(in == "Y" || in == "y") {
-                                double vol = scanner.nextLine();
-                                tempEvidence.setBloodVolume(vol);
+                                double vol = scanner.nextDouble();
+                                tempEvidence6.setBloodVolume(vol);
                             }
                         }
 
                         if(type == "Gun") {
                             System.out.println("Would you like to edit the gun type? (Y/N)");
                             in = scanner.nextLine();
+                            Gun tempEvidence7 = (Gun) tempEvidence; 
                             if(in == "Y" || in == "y") {
                                 String gunType = scanner.nextLine();
-                                tempEvidence.setGunType(gunType);
+                                tempEvidence7.setGunType(gunType);
                             }
 
                             System.out.println("Would you like to edit the gun model? (Y/N)");
                             in = scanner.nextLine();
+                            Gun tempEvidence8 = (Gun) tempEvidence; 
                             if(in == "Y" || in == "y") {
                                 String model = scanner.nextLine();
-                                tempEvidence.setModel(model);
+                                tempEvidence8.setModel(model);
                             }
 
                             System.out.println("Would you like to edit the bullet type? (Y/N)");
                             in = scanner.nextLine();
+                            Gun tempEvidence9 = (Gun) tempEvidence; 
                             if(in == "Y" || in == "y") {
                                 String bulletType = scanner.nextLine();
-                                tempEvidence.setBulletType(bulletType);
+                                tempEvidence9.setBulletType(bulletType);
                             }
 
                             System.out.println("Would you like to edit the year made? (Y/N)");
                             in = scanner.nextLine();
+                            Gun tempEvidence10 = (Gun) tempEvidence; 
                             if(in == "Y" || in == "y") {
-                                int year = scanner.nextLine();
-                                tempEvidence.setYear(year);
+                                int year = scanner.nextInt();
+                                tempEvidence10.setYearMade(year);
                             }
                         }
 
                         if(type == "Bullet") {
                             System.out.println("Would you like to edit the bullet type? (Y/N)");
                             in = scanner.nextLine();
+                            Bullet tempEvidence11 = (Bullet) tempEvidence; 
                             if(in == "Y" || in == "y") {
                                 String bulletT = scanner.nextLine();
-                                tempEvidence.setType(bulletT);
+                                tempEvidence11.setType(bulletT);
                             }
                         }
                         evidence.set(j, tempEvidence);
@@ -1095,9 +1098,7 @@ public class DataBaseUI {
                 while(true) {
                     System.out.println("Would you like to add more evidence to this crime? (Y/N)");
                     String n = scanner.nextLine();
-                    if(n == "Y" || n == "y")
-                        continue;
-                    else
+                    if(n != "Y" || n != "y")
                         break;
                     System.out.println("\nEnter the type of evidence you would like to add.\n1. Hair sample\n2. Blood sample\n3. Gun\n4. Bullet\n5. Normal/other"); 
                     String input1 = scanner.nextLine();
@@ -1152,7 +1153,7 @@ public class DataBaseUI {
                             System.out.println("\nEnter the type of bullet");
                             String type = scanner.nextLine();
                             Evidence newBullet = new Bullet(description, null, "Bullet", type);
-                            evidenceList.add(newBullet);
+                            evidence.add(newBullet);
                             break;
         
                         case 5:

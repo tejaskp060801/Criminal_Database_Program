@@ -37,12 +37,12 @@ public class DataBaseManager {
         personList.searchPerson(parameterChoices, searchParameters);
     }
 
-    public void searchCrime(UUID id) {
-        crimeList.searchCrime(id);
+    public Crime searchCrime(UUID id) {
+        return crimeList.searchCrime(id); 
     }
 
-    public void searchPerson(UUID id) {
-        personList.searchPerson(id);
+    public Person searchPerson(UUID id) {
+        return personList.searchPerson(id);
     }
 
     public boolean loginUser(String username, String password) {
