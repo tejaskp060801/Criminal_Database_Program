@@ -7,10 +7,12 @@ public class Criminal extends Person {
     private ArrayList<UUID> crimes; 
     private ArrayList<UUID> family; 
     private ArrayList<UUID> associates; 
+
     public Criminal(String firstName, String lastName, int age, String gender, String race, UUID id, String address,
     String profession, double height, double weight, String skinCol, String natHairCol, String unNatHairCol,
     String clothing, boolean hasTattoo, String tatDesc, double shoeSize, boolean isUsCitizen,
     String org, boolean isInJail, boolean Deceased, ArrayList<UUID> crimes, ArrayList<UUID> fm, ArrayList<UUID> assoc) {
+        
         super(firstName, lastName, age, gender, race, id, address, profession, height, weight, skinCol, natHairCol, unNatHairCol, clothing, hasTattoo, tatDesc, shoeSize, isUsCitizen, org); 
         this.setisInJail(isInJail); 
         this.setDeceased(Deceased);;
@@ -68,12 +70,12 @@ public class Criminal extends Person {
         }
 
         String assStr = "";
-        for(UUID a : assoc) {
+        for(UUID a : associates) {
             assStr += "\n" + "\t" + a.toString();
         }
 
         String famStr = "";
-        for(UUID f : fm) {
+        for(UUID f : family) {
             famStr += "\n" + "\t" + f.toString();
         }
 
