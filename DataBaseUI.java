@@ -95,48 +95,50 @@ public class DataBaseUI {
         System.out.println("\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Type of crime\n5. Location of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma(no space).\n");
         String input = scanner.nextLine();
         String [] paramChoices = input.split(",");
+        for(int i = 0; i < paramChoices.length; i++){
+        System.out.println(paramChoices[i]); }
         List<String> paramChoiceList = Arrays.asList(paramChoices);
         ArrayList<String> paramChoiceArrayList = new ArrayList<String>(paramChoiceList);
         
         ArrayList<String> searchParams = new ArrayList<String>();
         for(int i=0; i<paramChoices.length; i++) {
-            if(paramChoices[i] == "1") {
+            if(paramChoices[i].equals("1")) {
                 System.out.println("\nEnter the CaseID of the crime you would like to search");
                 String caseid = scanner.nextLine();
                 searchParams.add(caseid);
             }
 
-            if(paramChoices[i] == "2") {
+            if(paramChoices[i].equals("2")) {
                 System.out.println("\nEnter the case title of the crime you would like to search");
                 String title = scanner.nextLine();
                 searchParams.add(title);
             }
 
-            if(paramChoices[i] == "3") {
+            if(paramChoices[i].equals("3")) {
                 System.out.println("\nEnter the UUID of a person who was involved in the crime");
                 String personInvolvedID = scanner.nextLine();
                 searchParams.add(personInvolvedID);
             }
 
-            if(paramChoices[i] == "4") {
+            if(paramChoices[i].equals("4")) {
                 System.out.println("\nEnter the type of crime");
                 String crimeType = scanner.nextLine();
                 searchParams.add(crimeType);
             }
 
-            if(paramChoices[i] == "5") {
+            if(paramChoices[i].equals("5")) {
                 System.out.println("\nEnter the location of the crime");
                 String location = scanner.nextLine();
                 searchParams.add(location);
             }
 
-            if(paramChoices[i] == "6") {
+            if(paramChoices[i].equals("6")) {
                 System.out.println("\nEnter the date that the crime took place");
                 String date = scanner.nextLine();
                 searchParams.add(date);
             }
 
-            if(paramChoices[i] == "7") {
+            if(paramChoices[i].equals("7")) {
                 System.out.println("Enter the UUID of a piece of evidence related to the crime.");
                 String evidenceID = scanner.nextLine();
                 searchParams.add(evidenceID);
@@ -147,7 +149,7 @@ public class DataBaseUI {
 
     private void searchPerson() {
         System.out.println("\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Tattoo Description\n16. ShoeSize\n17. crimeOrganization\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma (no space).\n");
-        String input = scanner.nextLine();
+        String input = scanner.next();
         String[] paramChoices = new String[7];
         paramChoices = input.split(",");
         List<String> paramChoiceList = Arrays.asList(paramChoices);
@@ -155,103 +157,103 @@ public class DataBaseUI {
         
         ArrayList<String> searchParams = new ArrayList<String>();
         for(int i=0; i<paramChoices.length; i++) {
-            if(paramChoices[i] == "1") {
+            if(paramChoices[i].equals("1")) {
                 System.out.println("\nEnter the first name of the person you would like to search");
                 String firstName = scanner.nextLine();
                 searchParams.add(firstName);
             }
 
-            if(paramChoices[i] == "2") {
+            if(paramChoices[i].equals("2")) {
                 System.out.println("\nEnter the last name of the person you would like to search");
                 String lastName = scanner.nextLine();
                 searchParams.add(lastName);
             }
 
-            if(paramChoices[i] == "3") {
+            if(paramChoices[i].equals("3")) {
                 System.out.println("\nEnter the age of the person you would like to search");
                 String age = scanner.nextLine();
                 searchParams.add(age);
             }
 
-            if(paramChoices[i] == "4") {
+            if(paramChoices[i].equals("4")) {
                 System.out.println("\nEnter the gender of the person you would like to search");
                 String gender = scanner.nextLine();
                 searchParams.add(gender);
             }
 
-            if(paramChoices[i] == "5") {
+            if(paramChoices[i].equals("5")) {
                 System.out.println("\nEnter the race or ethnicity of the person you would like to search");
                 String race = scanner.nextLine();
                 searchParams.add(race);
             }
 
-            if(paramChoices[i] == "6") {
+            if(paramChoices[i].equals("6")) {
                 System.out.println("\nEnter the UUID of the person you would like to search");
                 String personid = scanner.nextLine();
                 searchParams.add(personid);
             }
 
-            if(paramChoices[i] == "7") {
+            if(paramChoices[i].equals("7")) {
                 System.out.println("\nEnter the address of the person you would like to search");
                 String address = scanner.nextLine();
                 searchParams.add(address);
             }
 
-            if(paramChoices[i] == "8") {
+            if(paramChoices[i].equals("8")) {
                 System.out.println("\nEnter the profession of the person you would like to search");
                 String profession = scanner.nextLine();
                 searchParams.add(profession);
             }
 
-            if(paramChoices[i] == "9") {
+            if(paramChoices[i].equals("9")) {
                 System.out.println("\nEnter the height of the person you would like to search");
                 String height = scanner.nextLine();
                 searchParams.add(height);
             }
 
-            if(paramChoices[i] == "10") {
+            if(paramChoices[i].equals("10")) {
                 System.out.println("\nEnter the weight of the person you would like to search");
                 String weight = scanner.nextLine();
                 searchParams.add(weight);
             }
 
-            if(paramChoices[i] == "11") {
+            if(paramChoices[i].equals("11")) {
                 System.out.println("\nEnter the skin color of the person you would like to search");
                 String skinColor = scanner.nextLine();
                 searchParams.add(skinColor);
             }
 
-            if(paramChoices[i] == "12") {
+            if(paramChoices[i].equals("12")) {
                 System.out.println("\nEnter the natural hair color of the person you would like to search");
                 String naturalHairColor = scanner.nextLine();
                 searchParams.add(naturalHairColor);
             }
 
-            if(paramChoices[i] == "13") {
+            if(paramChoices[i].equals("13")) {
                 System.out.println("\nEnter the un-natural hair color of the person you would like to search");
                 String unNaturalHairColor = scanner.nextLine();
                 searchParams.add(unNaturalHairColor);
             }
 
-            if(paramChoices[i] == "14") {
+            if(paramChoices[i].equals("14")) {
                 System.out.println("\nEnter the clothing of the person you would like to search");
                 String clothing = scanner.nextLine();
                 searchParams.add(clothing);
             }
 
-            if(paramChoices[i] == "15") {
+            if(paramChoices[i].equals("15")) {
                 System.out.println("\nEnter the tattoo description of the person you would like to search");
                 String tattooDescription = scanner.nextLine();
                 searchParams.add(tattooDescription);
             }
 
-            if(paramChoices[i] == "16") {
+            if(paramChoices[i].equals("16")) {
                 System.out.println("\nEnter the shoe size of the person you would like to search");
                 String shoeSize = scanner.nextLine();
                 searchParams.add(shoeSize);
             }
 
-            if(paramChoices[i] == "17") {
+            if(paramChoices[i].equals("17")) {
                 System.out.println("\nEnter the criminal organization of the person you would like to search");
                 String crimeOrganization = scanner.nextLine();
                 searchParams.add(crimeOrganization);
@@ -317,27 +319,27 @@ public class DataBaseUI {
         String[] inputArr = input.split(",");
         ArrayList<TypeOfCrime> felonyType = new ArrayList<TypeOfCrime>();
         for(int i=0; i<felonyType.size(); i++) {
-            if(inputArr[i] == "1") {
+            if(inputArr[i].equals("1")) {
                 felonyType.add(TypeOfCrime.CLASSAFELONY);
             }
 
-            if(inputArr[i] == "2") {
+            if(inputArr[i].equals("2")) {
                 felonyType.add(TypeOfCrime.CLASSBFELONY);
             }
 
-            if(inputArr[i] == "3") {
+            if(inputArr[i].equals("3")) {
                 felonyType.add(TypeOfCrime.CLASSCFELONY);
             }
 
-            if(inputArr[i] == "4") {
+            if(inputArr[i].equals("4")) {
                 felonyType.add(TypeOfCrime.CLASSDFELONY);
             }
 
-            if(inputArr[i] == "5") {
+            if(inputArr[i].equals("5")) {
                 felonyType.add(TypeOfCrime.CLASSEFELONY);
             }
 
-            if(inputArr[i] == "6") {
+            if(inputArr[i].equals("6")) {
                 felonyType.add(TypeOfCrime.CLASSFFELONY);   
             }
         }
@@ -790,108 +792,108 @@ public class DataBaseUI {
         String[] editChoices = input.split(",");
 
         for(int i=0; i<18; i++) {
-            if(editChoices[i] == "1") {
+            if(editChoices[i].equals("1")) {
                 System.out.println("\nEnter the first name of the person you would like to edit");
                 String firstName = scanner.nextLine();
                 replacement.setFirstName(firstName);
             }
 
-            if(editChoices[i] == "2") {
+            if(editChoices[i].equals("2")) {
                 System.out.println("\nEnter the last name of the person you would like to edit");
                 String lastName = scanner.nextLine();
                 replacement.setLastName(lastName);
             }
 
-            if(editChoices[i] == "3") {
+            if(editChoices[i].equals("3")) {
                 System.out.println("\nEnter the age of the person you would like to edit");
                 int age = scanner.nextInt();
                 scanner.nextLine();
                 replacement.setAge(age);
             }
 
-            if(editChoices[i] == "4") {
+            if(editChoices[i].equals("4")) {
                 System.out.println("\nEnter the gender of the person you would like to edit");
                 String gender = scanner.nextLine();
                 replacement.setGender(gender);
             }
 
-            if(editChoices[i] == "5") {
+            if(editChoices[i].equals("5")) {
                 System.out.println("\nEnter the race or ethnicity of the person you would like to edit");
                 String race = scanner.nextLine();
                 replacement.setRace(race);
             }
 
-            if(editChoices[i] == "6") {
+            if(editChoices[i].equals("6")) {
                 System.out.println("\nEnter the UUID of the person you would like to edit");
                 String pID = scanner.nextLine();
                 UUID personID = UUID.fromString(pID);
                 replacement.setPersonID(personID);
             }
 
-            if(editChoices[i] == "7") {
+            if(editChoices[i].equals("7")) {
                 System.out.println("\nEnter the address of the person you would like to edit");
                 String address = scanner.nextLine();
                 replacement.setAddress(address);
             }
 
-            if(editChoices[i] == "8") {
+            if(editChoices[i].equals("8")) {
                 System.out.println("\nEnter the profession of the person you would like to edit");
                 String profession = scanner.nextLine();
                 replacement.setProfession(profession);
             }
 
-            if(editChoices[i] == "9") {
+            if(editChoices[i].equals("9")) {
                 System.out.println("\nEnter the height of the person you would like to edit");
                 double height = scanner.nextDouble();
                 scanner.nextLine();
                 replacement.setHeight(height);
             }
 
-            if(editChoices[i] == "10") {
+            if(editChoices[i].equals("10")) {
                 System.out.println("\nEnter the weight of the person you would like to edit");
                 double weight = scanner.nextDouble();
                 scanner.nextLine();
                 replacement.setWeight(weight);
             }
 
-            if(editChoices[i] == "11") {
+            if(editChoices[i].equals("11")) {
                 System.out.println("\nEnter the skin color of the person you would like to edit");
                 String skinColor = scanner.nextLine();
                 replacement.setSkinColor(skinColor);
             }
 
-            if(editChoices[i] == "12") {
+            if(editChoices[i].equals("12")) {
                 System.out.println("\nEnter the natural hair color of the person you would like to edit");
                 String naturalHairColor = scanner.nextLine();
                 replacement.setHairColorNatural(naturalHairColor);
             }
 
-            if(editChoices[i] == "13") {
+            if(editChoices[i].equals("13")) {
                 System.out.println("\nEnter the un-natural hair color of the person you would like to edit");
                 String unNaturalHairColor = scanner.nextLine();
                 replacement.setHairColorUnNatural(unNaturalHairColor);
             }
 
-            if(editChoices[i] == "14") {
+            if(editChoices[i].equals("14")) {
                 System.out.println("\nEnter the clothing of the person you would like to edit");
                 String clothing = scanner.nextLine();
                 replacement.setClothing(clothing);
             }
 
-            if(editChoices[i] == "15") {
+            if(editChoices[i].equals("15")) {
                 System.out.println("\nEnter the tattoo description of the person you would like to edit");
                 String tattooDescription = scanner.nextLine();
                 replacement.setTattooDescription(tattooDescription);
             }
 
-            if(editChoices[i] == "16") {
+            if(editChoices[i].equals("16")) {
                 System.out.println("\nEnter the shoe size of the person you would like to edit");
                 double shoeSize = scanner.nextDouble();
                 scanner.nextLine();
                 replacement.setShoeSize(shoeSize);
             }
 
-            if(editChoices[i] == "17") {
+            if(editChoices[i].equals("17")) {
                 System.out.println("\nEnter the criminal organization of the person you would like to edit");
                 String crimeOrganization = scanner.nextLine();
                 replacement.setCriminalOrganization(crimeOrganization);
@@ -917,19 +919,19 @@ public class DataBaseUI {
         String[] editChoices = input.split(",");
 
         for(int i=0; i<editChoices.length; i++) {
-            if(editChoices[i] == "1") {
+            if(editChoices[i].equals("1")) {
                 System.out.println("\nEnter the CaseID of the crime you would like to edit");
                 UUID caseID = UUID.fromString(scanner.nextLine());
                 replacement.setID(caseID);
             }
 
-            if(editChoices[i] == "2") {
+            if(editChoices[i].equals("2")) {
                 System.out.println("\nEnter the case title of the crime you would like to edit");
                 String title = scanner.nextLine();
                 replacement.setTitle(title);
             }
 
-            if(editChoices[i] == "3") {
+            if(editChoices[i].equals("3")) {
                 System.out.println("\nEnter the UUIDs of the people involved separated by a comma (no spaces)");
                 input = scanner.nextLine();
                 String[] p1 = input.split(",");
@@ -947,52 +949,52 @@ public class DataBaseUI {
                 replacement.setPeople(setpeople);
             }
 
-            if(editChoices[i] == "4") {
+            if(editChoices[i].equals("4")) {
                 System.out.println("What type of felony is this crime?\n1. Class A felony\n2. Class B felony\n3. Class C felony\n4. Class D felony\n5. Class E felony\n6. Class F felony\nPlease enter the numbers corresponding to the type of felonies that this crime falls under. Separate numbers by comma with no space");
                 String input2 = scanner.nextLine();
                 String[] inputArr = input2.split(",");
                 ArrayList<TypeOfCrime> felonyType = new ArrayList<TypeOfCrime>();
                 for(int j=0; i<inputArr.length; i++) {
-                    if(inputArr[i] == "1") {
+                    if(inputArr[i].equals("1")) {
                         felonyType.add(TypeOfCrime.CLASSAFELONY);
                     }
         
-                    if(inputArr[i] == "2") {
+                    if(inputArr[i].equals("2")) {
                         felonyType.add(TypeOfCrime.CLASSBFELONY);
                     }
         
-                    if(inputArr[i] == "3") {
+                    if(inputArr[i].equals("3")) {
                         felonyType.add(TypeOfCrime.CLASSCFELONY);
                     }
         
-                    if(inputArr[i] == "4") {
+                    if(inputArr[i].equals("4")) {
                         felonyType.add(TypeOfCrime.CLASSDFELONY);
                     }
         
-                    if(inputArr[i] == "5") {
+                    if(inputArr[i].equals("5")) {
                         felonyType.add(TypeOfCrime.CLASSEFELONY);
                     }
         
-                    if(inputArr[i] == "6") {
+                    if(inputArr[i].equals("6")) {
                         felonyType.add(TypeOfCrime.CLASSFFELONY);   
                     }
                 }
                 replacement.setTypeOfCrime(felonyType);
             }
 
-            if(editChoices[i] == "5") {
+            if(editChoices[i].equals("5")) {
                 System.out.println("\nEnter the location of the crime");
                 String location = scanner.nextLine();
                 replacement.setLocation(location);
             }
 
-            if(editChoices[i] == "6") {
+            if(editChoices[i].equals("6")) {
                 System.out.println("\nEnter the date that the crime took place");
                 String date = scanner.nextLine();
                 replacement.setDate(date);
             }
 
-            if(editChoices[i] == "7") {
+            if(editChoices[i].equals("7")) {
                 ArrayList<Evidence> evidence = temp.getEvidence();
                 for(int j=0; j<evidence.size(); j++) {
                     Evidence tempEvidence = evidence.get(j);
