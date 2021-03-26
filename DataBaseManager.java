@@ -8,11 +8,12 @@ public class DataBaseManager {
     private CrimeList crimeList;
     private PersonList personList;
     private LawEnforcementUser user;
-/*
+
     public DataBaseManager() {
-        
+        policeBST = UserSearchTree.getUserSearchTree(); 
+        crimeList = CrimeList.getCrimeList(); 
+        personList = PersonList.getPersonList(); 
     }
-*/
 
     public void AddCrime(Crime crime) {
         crimeList.addCrime(crime);

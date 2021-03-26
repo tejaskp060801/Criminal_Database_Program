@@ -5,7 +5,7 @@ import javax.lang.model.util.ElementScanner6;
 
 public class DataBaseUI {
     private static final String WELCOME_MSG = "**********Welcome to the Criminal Database system**********";
-    private DataBaseManager databaseManager;
+    private DataBaseManager databaseManager = new DataBaseManager(); 
     private Scanner scanner = new Scanner(System.in);
 
     /**
@@ -723,7 +723,7 @@ public class DataBaseUI {
     }
 
     private void loginUser(String username, String password) {
-        if (databaseManager.loginUser(username, password) == false) {
+        if (!databaseManager.loginUser(username, password)) {
             System.out.println("There is no user with that username and password.\nWould you like to create a user? (Y/N)");
             String c = scanner.nextLine();
             if(c == "Y" || c == "y") {
