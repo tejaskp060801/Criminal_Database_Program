@@ -121,7 +121,7 @@ public class CrimeList {
 
                 if(parameterChoices.get(j) == "5") 
                 {
-                   String crimeType = UUID.fromString(searchParameters.get(j));                    
+                   String crimeType = searchParameters.get(j);                    
                     if(crimeType != current.getTypeOfCrime()) {
                         temp.remove(current);
                         break;
