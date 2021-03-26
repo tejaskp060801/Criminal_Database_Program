@@ -213,8 +213,7 @@ public class PersonList {
                 if(parameterChoices.get(j) == "17")
                 {
                     String search = searchParameters.get(j);
-                    
-                    if(temp.getOrganization().contains(search))
+                    if(current.getOrganization().contains(search))
                         break;
                     else {
                         temp.remove(current);
