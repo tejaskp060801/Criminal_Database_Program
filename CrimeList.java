@@ -93,7 +93,7 @@ public class CrimeList {
                 if(parameterChoices.get(j).equals("2"))//STRING
                 {
 
-                    if(searchParameters.get(j) != current.getTitle()) 
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getTitle()))
                     {
                         temp.remove(current);
                         break;
@@ -112,7 +112,7 @@ public class CrimeList {
 
                 if(parameterChoices.get(j).equals("4"))//STRING
                 {
-                    if(searchParameters.get(j) != current.getLocation()) 
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getLocation())) 
                     {
                         temp.remove(current);
                         break;
@@ -139,7 +139,7 @@ public class CrimeList {
 
                 if(parameterChoices.get(j).equals("6")) //String date
                 {
-                    if(searchParameters.get(j) != current.getDate()) 
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getDate()))
                     {
                         temp.remove(current);
                         break;
