@@ -11,7 +11,7 @@
             {
                 "eviddescription": "This is a counterfeit cigarette, clearly made without the proper licensing",
                 "evidenceId": "ead6e722-8675-11eb-8dcd-0242ac130003",
-                "evidenceType": null
+                "evidenceType": "normal"
             }, {
                 "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
                 "evidenceId": "f302aeea-8675-11eb-8dcd-0242ac130003",
@@ -19,14 +19,14 @@
                 "bloodType": "AB+",
                 "bloodVolume": "10.0"
             }, {
-                "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
+                "eviddescription": "HAIR",
                 "evidenceId": "f573a770-8732-11eb-8dcd-0242ac130003",
                 "evidenceType": "HairSample",
                 "color": "green",
                 "length": 1.2,
                 "thickness": 0.1
             }, {
-                "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
+                "eviddescription": "Which way is the beach?",
                 "evidenceId": "fb8d7e88-8732-11eb-8dcd-0242ac130003",
                 "evidenceType": "Gun",
                 "GunType": "Westchester",
@@ -34,7 +34,7 @@
                 "bulletType": "12 grain",
                 "yearmade": 1967
             }, {
-                "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
+                "eviddescription": "A bullet",
                 "evidenceId": "01d146b2-8733-11eb-8dcd-0242ac130003",
                 "evidenceType": "Bullet",
                 "Type": "12 grain"
@@ -47,7 +47,7 @@
         "title": "Watermelon murder",
         "isSolved": true,
         "People": [ "1f6f069c-8660-11eb-8dcd-0242ac130003" ],
-        "typeofCrime": [ "class A felony" ],
+        "typeofCrime": [ "classAfelony" ],
         "location": "Corner of Fredrickson and Main",
         "date": "February 2nd, 2020 at 4:02",
         "evidence": [
@@ -57,7 +57,7 @@
                 "evidenceType": "normal"
             }
         ],
-        "workingOnCase": [ "asnelling", "bigRex31" ],
+        "workingOnCase": [ "asnelling", "weewoo" ],
         "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
     }, {
         "caseNumber": "d00cd23e-8e5a-11eb-8dcd-0242ac130003",
