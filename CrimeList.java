@@ -100,14 +100,10 @@ public class CrimeList {
                     }
                 }
                 
-                if(parameterChoices.get(j) == "3") //ARRAY LIST
+                if(parameterChoices.get(j) == "3") 
                 {
-                    ArrayList<LawEnforcementUser> workingoncase = ArrayList.parseArrayList(searchParameters.get(j));
-                    String search = searchParameters.get(j);
-                    
-                    if(current.getWorkingOnCaseArrayList().contains(search))
-                        break;
-                    else{
+                    UUID id = UUID.fromString(searchParameters.get(j));                    
+                    if(id != current.getcasenumber()) {
                         temp.remove(current);
                         break;
                     }
@@ -123,18 +119,13 @@ public class CrimeList {
                     }
                 }
 
-                if(parameterChoices.get(j) == "5") //ARRAYLIST
+                if(parameterChoices.get(j) == "5") 
                 {
-                    ArrayList<TypeOfCrime> typeOfCrime = ArrayList.parseArrayList(searchParameters.get(j));
-                    String search = searchParameters.get(j);
-                    if(current.getTypeOfCrime().contains(search))
+                    UUID id = UUID.fromString(searchParameters.get(j));                    
+                    if(id != current.getTypeOfCrime()) {
+                        temp.remove(current);
                         break;
-
-                        else
-                        {
-                            temp.remove(current);
-                            break;
-                        }
+                    }
                     
                 }
 
@@ -161,14 +152,11 @@ public class CrimeList {
 
                 if(parameterChoices.get(j) == "7")
                 {
-                    ArrayList<Evidence> evidence = ArrayList.parseArrayList(searchParameters.get(j));
-                    String search = searchParameters.get(j);
-                    if(current.getEvidence().contains(search))
-                        break;
-                    else{
+                    UUID id = UUID.fromString(searchParameters.get(j));                    
+                    if(id != current.getEvidence()) {
                         temp.remove(current);
                         break;
-                        }
+                    }
                     
                 }
 
