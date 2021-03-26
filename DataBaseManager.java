@@ -34,7 +34,7 @@ public class DataBaseManager {
         ArrayList<Crime> temp = crimeList.searchCrime(parameterChoices, searchParameters);
         for(int i=0; i<temp.size(); i++) {
             Crime c = temp.get(i);
-            c.toString();
+            System.out.println(c.toString());
         }
         return temp;
     }
@@ -43,7 +43,7 @@ public class DataBaseManager {
         ArrayList<Person> temp = personList.searchPerson(parameterChoices, searchParameters);
         for(int i=0; i<temp.size(); i++) {
             Person p = temp.get(i);
-            p.toString();
+            System.out.println(p.toString());
         }
         return temp;
     }
