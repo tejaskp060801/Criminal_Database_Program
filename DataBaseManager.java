@@ -30,12 +30,22 @@ public class DataBaseManager {
         return;
     }
 
-    public void searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {  
-        crimeList.searchCrime(parameterChoices, searchParameters);
+    public ArrayList<Crime> searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {  
+        ArrayList<Crime> temp = crimeList.searchCrime(parameterChoices, searchParameters);
+        for(int i=0; i<temp.size(); i++) {
+            Crime c = temp.get(i);
+            c.toString();
+        }
+        return temp;
     }
 
-    public void searchPerson(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {
-        personList.searchPerson(parameterChoices, searchParameters);
+    public ArrayList<Person> searchPerson(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {
+        ArrayList<Person> temp = personList.searchPerson(parameterChoices, searchParameters);
+        for(int i=0; i<temp.size(); i++) {
+            Person p = temp.get(i);
+            p.toString();
+        }
+        return temp;
     }
 
     public Crime searchCrime(UUID id) {
