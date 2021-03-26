@@ -42,9 +42,9 @@ public abstract class PersonOfInterest extends Person{
         }
 
         return super.toString()+ 
-        "\n The crimes this person is involved in is " + crimeStr
-        + "\n The relations this person has are " + relationStr
-        + "\n the statement this person has to make is " + this.statement;
+        "\nCrime IDs: " + crimeStr
+        + "\nRelations IDs " + relationStr
+        + "\nStatement: " + this.statement;
     }
 
      

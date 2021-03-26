@@ -80,11 +80,11 @@ public class Criminal extends Person {
         }
 
         return super.toString() 
-        + "\n Is this person Deceased? " +this.Deceased 
-        + "\n The assosciates associated with this criminal are " + assStr
-        + "\n The crimes this person has commited are " + crimeStr 
-        + "\n The family members associated with this criminal are " + famStr 
-        + "\n Is this person in Jail? " + this.isInJail; 
+        + "\nDeceased: " +this.Deceased 
+        + "\nAssociate IDs: " + assStr
+        + "\nCrime IDs: " + crimeStr 
+        + "\nFamily Member IDs: " + famStr 
+        + "\nIn Jail: " + this.isInJail; 
     }
     
 }

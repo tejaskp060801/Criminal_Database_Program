@@ -29,7 +29,7 @@ public class FamilyMember extends Person{
     }
     public String toString() {
         return super.toString() 
-        + "\n the relationship between criminal and family member is " + this.relationship 
-        + "\n the Relationship ID is "  + this.relationshipID;
+        + "\nRelationship with Criminal: " + this.relationship 
+        + "\nID of criminal relation: "  + this.relationshipID;
     }
 }
