@@ -43,10 +43,12 @@ public class JSONReader extends JSONconstants {
                 LawEnforcementUser temp = new LawEnforcementUser(username, password, firstname, lastname, clearance, id);
                 ret.addElement(temp);
             }
+            filereader.close();
         } catch(Exception e) {
             e.printStackTrace();
             return null;
         }
+
         return ret;
     }
 
@@ -194,6 +196,7 @@ public class JSONReader extends JSONconstants {
                     return null;
                 }
             }
+        filereader.close();
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -310,6 +313,7 @@ public class JSONReader extends JSONconstants {
                     date, evidence, workingoncase, crimedesc);
                 ret.add(temp);
             } 
+        filereader.close();
         } catch(Exception e) {
             e.printStackTrace();
             return null;

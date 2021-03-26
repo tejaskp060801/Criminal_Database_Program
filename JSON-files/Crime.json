@@ -1,1 +1,74 @@
-[{"date":"February 19th, 2021 at 15:21","evidence":[{"eviddescription":"This is a counterfeit cigarette, clearly made without the proper licensing","evidenceId":"ead6e722-8675-11eb-8dcd-0242ac130003","evidenceType":"normal"},{"bloodVolume":"10.0","eviddescription":"Jerome Anderson blood sample found at the site of the accident","evidenceId":"f302aeea-8675-11eb-8dcd-0242ac130003","evidenceType":"BloodSample","bloodType":"AB+"},{"eviddescription":"HAIR","color":"green","thickness":0.1,"evidenceId":"f573a770-8732-11eb-8dcd-0242ac130003","evidenceType":"HairSample","length":1.2},{"yearmade":1967,"eviddescription":"Which way is the beach?","bulletType":"12 grain","evidenceId":"fb8d7e88-8732-11eb-8dcd-0242ac130003","evidenceType":"Gun","model":"1967","GunType":"Westchester"},{"Type":"12 grain","eviddescription":"A bullet","evidenceId":"01d146b2-8733-11eb-8dcd-0242ac130003","evidenceType":"Bullet"}],"caseNumber":"ab4639e8-8664-11eb-8dcd-0242ac130003","isSolved":true,"typeofCrime":["CLASSCFELONY","CLASSEFELONY"],"People":["16027eb8-8660-11eb-8dcd-0242ac130003"],"location":"Intersection of Assembly and Blossom","workingOnCase":["asnelling","bigRex31"],"title":"Jerome Anderson car accident","crimeDescription":"The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"},{"date":"February 2nd, 2020 at 4:02","evidence":[{"eviddescription":"A written confession from Ms. Windower indicating that she murdered her watermelon","evidenceId":"f91a8316-8675-11eb-8dcd-0242ac130003","evidenceType":"normal"}],"caseNumber":"c0a98718-8664-11eb-8dcd-0242ac130003","isSolved":true,"typeofCrime":["CLASSAFELONY"],"People":["1f6f069c-8660-11eb-8dcd-0242ac130003"],"location":"Corner of Fredrickson and Main","workingOnCase":["asnelling","weewoo"],"title":"Watermelon murder","crimeDescription":"The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"}]
+[
+    {
+        "caseNumber": "ab4639e8-8664-11eb-8dcd-0242ac130003",
+        "title": "Jerome Anderson car accident",
+        "isSolved": true,
+        "People": [ "16027eb8-8660-11eb-8dcd-0242ac130003" ],
+        "typeofCrime": ["classCfelony", "classEfelony"],
+        "location": "Intersection of Assembly and Blossom",
+        "date": "February 19th, 2021 at 15:21",
+        "evidence": [
+            {
+                "eviddescription": "This is a counterfeit cigarette, clearly made without the proper licensing",
+                "evidenceId": "ead6e722-8675-11eb-8dcd-0242ac130003",
+                "evidenceType": "normal"
+            }, {
+                "eviddescription": "Jerome Anderson blood sample found at the site of the accident",
+                "evidenceId": "f302aeea-8675-11eb-8dcd-0242ac130003",
+                "evidenceType": "BloodSample",
+                "bloodType": "AB+",
+                "bloodVolume": "10.0"
+            }, {
+                "eviddescription": "HAIR",
+                "evidenceId": "f573a770-8732-11eb-8dcd-0242ac130003",
+                "evidenceType": "HairSample",
+                "color": "green",
+                "length": 1.2,
+                "thickness": 0.1
+            }, {
+                "eviddescription": "Which way is the beach?",
+                "evidenceId": "fb8d7e88-8732-11eb-8dcd-0242ac130003",
+                "evidenceType": "Gun",
+                "GunType": "Westchester",
+                "model": "1967",
+                "bulletType": "12 grain",
+                "yearmade": 1967
+            }, {
+                "eviddescription": "A bullet",
+                "evidenceId": "01d146b2-8733-11eb-8dcd-0242ac130003",
+                "evidenceType": "Bullet",
+                "Type": "12 grain"
+            }
+        ],
+        "workingOnCase": [ "asnelling", "bigRex31" ],
+        "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
+    }, {
+        "caseNumber": "c0a98718-8664-11eb-8dcd-0242ac130003",
+        "title": "Watermelon murder",
+        "isSolved": true,
+        "People": [ "1f6f069c-8660-11eb-8dcd-0242ac130003" ],
+        "typeofCrime": [ "classAfelony" ],
+        "location": "Corner of Fredrickson and Main",
+        "date": "February 2nd, 2020 at 4:02",
+        "evidence": [
+            {
+                "eviddescription": "A written confession from Ms. Windower indicating that she murdered her watermelon",
+                "evidenceId": "f91a8316-8675-11eb-8dcd-0242ac130003",
+                "evidenceType": "normal"
+            }
+        ],
+        "workingOnCase": [ "asnelling", "weewoo" ],
+        "crimeDescription": "The suspect failed to stop after a fatal car accident and they were found to be in possession of counterfeit cigarettes"
+    }, {
+        "caseNumber": "d00cd23e-8e5a-11eb-8dcd-0242ac130003",
+        "title": "Robbed a bar, stole liquor",
+        "isSolved": true,
+        "People": [ "afa2dd06-8e53-11eb-8dcd-0242ac130003" ],
+        "typeofCrime": ["classBfelony"],
+        "location": "Five Points",
+        "date": "February 30th, 2015 at 15:21",
+        "evidence": [ ],
+        "workingOnCase": [  ],
+        "crimeDescription": "Robbed a bar with just his fist"
+    }
+]

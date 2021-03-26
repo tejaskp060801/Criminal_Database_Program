@@ -1,1 +1,31 @@
-[{"firstName":"Alanna","lastName":"Snelling","password":"ilikebeingpolice123","LawEnforcementID":"8637eec8-865d-11eb-8dcd-0242ac130003","clearanceLevel":1,"username":"asnelling"},{"firstName":"Rex","lastName":"Varley","password":"wherethecriminals","LawEnforcementID":"8c60225c-865d-11eb-8dcd-0242ac130003","clearanceLevel":2,"username":"bigRex31"},{"firstName":"John","lastName":"Cena","password":"special","LawEnforcementID":"90ea7070-865d-11eb-8dcd-0242ac130003","clearanceLevel":3,"username":"weewoo"}]
+[
+    {
+        "LawEnforcementID": "8637eec8-865d-11eb-8dcd-0242ac130003",
+        "username": "asnelling",
+        "password": "ilikebeingpolice123",
+        "firstName": "Alanna",
+        "lastName": "Snelling",
+        "clearanceLevel": 1
+    }, {
+        "LawEnforcementID": "8c60225c-865d-11eb-8dcd-0242ac130003",
+        "username": "bigRex31",
+        "password": "wherethecriminals",
+        "firstName": "Rex",
+        "lastName": "Varley",
+        "clearanceLevel": 2
+    }, {
+        "LawEnforcementID": "90ea7070-865d-11eb-8dcd-0242ac130003",
+        "username": "weewoo",
+        "password": "special",
+        "firstName": "John",
+        "lastName": "Cena",
+        "clearanceLevel": 3
+    }, {
+        "LawEnforcementID": "90ea7070-865d-11eb-8dcd-0242ac130003",
+        "username": "Mandelini123",
+        "password": "wow",
+        "firstName": "Charles",
+        "lastName": "Mandelin",
+        "clearanceLevel": 3
+    }
+]
