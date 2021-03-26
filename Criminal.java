@@ -7,10 +7,12 @@ public class Criminal extends Person {
     private ArrayList<UUID> crimes; 
     private ArrayList<UUID> family; 
     private ArrayList<UUID> associates; 
+
     public Criminal(String firstName, String lastName, int age, String gender, String race, UUID id, String address,
     String profession, double height, double weight, String skinCol, String natHairCol, String unNatHairCol,
     String clothing, boolean hasTattoo, String tatDesc, double shoeSize, boolean isUsCitizen,
     String org, boolean isInJail, boolean Deceased, ArrayList<UUID> crimes, ArrayList<UUID> fm, ArrayList<UUID> assoc) {
+        
         super(firstName, lastName, age, gender, race, id, address, profession, height, weight, skinCol, natHairCol, unNatHairCol, clothing, hasTattoo, tatDesc, shoeSize, isUsCitizen, org); 
         this.setisInJail(isInJail); 
         this.setDeceased(Deceased);;
@@ -62,11 +64,26 @@ public class Criminal extends Person {
         this.associates = assoc; 
     }
     public String toString() {
+        String crimeStr = "";
+        for(UUID c : crimes) {
+            crimeStr += "\n" + "\t" + c.toString();
+        }
+
+        String assStr = "";
+        for(UUID a : associates) {
+            assStr += "\n" + "\t" + a.toString();
+        }
+
+        String famStr = "";
+        for(UUID f : family) {
+            famStr += "\n" + "\t" + f.toString();
+        }
+
         return super.toString() 
         + "\n Is this person Deceased? " +this.Deceased 
-        + "\n The assosciates associated with this criminal are " + this.associates 
-        + "\n The crimes this person has commited are " + this.crimes 
-        + "\n The family members associated with this criminal are " + this.family 
+        + "\n The assosciates associated with this criminal are " + assStr
+        + "\n The crimes this person has commited are " + crimeStr 
+        + "\n The family members associated with this criminal are " + famStr 
         + "\n Is this person in Jail? " + this.isInJail; 
     }
     

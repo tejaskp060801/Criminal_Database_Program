@@ -31,9 +31,19 @@ public abstract class PersonOfInterest extends Person{
         return this.statement; 
     }
     public String toString(){
+        String crimeStr = "";
+        for(UUID c : crimes) {
+            crimeStr += "\n" + "\t" + c.toString();
+        }
+
+        String relationStr = "";
+        for(UUID r : relations) {
+            relationStr += "\n" + "\t" + r.toString();
+        }
+
         return super.toString()+ 
-        "\n The crimes this person is involved in is " + this.crimes 
-        + "\n The relations this person has are " + this.relations
+        "\n The crimes this person is involved in is " + crimeStr
+        + "\n The relations this person has are " + relationStr
         + "\n the statement this person has to make is " + this.statement;
     }
 
