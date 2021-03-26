@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.UUID;
 import java.util.Iterator;
+import java.util.List;
 
 
 public class CrimeList {
@@ -47,6 +48,19 @@ public class CrimeList {
         return searchCrime(crime.getcasenumber());
     }
 
+    public Crime searchCrime(UUID id){
+        Iterator<Crime> iterator = crimes.iterator();
+        while (iterator.hasNext()){
+            Crime temp = iterator.next();
+            if(temp.getcasenumber().compareTo(id) == 0){
+                return temp;
+            }
+        }
+        System.out.println("Sorry, this crime does not exist");
+        return null;
+    }
+
+    /*
     public Crime searchCrime(UUID id) {
         for (int i = 0; i < crimes.size(); i++) {
             if (crimes.get(i).getcasenumber().compareTo(id) == 0) {
@@ -56,69 +70,118 @@ public class CrimeList {
         System.out.println("Sorry, this crime does not exist");
         return null;
     }
+    */
 
-    public ArrayList<Crime> searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters)
-    {
+    public ArrayList<Crime> searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters){
+        ArrayList<Crime> temp = crimes;
         for(int i = 0; i < crimes.size(); i++)
         {
-            Crime temp = crimes.get(i);
+            Crime current = crimes.get(i);
             for(int j =0; j < searchParameters.size(); j++)
             {
                 
-                if(parameterChoices.get(j) == "1")
+                if(parameterChoices.get(j) == "1")//UUID
+                {
+                    UUID id = UUID.fromString(searchParameters.get(j));
+                    if(id != current.getcasenumber()) 
+                    {
+                        temp.remove(current);
+                        break;
+                    }
+                }
+
+                if(parameterChoices.get(j) == "2")//STRING
                 {
 
-                    if(searchParameters.get(j) == temp.getcasenumber())
+                    if(searchParameters.get(j) != current.getTitle()) 
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
-                if(parameterChoices.get(j) == "2")
+                
+                if(parameterChoices.get(j) == "3") //ARRAY LIST
                 {
+                    ArrayList<LawEnforcementUser> workingoncase = ArrayList.parseArrayList(searchParameters.get(j));
+                    String search = searchParameters.get(j);
+                    
+                    if(current.getWorkingOnCaseArrayList().contains(search))
+                        break;
+                    else{
+                        temp.remove(current);
+                        break;
+                    }
+                
+                }
 
-                    if(searchParameters.get(j) == temp.getTitle())
-                    {
-                        return temp;
-                    }
-                }
-                if(parameterChoices.get(j) == "3")
+                if(parameterChoices.get(j) == "4")//STRING
                 {
-                    if(searchParameters.get(j) == temp.getWorkingOnCaseArrayList())
+                    if(searchParameters.get(j) != current.getLocation()) 
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
-                if(parameterChoices.get(j) == "4")
+
+                if(parameterChoices.get(j) == "5") //ARRAYLIST
                 {
-                    if(searchParameters.get(j) == temp.getLocation())
-                    {
-                        return temp;
-                    }
+                    ArrayList<TypeOfCrime> typeOfCrime = ArrayList.parseArrayList(searchParameters.get(j));
+                    String search = searchParameters.get(j);
+                    if(current.getTypeOfCrime().contains(search))
+                        break;
+
+                        else
+                        {
+                            temp.remove(current);
+                            break;
+                        }
+                    
                 }
-                if(parameterChoices.get(j) == "5")
+
+
+                if(parameterChoices.get(j) == "6") //String date
                 {
-                    if(searchParameters.get(j) == temp.getTypeOfCrime())
+                    if(searchParameters.get(j) != current.getDate()) 
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
-                }
-                if(parameterChoices.get(j) == "6")
-                {
-                    if(searchParameters.get(j) ==  temp.getDate())
-                    {
-                        return temp;
+                    /*
+                    String search = searchParameters.get(j);
+                    if(current.getDate().contains(search))
+                        break;
+                    else{
+                        temp.remove(current);
+                        break;
                     }
+                    */
+
+                    
                 }
+
                 if(parameterChoices.get(j) == "7")
                 {
-                    if(searchParameters.get(j) == temp.getEvidence())
-                    {
-                        return temp;
-                    }
-                 }
+                    ArrayList<Evidence> evidence = ArrayList.parseArrayList(searchParameters.get(j));
+                    String search = searchParameters.get(j);
+                    if(current.getEvidence().contains(search))
+                        break;
+                    else{
+                        temp.remove(current);
+                        break;
+                        }
+                    
+                }
+
+
              }
-         }
-        return null;
+         
+        if(temp.isEmpty()){
+            return null;
+        }
+        else{
+            return temp;
+        }
+    }
     }
 
    
