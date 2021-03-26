@@ -167,13 +167,7 @@ public class CrimeList {
 
              }
         }
-        if(temp.isEmpty()){
-            return null;
-        }
-        else{
             return temp;
-        }
-    
     }
 
    

@@ -221,13 +221,7 @@ public class PersonList {
                 
             }
         }
-        if(temp.isEmpty()) {
-            return null;
-        }
-
-        else {
             return temp;
-        }
     }
 
     public void getInformation(Person person) {
