@@ -145,13 +145,13 @@ public class DataBaseUI {
             System.out.println("Crime title: " + c.getTitle() + "\nDescription: " + c.getCrimeDescription() + "\nDate: " + c.getDate() + "\nCrime is solved: " + c.isSolved());
             System.out.println("Would you like to display all of this crime's information? (Y/N)");
             String q = scanner.nextLine();
-            if(q == "Y" || q == "y") {
+            if(q.equalsIgnoreCase("y")) {
                 System.out.println(c.toString());
             }
 
             System.out.println("Would you like to export this crime's information to a text file? (Y/N)");
             q = scanner.nextLine();
-            if(q =="Y" || q == "y") {
+            if(q.equalsIgnoreCase("y")) {
                 databaseManager.export(1, c.getcasenumber());
             }
         }
@@ -273,13 +273,13 @@ public class DataBaseUI {
             System.out.println("First name: " + p.getFirstName() + "\nLast name: " + p.getLastName() + "\nAge: " + p.getAge() + "\nAddress: " + p.getAddress());
             System.out.println("Would you like to display all of this person's information? (Y/N)");
             String c = scanner.nextLine();
-            if(c == "Y" || c == "y") {
+            if(c.equalsIgnoreCase("y")) {
                 System.out.println(p.toString());
             }
 
             System.out.println("Would you like to export this person's information to a text file? (Y/N)");
             c = scanner.nextLine();
-            if(c =="Y" || c == "y") {
+            if(c.equalsIgnoreCase("y")) {
                 databaseManager.export(1, p.getPersonID());
             }
         }
