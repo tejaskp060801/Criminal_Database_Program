@@ -94,8 +94,7 @@ public class DataBaseUI {
     private void searchCrime() {
         System.out.println("\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Type of crime\n5. Location of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma(no space).\n");
         String input = scanner.nextLine();
-        String[] paramChoices = new String[7];
-        paramChoices = input.split(",");
+        String [] paramChoices = input.split(",");
         List<String> paramChoiceList = Arrays.asList(paramChoices);
         ArrayList<String> paramChoiceArrayList = new ArrayList<String>(paramChoiceList);
         
