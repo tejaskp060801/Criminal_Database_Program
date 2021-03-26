@@ -100,7 +100,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j) == "4")
                 {
-                    if(searchParameters.get(j) == current.getGender())
+                    if(searchParameters.get(j) != current.getGender())
                     {
                         temp.remove(current);
                         break;
@@ -125,7 +125,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j) == "7")
                 {
-                    if(searchParameters.get(j) == current.getAddress())
+                    if(searchParameters.get(j) != current.getAddress())
                     {
                         temp.remove(current);
                         break;
@@ -133,7 +133,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j) == "8")
                 {
-                    if(searchParameters.get(j) == current.getProfession())
+                    if(searchParameters.get(j) != current.getProfession())
                     {
                         temp.remove(current);
                         break;
@@ -213,8 +213,7 @@ public class PersonList {
                 if(parameterChoices.get(j) == "17")
                 {
                     String search = searchParameters.get(j);
-                    
-                    if(temp.getOrganization().contains(search))
+                    if(current.getOrganization().contains(search))
                         break;
                     else {
                         temp.remove(current);
