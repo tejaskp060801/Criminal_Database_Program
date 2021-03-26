@@ -72,7 +72,7 @@ public class PersonList {
                 
                 if(parameterChoices.get(j).equals("1"))
                 {
-                    if(searchParameters.get(j) != current.getFirstName())
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getFirstName()))
                     {
                         temp.remove(current);
                         break;
@@ -81,7 +81,7 @@ public class PersonList {
                 if(parameterChoices.get(j).equals("2"))
                 {
 
-                    if(searchParameters.get(j) != current.getLastName())
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getLastName()))
                     {
                         temp.remove(current);
                         break;
@@ -98,7 +98,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j).equals("4"))
                 {
-                    if(searchParameters.get(j) != current.getGender())
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getGender()))
                     {
                         temp.remove(current);
                         break;
@@ -106,7 +106,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j).equals("5"))
                 {
-                    if(searchParameters.get(j) != current.getRace())
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getRace()))
                     {
                         temp.remove(current);
                         break;
@@ -115,7 +115,7 @@ public class PersonList {
                 if(parameterChoices.get(j).equals("6"))
                 {
                     UUID id = UUID.fromString(searchParameters.get(j));
-                    if(id !=  current.getPersonID())
+                    if(id.compareTo(current.getPersonID()) != 0)
                     {
                         temp.remove(current);
                         break;
@@ -123,7 +123,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j).equals("7"))
                 {
-                    if(searchParameters.get(j) != current.getAddress())
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getAddress()))
                     {
                         temp.remove(current);
                         break;
@@ -131,7 +131,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j).equals("8"))
                 {
-                    if(searchParameters.get(j) != current.getProfession())
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getProfession()))
                     {
                         temp.remove(current);
                         break;
@@ -157,7 +157,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j).equals("11"))
                 {
-                    if(searchParameters.get(j) != current.getSkinColor())
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getSkinColor()))
                     {
                         temp.remove(current);
                         break;
@@ -165,7 +165,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j).equals("12"))
                 {
-                    if(searchParameters.get(j) != current.getHairColorNatural())
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getHairColorNatural()))
                     {
                         temp.remove(current);
                         break;
@@ -173,7 +173,7 @@ public class PersonList {
                 }
                 if(parameterChoices.get(j).equals("13"))
                 {
-                    if(searchParameters.get(j) != current.getHairColorUnNatural())
+                    if(!searchParameters.get(j).equalsIgnoreCase(current.getHairColorUnNatural()))
                     {
                         temp.remove(current);
                         break;
