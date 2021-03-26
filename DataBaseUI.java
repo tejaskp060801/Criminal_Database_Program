@@ -85,10 +85,8 @@ public class DataBaseUI {
         if(choice == 2) {
             System.out.println("Searching for crime\nHow would you like to search for this crime?");
             searchCrime();
-           }
-        else  
-            System.out.println("Invalid input");
-        return;
+        }
+        
     }
 
     private void searchCrime() {
@@ -302,8 +300,6 @@ public class DataBaseUI {
             addCrime();
             System.out.println("The crime has been added to the database");
         }
-        else  
-            System.out.println("Invalid input");
     }
 
     private void addCrime() {
