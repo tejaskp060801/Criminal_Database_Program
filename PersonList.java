@@ -64,9 +64,9 @@ public class PersonList {
     //.get(index) = It returns the element at the specified index in the given list.
     //had to change it from people[j] and parameterChoices[j] and searchParameters[j] cause it gave errors
         ArrayList<Person> temp = personlist.getPeople();
-        for(int i = 0; i< people.size(); i++)
+        for(int i = 0; i< temp.size(); i++)
         {
-            Person current = people.get(i);
+            Person current = temp.get(i);
             for(int j = 0; j < searchParameters.size(); j++)
             {
                 
@@ -155,7 +155,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j).equals("15"))
+                if(parameterChoices.get(j).equals("11"))
                 {
                     if(searchParameters.get(j) != current.getSkinColor())
                     {
@@ -163,7 +163,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j).equals("16"))
+                if(parameterChoices.get(j).equals("12"))
                 {
                     if(searchParameters.get(j) != current.getHairColorNatural())
                     {
@@ -171,7 +171,7 @@ public class PersonList {
                         break;
                     }
                 }
-                if(parameterChoices.get(j).equals("15"))
+                if(parameterChoices.get(j).equals("13"))
                 {
                     if(searchParameters.get(j) != current.getHairColorUnNatural())
                     {
