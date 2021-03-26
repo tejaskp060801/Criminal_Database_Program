@@ -21,7 +21,7 @@ public class CrimeList {
     }
 
     public void addCrime(Crime crime) {
-        crimelist.addCrime(crime);
+        crimes.add(crime);
     }
 
     public boolean removeCrime(Crime crime ) {
