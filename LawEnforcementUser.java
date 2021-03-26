@@ -1,5 +1,3 @@
-
-
 import java.util.UUID;
 
 public class LawEnforcementUser implements Comparable<LawEnforcementUser> {
@@ -75,3 +73,7 @@ public class LawEnforcementUser implements Comparable<LawEnforcementUser> {
                 "\nlastname: " + this.lastname;
     }
 }
+
+
+
+
