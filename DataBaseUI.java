@@ -148,13 +148,13 @@ public class DataBaseUI {
             System.out.println("Would you like to display all of this crime's information? (Y/N)");
             String q = scanner.nextLine();
             if(q == "Y" || q == "y") {
-                System.out.println(p.toString());
+                System.out.println(c.toString());
             }
 
             System.out.println("Would you like to export this crime's information to a text file? (Y/N)");
             q = scanner.nextLine();
             if(q =="Y" || q == "y") {
-                databaseManager.export(1, p.getPersonID());
+                databaseManager.export(1, c.getPersonID());
             }
         }
     }
