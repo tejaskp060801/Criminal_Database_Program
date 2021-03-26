@@ -62,152 +62,175 @@ public class PersonList {
         return null;
     }
 
-    public Person searchPerson(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters) {
+    public ArrayList<Person> searchPerson(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {
     //.get(index) = It returns the element at the specified index in the given list.
     //had to change it from people[j] and parameterChoices[j] and searchParameters[j] cause it gave errors
+        ArrayList<Person> temp = people;
         for(int i = 0; i< people.size(); i++)
         {
-            Person temp = people.get(i);
+            Person current = people.get(i);
             for(int j = 0; j < searchParameters.size(); j++)
             {
                 
                 if(parameterChoices.get(j) == "1")
                 {
-
-                    if(searchParameters.get(j) == temp.getFirstName())
+                    if(searchParameters.get(j) != current.getFirstName())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "2")
                 {
 
-                    if(searchParameters.get(j) == temp.getLastName())
+                    if(searchParameters.get(j) != current.getLastName())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "3")
                 {
-                    if(searchParameters.get(j) == temp.getAge()) 
+                    int age = Integer.paraseInt(searchParameters.get(j));
+                    if(age != current.getAge()) 
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "4")
                 {
-                    if(searchParameters.get(j) == temp.getGender())
+                    if(searchParameters.get(j) == current.getGender())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "5")
                 {
-                    if(searchParameters.get(j) == temp.getRace())
+                    if(searchParameters.get(j) != current.getRace())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "6")
                 {
-                    if(searchParameters.get(j) ==  temp.getPersonID())
+                    UUID id = UUID.fromString(searchParameters.get(j));
+                    if(id !=  current.getPersonID())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "7")
                 {
-                    if(searchParameters.get(j) == temp.getAddress())
+                    if(searchParameters.get(j) == current.getAddress())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "8")
                 {
-                    if(searchParameters.get(j) == temp.getProfession())
+                    if(searchParameters.get(j) == current.getProfession())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "9")
                 {
-                    if(searchParameters.get(j) == temp.getHeight()) //double
+                    double height = Double.parseDouble(searchParameters.get(j));
+                    if(height != current.getHeight()) //double
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "10")
                 {
-                    if(searchParameters.get(j) == temp.getWeight()) //double
+                    double weight = Double.parseDouble(searchParameters.get(j));
+                    if(weight != current.getWeight()) //double
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "11")
                 {
-                    if(searchParameters.get(j) == temp.getSkinColor())
+                    if(searchParameters.get(j) != current.getSkinColor())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "12")
                 {
-                    if(searchParameters.get(j) == temp.getHairColorNatural())
+                    if(searchParameters.get(j) != current.getHairColorNatural())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "13")
                 {
-                    if(searchParameters.get(j) == temp.getHairColorUnNatural())
+                    if(searchParameters.get(j) != current.getHairColorUnNatural())
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "14")
                 {
-                    if(searchParameters.get(j) == temp.getClothing())
-                    {
-                        return temp;
+                    String search = searchParameters.get(j);
+                    if(current.getClothing().contains(search))
+                        break;
+                    else {
+                        temp.remove(current);
+                        break;
                     }
                 }
-                if(parameterChoices[j] == "15")
+                if(parameterChoices.get(j) == "15")
                 {
-                    if(searchParameters.get(j) == temp.getTattoo())    //boolean
-                    {
-                        return temp;
+                    String search = searchParameters.get(j);
+                    if(current.getTattooDescription().contains(search)) 
+                        break;
+                    else {
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "16")
                 {
-                    if(searchParameters.get(j) == temp.getShoeSize())  ///double
+                    double shoeSize = Double.parseDouble(searchParameters.get(j));
+                    if(shoeSize != current.getShoeSize())  
                     {
-                        return temp;
+                        temp.remove(current);
+                        break;
                     }
                 }
                 if(parameterChoices.get(j) == "17")
                 {
-                    if(searchParameters.get(j) == temp.getIsUSCitizen())  ////boolean
-                    {
-                        return temp;
+                    String search = searchParameters.get(j);
+                    
+                    if(temp.getOrganization().contains(search))
+                        break;
+                    else {
+                        temp.remove(current);
+                        break;
                     }
                 }
-                if(parameterChoices.get(j) == "18")
-                {
-                    if(searchParameters.get(j) == temp.getOrganization())
-                    {
-                        return temp;
-                    }
-                }
-                if(parameterChoices.get(j) == "19")
-                {
-                    if(searchParameters.get(j) == temp.getType())
-                    {
-                        return temp;
-                    }
-                }
-             }
-         }
+                
+            }
+        }
+        if(temp.isEmpty()) {
+            return null;
+        }
+
+        else {
+            return temp;
+        }
     }
 
     public void getInformation(Person person) {

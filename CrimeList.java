@@ -57,7 +57,7 @@ public class CrimeList {
         return null;
     }
 
-    public Crime searchCrime(ArrayList<String> parameterChoices, ArrayList<Object> searchParameters)
+    public ArrayList<Crime> searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters)
     {
         for(int i = 0; i < crimes.size(); i++)
         {
