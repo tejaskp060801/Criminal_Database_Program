@@ -518,9 +518,19 @@ public class DataBaseUI {
         double shoeSize = scanner.nextDouble();
         scanner.nextLine();
 
+        System.out.println("Is this person a US citizen (Y/N)");
+        String cit = scanner.nextLine();
+        boolean isUSCitizen;
+        if(cit == "Y" || cit == "y")
+            isUSCitizen = true;
+        else
+            isUSCitizen = false;
+
+        System.out.println("Enter the crime organization (if any) that this person is associated with");
+        String crimeOrg = scanner.nextLine();
+
         ArrayList<UUID> crimes = new ArrayList<UUID>();
         ArrayList<UUID> relations = new ArrayList<UUID>();
-        String statement;
         if(personType == 1 || personType == 2 || personType == 3) {
             System.out.println("Would you like to add Crimes to the Person? Enter Y / N");  
             String choice1 = scanner.nextLine();
@@ -562,22 +572,7 @@ public class DataBaseUI {
                     break;
                 }
             }
-
-            System.out.println("Please enter the statement for the Person of Interest, if none, simply hit enter");
-            statement = scanner.nextLine();
         }
-
-        System.out.println("Is this person a US citizen (Y/N)");
-        String cit = scanner.nextLine();
-        boolean isUSCitizen;
-        if(cit == "Y" || cit == "y")
-            isUSCitizen = true;
-        else
-            isUSCitizen = false;
-
-        System.out.println("Enter the crime organization (if any) that this person is associated with");
-        String crimeOrg = scanner.nextLine();
-
         //create new person based on person type
         switch(personType) {
             case 1:
@@ -588,6 +583,8 @@ public class DataBaseUI {
                     willTestify = true;
                 else
                     willTestify = false;
+                System.out.println("Please enter the statement for the Person of Interest, if none, simply hit enter");
+                String statement = scanner.nextLine();
                 //construct victim
                 Person newVictim = new Victim(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement, willTestify);
                 return newVictim;
@@ -600,8 +597,10 @@ public class DataBaseUI {
                     willTestify1 = true;
                 else
                     willTestify1 = false;
+                System.out.println("Please enter the statement for the Person of Interest, if none, simply hit enter");
+                String statement1 = scanner.nextLine();
                  //construct witness
-                Person newWitness= new Witness(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement, willTestify1);
+                Person newWitness= new Witness(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement1, willTestify1);
                 return newWitness;
 
             case 3:
@@ -613,7 +612,9 @@ public class DataBaseUI {
                     willTestify2 = true;
                 else
                     willTestify2 = false;
-                Person newSuspect = new Suspect(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement, willTestify2);
+                System.out.println("Please enter the statement for the Person of Interest, if none, simply hit enter");
+                String statement2 = scanner.nextLine();
+                Person newSuspect = new Suspect(firstName, lastName, age, gender, race, personID, address, profession, height, weight, skinColor, natHair, unNatHair, clothing, hasTattoo, tatDescription, shoeSize, isUSCitizen, crimeOrg, crimes, relations, statement2, willTestify2);
                 return newSuspect;
 
             case 4:
