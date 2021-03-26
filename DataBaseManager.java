@@ -63,13 +63,12 @@ public class DataBaseManager {
             Scanner scanner = new Scanner(System.in);
             String directory = scanner.nextLine();
             scanner.close();
-            File d = new File(directory);
             
             //exporting a person file
             if(option == 1) {
                 Person temp = personList.searchPerson(id);
                 String fileName = temp.getFirstName() + temp.getLastName() + ".txt";
-                File personFile = new File(d, fileName);
+                File personFile = new File(fileName);
                 if(personFile.createNewFile()) {
                     FileWriter personWriter = new FileWriter(fileName);
                     personWriter.write(temp.toString());
@@ -79,7 +78,7 @@ public class DataBaseManager {
                 //file already existed, so delete old file and make new one
                 else {
                     personFile.delete();
-                    File personFileUpdate = new File(d, fileName);
+                    File personFileUpdate = new File(fileName);
                     FileWriter personWriterUpdate = new FileWriter(fileName);
                     personWriterUpdate.write(temp.toString());
                     personWriterUpdate.close();
@@ -91,7 +90,7 @@ public class DataBaseManager {
             else if(option == 2) {
                 Crime temp = crimeList.searchCrime(id);
                 String fileName = temp.getTitle() + ".txt";
-                File crimeFile = new File(d, fileName);
+                File crimeFile = new File(fileName);
                 if(crimeFile.createNewFile()) {
                     FileWriter crimeWriter = new FileWriter(fileName);
                     crimeWriter.write(temp.toString());
@@ -101,7 +100,7 @@ public class DataBaseManager {
                 //file already existed, so delete old file and make new one
                 else {
                     crimeFile.delete();
-                    File crimeFileUpdate = new File(d, fileName);
+                    File crimeFileUpdate = new File(fileName);
                     FileWriter crimeWriterUpdate = new FileWriter(fileName);
                     crimeWriterUpdate.write(temp.toString());
                     crimeWriterUpdate.close();
