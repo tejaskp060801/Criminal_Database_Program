@@ -952,28 +952,28 @@ public class DataBaseUI {
                 String input2 = scanner.nextLine();
                 String[] inputArr = input2.split(",");
                 ArrayList<TypeOfCrime> felonyType = new ArrayList<TypeOfCrime>();
-                for(int j=0; i<inputArr.length; i++) {
-                    if(inputArr[i].equals("1")) {
+                for(int j=0; i<inputArr.length; j++) {
+                    if(inputArr[j].equals("1")) {
                         felonyType.add(TypeOfCrime.CLASSAFELONY);
                     }
         
-                    if(inputArr[i].equals("2")) {
+                    if(inputArr[j].equals("2")) {
                         felonyType.add(TypeOfCrime.CLASSBFELONY);
                     }
         
-                    if(inputArr[i].equals("3")) {
+                    if(inputArr[j].equals("3")) {
                         felonyType.add(TypeOfCrime.CLASSCFELONY);
                     }
         
-                    if(inputArr[i].equals("4")) {
+                    if(inputArr[j].equals("4")) {
                         felonyType.add(TypeOfCrime.CLASSDFELONY);
                     }
         
-                    if(inputArr[i].equals("5")) {
+                    if(inputArr[j].equals("5")) {
                         felonyType.add(TypeOfCrime.CLASSEFELONY);
                     }
         
-                    if(inputArr[i].equals("6")) {
+                    if(inputArr[j].equals("6")) {
                         felonyType.add(TypeOfCrime.CLASSFFELONY);   
                     }
                 }
