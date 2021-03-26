@@ -140,23 +140,23 @@ public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> typ
     public String toString() { 
         String tocStr = "";
         for(TypeOfCrime t : typeOfCrime) {
-            tocStr += "\n" + t.toString();
+            tocStr += "\n" + "\t" + t.toString();
         }
 
 
         String evidenceStr = "";
         for(Evidence e : evidence) {
-            evidenceStr += "\n" + e.toString();
+            evidenceStr += "\n" + "\t" + e.toString();
         }
         
         String peopleStr = "";
         for(Person p : people) {
-            peopleStr += "\n" + p.toString();
+            peopleStr += "\n" + "\t" + p.toString();
         }
 
         String workingOnCaseStr = "";
         for(LawEnforcementUser l : workingoncase) {
-            workingOnCaseStr += "\n" + l.toString();
+            workingOnCaseStr += "\n" + "\t" + l.toString();
         }
 
         return "\n----------\n" + "Case Number: " + this.casenumber +"\nTitle "

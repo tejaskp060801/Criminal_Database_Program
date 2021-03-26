@@ -62,11 +62,26 @@ public class Criminal extends Person {
         this.associates = assoc; 
     }
     public String toString() {
+        String crimeStr = "";
+        for(UUID c : crimes) {
+            crimeStr += "\n" + "\t" + c.toString();
+        }
+
+        String assStr = "";
+        for(UUID a : assoc) {
+            assStr += "\n" + "\t" + a.toString();
+        }
+
+        String famStr = "";
+        for(UUID f : fm) {
+            famStr += "\n" + "\t" + f.toString();
+        }
+
         return super.toString() 
         + "\n Is this person Deceased? " +this.Deceased 
-        + "\n The assosciates associated with this criminal are " + this.associates 
-        + "\n The crimes this person has commited are " + this.crimes 
-        + "\n The family members associated with this criminal are " + this.family 
+        + "\n The assosciates associated with this criminal are " + assStr
+        + "\n The crimes this person has commited are " + crimeStr 
+        + "\n The family members associated with this criminal are " + famStr 
         + "\n Is this person in Jail? " + this.isInJail; 
     }
     
