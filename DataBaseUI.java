@@ -444,11 +444,6 @@ public class DataBaseUI {
                         break;
                 }
             }
-            System.out.println("Would you like to add more evidence to the crime?");  
-            String choice = scanner.nextLine();
-            if(choice.equalsIgnoreCase("y")) {
-                continue;
-            } 
             else {
                 break;
             }
@@ -1126,7 +1121,7 @@ public class DataBaseUI {
                     }
                 }
                 while(true) {
-                    System.out.println("Would you like to add more evidence to this crime? (Y/N)");
+                    System.out.println("Would you like to add evidence to this crime? (Y/N)");
                     String n = scanner.nextLine();
                     if(n.equalsIgnoreCase("n"))
                         break;
