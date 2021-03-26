@@ -70,5 +70,27 @@
         "evidence": [ ],
         "workingOnCase": [  ],
         "crimeDescription": "Robbed a bar with just his fist"
+    }, {
+        "caseNumber": "44a63d06-8e60-11eb-8dcd-0242ac130003",
+        "title": "Stolen Mario Kart",
+        "isSolved": false,
+        "People": [ "dae424e0-8e60-11eb-8dcd-0242ac130003", "4ed79822-8e62-11eb-8dcd-0242ac130003", "2df6e0a2-8e64-11eb-8dcd-0242ac130003", "26f1634a-8e64-11eb-8dcd-0242ac130003"  ],
+        "typeofCrime": ["classAfelony"],
+        "location": "Mario Kart Raceway",
+        "date": "March 25th, 2021 at 4:21",
+        "evidence": [ 
+            {
+                "eviddescription": "A picture of the suspect driving away in the Mario Kart",
+                "evidenceId": "e38914c6-8e64-11eb-8dcd-0242ac130003",
+                "evidenceType": "normal"
+            },
+            {
+                "eviddescription": "A video of the suspect doing doughnuts in the Mario Kart in his driveway",
+                "evidenceId": "e8963b88-8e64-11eb-8dcd-0242ac130003",
+                "evidenceType": "normal"
+            }
+        ],
+        "workingOnCase": [  ],
+        "crimeDescription": "A life sized mario kart was stolen from the raceway by an unknown person"
     }
 ]
