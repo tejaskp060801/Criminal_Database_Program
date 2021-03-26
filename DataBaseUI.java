@@ -598,7 +598,7 @@ public class DataBaseUI {
                 System.out.println("Will this Witness testify (Y/N)");
                 String test1 = scanner.nextLine();
                 boolean willTestify1;
-                if(test == "Y" || test == "y")
+                if(test1 == "Y" || test1 == "y")
                     willTestify1 = true;
                 else
                     willTestify1 = false;
@@ -1014,9 +1014,10 @@ public class DataBaseUI {
                         if(type == "HairSample") {
                             System.out.println("Would you like to edit the color? (Y/N)");
                             in = scanner.nextLine();
+                            HairSample tempEvidence2 = (HairSample) tempEvidence;
                             if(in == "Y" || in == "y") {
                                 String color = scanner.nextLine();
-                                tempEvidence.setColor(color);
+                                tempEvidence2.setColor(color);
                             }
 
                             System.out.println("Would you like to edit the length? (Y/N)");
