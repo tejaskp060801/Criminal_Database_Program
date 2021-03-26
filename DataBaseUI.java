@@ -148,9 +148,8 @@ public class DataBaseUI {
 
     private void searchPerson() {
         System.out.println("\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Tattoo Description\n16. ShoeSize\n17. crimeOrganization\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma (no space).\n");
-        String input = scanner.next();
-        String[] paramChoices = new String[7];
-        paramChoices = input.split(",");
+        String input = scanner.nextLine();
+        String[] paramChoices = input.split(",");
         List<String> paramChoiceList = Arrays.asList(paramChoices);
         ArrayList<String> paramChoiceArrayList = new ArrayList<String>(paramChoiceList);
         
