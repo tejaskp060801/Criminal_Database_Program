@@ -75,7 +75,7 @@ public class DataBaseUI {
     }
 
     private void search() {
-        System.out.println("What would you like to search for?\n 1. Person\n2. Crime");
+        System.out.println("What would you like to search for?\n1. Person\n2. Crime");
         int choice = scanner.nextInt();
         scanner.nextLine();
         if(choice == 1) {
@@ -154,6 +154,9 @@ public class DataBaseUI {
             if(q.equalsIgnoreCase("y")) {
                 databaseManager.export(1, c.getcasenumber());
             }
+        }
+        if (crimes.size() == 0) {
+            System.out.println("No crimes were found");
         }
     }
 
@@ -282,6 +285,9 @@ public class DataBaseUI {
             if(c.equalsIgnoreCase("y")) {
                 databaseManager.export(1, p.getPersonID());
             }
+        }
+        if (persons.size() == 0) {
+            System.out.println("No people matched your search");
         }
     }
 
