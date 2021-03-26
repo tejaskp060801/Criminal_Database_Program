@@ -154,7 +154,7 @@ public class DataBaseUI {
             System.out.println("Would you like to export this crime's information to a text file? (Y/N)");
             q = scanner.nextLine();
             if(q =="Y" || q == "y") {
-                databaseManager.export(1, c.getPersonID());
+                databaseManager.export(1, c.getcasenumber());
             }
         }
     }
