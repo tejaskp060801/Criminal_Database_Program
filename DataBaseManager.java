@@ -30,12 +30,22 @@ public class DataBaseManager {
         return;
     }
 
-    public void searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {  
-        crimeList.searchCrime(parameterChoices, searchParameters);
+    public ArrayList<Crime> searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {  
+        ArrayList<Crime> temp = crimeList.searchCrime(parameterChoices, searchParameters);
+        for(int i=0; i<temp.size(); i++) {
+            Crime c = temp.get(i);
+            System.out.println(c.toString());
+        }
+        return temp;
     }
 
-    public void searchPerson(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {
-        personList.searchPerson(parameterChoices, searchParameters);
+    public ArrayList<Person> searchPerson(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {
+        ArrayList<Person> temp = personList.searchPerson(parameterChoices, searchParameters);
+        for(int i=0; i<temp.size(); i++) {
+            Person p = temp.get(i);
+            System.out.println(p.toString());
+        }
+        return temp;
     }
 
     public Crime searchCrime(UUID id) {
@@ -59,10 +69,6 @@ public class DataBaseManager {
     public void export(int option, UUID id) {
         try {
             //user will select the directory they want to save the file to
-            System.out.println("Enter the directory you would like to export the file to");
-            Scanner scanner = new Scanner(System.in);
-            String directory = scanner.nextLine();
-            scanner.close();
             
             //exporting a person file
             if(option == 1) {
