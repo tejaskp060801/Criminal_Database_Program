@@ -63,7 +63,7 @@ public class PersonList {
     public ArrayList<Person> searchPerson(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {
     //.get(index) = It returns the element at the specified index in the given list.
     //had to change it from people[j] and parameterChoices[j] and searchParameters[j] cause it gave errors
-        ArrayList<Person> temp = people;
+        ArrayList<Person> temp = personlist.getPeople();
         for(int i = 0; i< people.size(); i++)
         {
             Person current = people.get(i);
