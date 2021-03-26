@@ -64,9 +64,9 @@ public class PersonList {
     //.get(index) = It returns the element at the specified index in the given list.
     //had to change it from people[j] and parameterChoices[j] and searchParameters[j] cause it gave errors
         ArrayList<Person> temp = personlist.getPeople();
-        for(int i = 0; i< temp.size(); i++)
+        for(int i = 0; i< people.size(); i++)
         {
-            Person current = temp.get(i);
+            Person current = people.get(i);
             for(int j = 0; j < searchParameters.size(); j++)
             {
                 
@@ -192,9 +192,9 @@ public class PersonList {
                 if(parameterChoices.get(j).equals("15"))
                 {
                     String search = searchParameters.get(j);
-                    if(current.getTattooDescription().contains(search)) 
+                    if(current.getTattooDescription().contains(search)) {
                         break;
-                    else {
+                    } else {
                         temp.remove(current);
                         break;
                     }
