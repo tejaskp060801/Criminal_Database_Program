@@ -73,24 +73,24 @@ public class CrimeList {
     */
 
     public ArrayList<Crime> searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters){
-        ArrayList<Crime> temp = crimes;
+        ArrayList<Crime> temp = crimelist.getCrimes();
         for(int i = 0; i < crimes.size(); i++)
         {
             Crime current = crimes.get(i);
             for(int j =0; j < searchParameters.size(); j++)
             {
                 
-                if(parameterChoices.get(j) == "1")//UUID
+                if(parameterChoices.get(j).equals("1"))//UUID
                 {
                     UUID id = UUID.fromString(searchParameters.get(j));
-                    if(id != current.getcasenumber()) 
+                    if(current.getcasenumber().compareTo(id) != 0) 
                     {
                         temp.remove(current);
                         break;
                     }
                 }
 
-                if(parameterChoices.get(j) == "2")//STRING
+                if(parameterChoices.get(j).equals("2"))//STRING
                 {
 
                     if(searchParameters.get(j) != current.getTitle()) 
@@ -100,7 +100,7 @@ public class CrimeList {
                     }
                 }
                 
-                if(parameterChoices.get(j) == "3") 
+                if(parameterChoices.get(j).equals("3")) 
                 {
                     UUID id = UUID.fromString(searchParameters.get(j));                    
                     if(id != current.getcasenumber()) {
@@ -110,7 +110,7 @@ public class CrimeList {
                 
                 }
 
-                if(parameterChoices.get(j) == "4")//STRING
+                if(parameterChoices.get(j).equals("4"))//STRING
                 {
                     if(searchParameters.get(j) != current.getLocation()) 
                     {
@@ -119,7 +119,7 @@ public class CrimeList {
                     }
                 }
 
-                if(parameterChoices.get(j) == "5") 
+                if(parameterChoices.get(j).equals("5")) 
                 {
                    String crimeType = searchParameters.get(j);
                    ArrayList<TypeOfCrime> crimeTypeList = current.getTypeOfCrime();
@@ -137,7 +137,7 @@ public class CrimeList {
                 }
 
 
-                if(parameterChoices.get(j) == "6") //String date
+                if(parameterChoices.get(j).equals("6")) //String date
                 {
                     if(searchParameters.get(j) != current.getDate()) 
                     {
@@ -157,7 +157,7 @@ public class CrimeList {
                     
                 }
 
-                if(parameterChoices.get(j) == "7")
+                if(parameterChoices.get(j).equals("7"))
                 {
                     UUID id = UUID.fromString(searchParameters.get(j));  
                     ArrayList<Evidence> e = current.getEvidence();
