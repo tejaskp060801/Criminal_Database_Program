@@ -760,6 +760,7 @@ public class DataBaseUI {
                 databaseManager.createUser(username, password, level, f, l);
             }
             else if(c.equalsIgnoreCase("n")) {
+                System.out.println("- - - Exiting the Criminal Database - - -\nSee you next time!");
                 databaseManager.exit();
             }
         }
