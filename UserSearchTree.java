@@ -18,7 +18,7 @@ public class UserSearchTree {
     public boolean Login (String username, String pw) {
         UserSearchTree usertree = UserSearchTree.getUserSearchTree();
         LawEnforcementUser temp = usertree.search(username);
-        if (temp.passwordCorrect(pw)) {
+        if (temp != null && temp.passwordCorrect(pw)) {
             return true;
         }
         return false;
