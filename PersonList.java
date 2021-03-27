@@ -20,7 +20,7 @@ public class PersonList {
     }
 
     public void addPerson(Person person) {
-        personlist.addPerson(person);
+        people.add(person);
     }
 
     public boolean removePerson(Person p) { 

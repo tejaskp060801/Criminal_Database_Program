@@ -133,7 +133,11 @@ public abstract class Person {
         this.race = race; 
     }
     public void setPersonID (UUID id) {
-        PersonID = id; 
+        if (id == null) {
+            this.PersonID = UUID.randomUUID();
+        } else {
+            this.PersonID = id;
+        }
     }
     public void setAddress(String address) {
         this.address = address; 

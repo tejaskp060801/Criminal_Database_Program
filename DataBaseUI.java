@@ -325,6 +325,7 @@ public class DataBaseUI {
         String s = scanner.nextLine();
         if(s.equalsIgnoreCase("y")) {
             Person temp = addPerson();
+            databaseManager.AddPerson(temp);
             people.add(temp);
         }
         while(true) {
@@ -332,13 +333,11 @@ public class DataBaseUI {
             String more = scanner.nextLine();
             if(more.equalsIgnoreCase("y")) {
                 Person temp = addPerson();
+                databaseManager.AddPerson(temp);
                 people.add(temp);
                 continue;
             }
-            if(more.equalsIgnoreCase("n"))
-                break;
-            else
-                break;
+            break;
         }
         
         System.out.println("What type of felony is this crime?\n1. Class A felony\n2. Class B felony\n3. Class C felony\n4. Class D felony\n5. Class E felony\n6. Class F felony\nPlease enter the numbers corresponding to the type of felonies that this crime falls under. Separate numbers by comma with no space");
