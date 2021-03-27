@@ -128,15 +128,6 @@ public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> typ
     //i dont these two are neccessary because the person class doesnt have one like this either
     //sort of confused with what information
 
-    public void addInformation() {  
-
-       
-    }
-
-    public void editInformation(){ 
-        
-    }
-
     public String toString() { 
         String tocStr = "";
         for(TypeOfCrime t : typeOfCrime) {
