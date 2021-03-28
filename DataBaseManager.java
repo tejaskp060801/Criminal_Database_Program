@@ -61,7 +61,7 @@ public class DataBaseManager {
     public boolean loginUser(String username, String password) {
         //check if user with that username and pw exists first, if they do, login, if not create user
         return policeBST.Login(username, password);       
-    }
+    }                                                                                                                                                            
 
     public void logoutUser() {
         save();

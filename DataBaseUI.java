@@ -152,7 +152,7 @@ public class DataBaseUI {
             System.out.println("Would you like to export this crime's information to a text file? (Y/N)");
             q = scanner.nextLine();
             if(q.equalsIgnoreCase("y")) {
-                databaseManager.export(1, c.getcasenumber());
+                databaseManager.export(2, c.getcasenumber());
             }
         }
         if (crimes.size() == 0) {
