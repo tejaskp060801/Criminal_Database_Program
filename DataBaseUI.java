@@ -477,7 +477,7 @@ public class DataBaseUI {
         int personType = scanner.nextInt();
         scanner.nextLine();
         
-        System.out.println("If there is any information that you are unsure of, press ENTER that pieice of information will be skipped for now");
+        System.out.println("If there is any information that you are unsure of, press ENTER that piece of information will be skipped for now");
 
         //get all attributes for general person
         System.out.println("Enter the first name of the person you would like to add");
@@ -865,7 +865,7 @@ public class DataBaseUI {
             }
 
             if(editChoices[i].equals("9")) {
-                System.out.println("\nEnter the height of the person you would like to edit. Enter feet followed by \".\" , followed by inches");
+                System.out.println("\nEnter the height of the person you would like to edit. Enter feet followed by \".\" , followed by inches)");
                 double height = scanner.nextDouble();
                 scanner.nextLine();
                 replacement.setHeight(height);
