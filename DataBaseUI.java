@@ -1,8 +1,6 @@
 
 import java.util.*;
 
-import javax.lang.model.util.ElementScanner6;
-
 public class DataBaseUI {
     private static final String WELCOME_MSG = "**********Welcome to the Criminal Database system**********";
     private DataBaseManager databaseManager = new DataBaseManager(); 

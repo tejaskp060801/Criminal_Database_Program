@@ -30,23 +30,11 @@ public class DataBaseManager {
 
     public ArrayList<Crime> searchCrime(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {  
         ArrayList<Crime> temp = crimeList.searchCrime(parameterChoices, searchParameters);
-        /*
-        for(int i=0; i<temp.size(); i++) {
-            Crime c = temp.get(i);
-            System.out.println(c.toString());
-        }
-        */
         return temp;
     }
 
     public ArrayList<Person> searchPerson(ArrayList<String> parameterChoices, ArrayList<String> searchParameters) {
         ArrayList<Person> temp = personList.searchPerson(parameterChoices, searchParameters);
-        /*
-        for(int i=0; i<temp.size(); i++) {
-            Person p = temp.get(i);
-            System.out.println(p.toString());
-        }
-        */
         return temp;
     }
 
