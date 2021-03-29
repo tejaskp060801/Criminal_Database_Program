@@ -811,7 +811,7 @@ public class DataBaseUI {
         String input = scanner.nextLine();
         String[] editChoices = input.split(",");
 
-        for(int i=0; i<18; i++) {
+        for(int i=0; i < editChoices.length; i++) {
             if(editChoices[i].equals("1")) {
                 System.out.println("\nEnter the first name of the person you would like to edit");
                 String firstName = scanner.nextLine();
@@ -938,7 +938,7 @@ public class DataBaseUI {
         String input = scanner.nextLine();
         String[] editChoices = input.split(",");
 
-        for(int i=0; i<editChoices.length; i++) {
+        for(int i=0; i < editChoices.length; i++) {
             if(editChoices[i].equals("1")) {
                 System.out.println("\nEnter the CaseID of the crime you would like to edit");
                 UUID caseID = UUID.fromString(scanner.nextLine());
