@@ -934,7 +934,7 @@ public class DataBaseUI {
         Crime temp = databaseManager.searchCrime(crimeIDEdit); 
         Crime replacement = temp;
 
-        System.out.println("What attributes of this crime would you like to edit?\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Tattoo Description\n16. ShoeSize\n17. crimeOrganization\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma (no space).\n");
+        System.out.println("What attributes of this crime would you like to edit?\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Type of crime\n5. Location of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma(no space).\n");
         String input = scanner.nextLine();
         String[] editChoices = input.split(",");
 
