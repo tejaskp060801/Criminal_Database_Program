@@ -88,7 +88,7 @@ public class DataBaseUI {
     }
 
     private void searchCrime() {
-        System.out.println("\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Type of crime\n5. Location of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma(no space).\n");
+        System.out.println("\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Location of crime\n5. Type of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma(no space).\n");
         String input = scanner.nextLine();
         String [] paramChoices = input.split(",");
         List<String> paramChoiceList = Arrays.asList(paramChoices);
@@ -115,13 +115,13 @@ public class DataBaseUI {
             }
 
             if(paramChoices[i].equals("4")) {
-                System.out.println("\nEnter the type of crime");
+                System.out.println("\nEnter the location of the crime");
                 String crimeType = scanner.nextLine();
                 searchParams.add(crimeType);
             }
 
             if(paramChoices[i].equals("5")) {
-                System.out.println("\nEnter the location of the crime");
+                System.out.println("\nEnter the type of crime");
                 String location = scanner.nextLine();
                 searchParams.add(location);
             }
