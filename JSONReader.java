@@ -12,17 +12,9 @@ import java.io.FileReader;
 import java.util.UUID;
 import java.util.Iterator;
 
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public class JSONReader extends JSONconstants {
-
-    public static void LoadData() {
-        getUsers();
-        getPeople();
-        getCrimes();
-    }
 
     public static BinarySearchTree<LawEnforcementUser> getUsers() {
         BinarySearchTree<LawEnforcementUser> ret = new BinarySearchTree<LawEnforcementUser>();

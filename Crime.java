@@ -142,7 +142,7 @@ public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> typ
         
         String peopleStr = "";
         for(Person p : people) {
-            peopleStr += "\n" + "\t" + p.toString();
+            peopleStr += "\n" + p.toString();
         }
 
         String workingOnCaseStr = "";
@@ -150,12 +150,12 @@ public Crime(UUID id, String title, boolean isSolved, ArrayList<TypeOfCrime> typ
             workingOnCaseStr += "\n" + "\t" + l.toString();
         }
 
-        return "\n----------\n" + "Case Number: " + this.casenumber +"\nTitle "
+        return "\n\n----------------------------------------------\n\n" + "Case Number: " + this.casenumber +"\nTitle "
         + this.title  + "\nSolved or Unsolved: " + this.isSolved +
-        "\nPeople" + peopleStr + " \nType of Crime" + tocStr + " Location\n" +
+        "\nPeople Involved:" + peopleStr + " \nType of Crime" + tocStr + " Location\n" +
         this.location + "\nDate: " + this.date + "\nEvidence: " + evidenceStr + 
         "\nLaw Enforcement User Working On Case: " + workingOnCaseStr +
-        "\nDescription of Crime: " + this.crimedescription + "\n----------\n"; 
+        "\nDescription of Crime: " + this.crimedescription + "\n\n----------------------------------------------\n\n"; 
     }
 
     public UUID getcasenumber() {

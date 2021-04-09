@@ -1,8 +1,6 @@
 
 import java.util.*;
 
-import javax.lang.model.util.ElementScanner6;
-
 public class DataBaseUI {
     private static final String WELCOME_MSG = "**********Welcome to the Criminal Database system**********";
     private DataBaseManager databaseManager = new DataBaseManager(); 
@@ -90,7 +88,7 @@ public class DataBaseUI {
     }
 
     private void searchCrime() {
-        System.out.println("\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Type of crime\n5. Location of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma(no space).\n");
+        System.out.println("\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Location of crime\n5. Type of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma(no space).\n");
         String input = scanner.nextLine();
         String [] paramChoices = input.split(",");
         List<String> paramChoiceList = Arrays.asList(paramChoices);
@@ -117,13 +115,13 @@ public class DataBaseUI {
             }
 
             if(paramChoices[i].equals("4")) {
-                System.out.println("\nEnter the type of crime");
+                System.out.println("\nEnter the location of the crime");
                 String crimeType = scanner.nextLine();
                 searchParams.add(crimeType);
             }
 
             if(paramChoices[i].equals("5")) {
-                System.out.println("\nEnter the location of the crime");
+                System.out.println("\nEnter the type of crime");
                 String location = scanner.nextLine();
                 searchParams.add(location);
             }
@@ -152,7 +150,7 @@ public class DataBaseUI {
             System.out.println("Would you like to export this crime's information to a text file? (Y/N)");
             q = scanner.nextLine();
             if(q.equalsIgnoreCase("y")) {
-                databaseManager.export(1, c.getcasenumber());
+                databaseManager.export(2, c.getcasenumber());
             }
         }
         if (crimes.size() == 0) {
@@ -813,7 +811,7 @@ public class DataBaseUI {
         String input = scanner.nextLine();
         String[] editChoices = input.split(",");
 
-        for(int i=0; i<18; i++) {
+        for(int i=0; i < editChoices.length; i++) {
             if(editChoices[i].equals("1")) {
                 System.out.println("\nEnter the first name of the person you would like to edit");
                 String firstName = scanner.nextLine();
@@ -936,11 +934,11 @@ public class DataBaseUI {
         Crime temp = databaseManager.searchCrime(crimeIDEdit); 
         Crime replacement = temp;
 
-        System.out.println("What attributes of this crime would you like to edit?\n1. First name\n2. Last name\n3. Age\n4. Gender\n5. Race\n6. Person UUID\n7. Address\n8. Profession\n9. Height\n10. Weight\n11. Skin Color\n12. Natural hair color\n13. Unnatural hair color\n14. Clothing\n15. Tattoo Description\n16. ShoeSize\n17. crimeOrganization\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma (no space).\n");
+        System.out.println("What attributes of this crime would you like to edit?\n1. Case ID\n2. Case title\n3. By people involved in crime\n4. Type of crime\n5. Location of crime\n6. Date of crime\n7. Evidence related to crime\nPlease enter the numbers corresponding to the attributes you would like to search for separated by a comma(no space).\n");
         String input = scanner.nextLine();
         String[] editChoices = input.split(",");
 
-        for(int i=0; i<editChoices.length; i++) {
+        for(int i=0; i < editChoices.length; i++) {
             if(editChoices[i].equals("1")) {
                 System.out.println("\nEnter the CaseID of the crime you would like to edit");
                 UUID caseID = UUID.fromString(scanner.nextLine());
