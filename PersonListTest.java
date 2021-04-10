@@ -7,6 +7,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import jdk.jfr.Timestamp;
+
 //import jdk.jfr.Timestamp;
 
 class PersonListTest {
@@ -93,7 +95,7 @@ class PersonListTest {
     public void testEditPersonValidOldTwo() {
         Person temp = people.get(2);
         Person newPerson = temp;
-        newPerson.setCriminalOrganization("BDK");
+        newPerson.setCriminalOrganization("GDK");
         Person ret = p.edit(temp, newPerson);
         assertEquals(ret, newPerson);
     }
@@ -114,4 +116,107 @@ class PersonListTest {
     }
     
     //TODO tests for seachPerson(parameterChoices, searchParameters)
+    //one parameter valid
+    @Test
+    public void testSearchPersonByParamsOneValid() {
+        ArrayList<String> paramChoices;
+        ArrayList<String> searchParams;
+        ArrayList<Person> persons;
+        Person temp = people.get(1);
+        persons.add(temp);
+        String fName = temp.getFirstName();
+        paramChoices.add("1");
+        searchParams.add(fName);
+        ArrayList <Person> ret = p.searchPerson(paramChoices, searchParams);
+        assertEquals(persons, ret);
+    }
+
+    //one parameter invalid (no search result)
+    @Test
+    public void testSearchPersonByParamsOneNoSearchResult() {
+        ArrayList<String> paramChoices;
+        ArrayList<String> searchParams;
+        ArrayList<Person> persons;
+        String age = "465";
+        paramChoices.add("3");
+        searchParams.add(age);
+        ArrayList <Person> ret = p.searchPerson(paramChoices, searchParams);
+        assertEquals(persons, ret);
+    }
+    
+    //two parameters valid
+    @Test
+    public void testSearchPersonByParamsTwoParamsValid() {
+        ArrayList<String> paramChoices;
+        ArrayList<String> searchParams;
+        ArrayList<Person> persons;
+        Person temp = people.get(2);
+        persons.add(temp);
+        String gender = temp.getGender();
+        String skinColor = temp.getSkinColor();
+        paramChoices.add("4");
+        searchParams.add(gender);
+        paramChocies.add("11");
+        searchParams.add(skinColor);
+        ArrayList <Person> ret = p.searchPerson(paramChoices, searchParams);
+        assertEquals(persons, ret);
+    }
+
+    //two parameters one valid one invalid
+    @Test
+    public void testSearchPersonByParamsOneValidOneInvalidParam() {
+        ArrayList<String> paramChoices;
+        ArrayList<String> searchParams;
+        ArrayList<Person> persons;
+        Person temp = people.get(3);
+        String weight = (String) temp.getWeight();
+        String lName = "Not real last name";
+        paramChoices.add("10");
+        searchParams.add(weight);
+        paramChoices.add("2");
+        searchParams.add(lName);
+        ArrayList <Person> ret = p.searchPerson(paramChoices, searchParams);
+        assertEquals(persons, ret);
+    }
+
+    //two parameters both invalid
+    @Test
+    public void testSearchPersonByParamsTwoInvalid() {
+        ArrayList<String> paramChoices;
+        ArrayList<String> searchParams;
+        ArrayList<Person> persons;
+        String hairColorNat = "infared";
+        String lName = "Not real last name";
+        paramChoices.add("12");
+        searchParams.add(hairColorNat);
+        paramChoices.add("2");
+        searchParams.add(lName);
+        ArrayList <Person> ret = p.searchPerson(paramChoices, searchParams);
+        assertEquals(persons, ret);
+    }
+
+    //no parameters
+    @Test
+    public void testSearchPersonByParamsNoParams() {
+        ArrayList<String> paramChoices;
+        ArrayList<String> searchParams;
+        ArrayList<Person> persons;
+        ArrayList<Person> ret = p.searchPerson(paramChoices, searchParams);
+        assertEquals(persons, ret);
+    }
+
+    //would be valid but search param does not correspond with paramchocies
+    @Test
+    public void testSearchPersonByParamsSParAndParChoicesDoNotMatch() {
+        ArrayList<String> paramChoices;
+        ArrayList<String> searchParams;
+        ArrayList<Person> persons;
+        Person temp = people.get(2);
+        String shoeSize = (String) temp.getShoeSize();
+        paramChoices.add("1");
+        searchParams.add(shoeSize);
+        ArrayList<Person> ret = p.searchPerson(paramChoices, searchParams);
+        assertEquals(persons, ret);
+    }    
+     
 }
