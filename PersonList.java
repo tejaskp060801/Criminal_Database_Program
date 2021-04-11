@@ -231,4 +231,10 @@ public class PersonList {
     public ArrayList<Person> getPeople() {
         return (ArrayList) this.people.clone();  //  Changes made to objects inside this arraylist will be reflected in PersonList -- passbyref
     }
+
+    //  Used for testing
+    public ArrayList<Person> clearall() {
+        people.clear();
+        return people;
+    }
 }

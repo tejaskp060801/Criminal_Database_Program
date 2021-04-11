@@ -178,6 +178,11 @@ public class CrimeList {
     public ArrayList<Crime> getCrimes() {
         return (ArrayList) this.crimes.clone();  //  PassbyRef
     }
+
+    public ArrayList<Crime> clearall() {
+        crimes.clear();
+        return crimes;
+    }
 }
 
 
