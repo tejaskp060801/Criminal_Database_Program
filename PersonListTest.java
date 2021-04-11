@@ -24,7 +24,7 @@ class PersonListTest {
     @Test
     public void testAddPersonSuspect() {
         boolean isAdded;
-        Person temp = new Suspect("Mike", "Smith", 35, "Male", "Caucasian", null, "123 Main", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        Person temp = new Suspect("Mike", "Smith", 35, "Male", "Caucasian", null, "123 Main", null, null, 10.2, 213.2, null, null, null, null, true, null, 10.5, true, null, null, null, null, true);
         people.addPerson(temp);
         for(int i=0; i<people.size(); i++) {
             if(people.get(i) == temp) {
@@ -38,7 +38,7 @@ class PersonListTest {
     @Test
     public void testAddPersonCriminal() {
         boolean isAdded;
-        Person temp = new Criminal("Nate", "Samuel", 20, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        Person temp = new Criminal("Nate", "Samuel", 20, null, null, null, null, null, 6.0, 250.0, null, null, null, null, false, null, 9.5, true, null, true, false, null, null, null);
         p.addPerson(temp);
         for(int i=0; i<people.size(); i++) {
             if(people.get(i) == temp) {
@@ -52,7 +52,7 @@ class PersonListTest {
     @Test
     public void testRemovePersonInvalid() {
         boolean isRemoved;
-        Person tempWitness = new Witness("Idon't", "Exist", 99, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        Person tempWitness = new Witness("Idon't", "Exist", 99, null, null, null, null, null, 6.2, 167.8, null, null, null, null, true, null, 10.0, true, null, null, null, null, true);
         isRemoved = p.removePerson(tempWitness);
         assertFalse(isRemoved);
     }
@@ -75,8 +75,8 @@ class PersonListTest {
 
     @Test
     public void testEditPersonInvalidOld() {
-        Person old = new Witness("Idon't", "Exist", 99, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-        Person newWitness = new Witness("Idon't", "Exist", 100, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        Person old = new Witness("Idon't", "Exist", 99, null, null, null, null, null, 5.5, 120.0, null, null, null, null, true, null, 9.0, true, null, null, null, null, false);
+        Person newWitness = new Witness("Idon't", "Exist", 100, null, null, null, null, null, 5.6, 125.0, null, null, null, null, true, null, 9.0, true, null, null, null, null, true);
         Person ret = p.editPerson(old, newWitness);
         assertEquals(ret, null);
     }    
