@@ -16,6 +16,10 @@ public class BinarySearchTreeTest {
     private String lastname = "padmanabhan";
     private int clearancelevel = 1;
     private UUID id;
+    @BeforeEach
+    public void reset() {
+        user = new BinarySearchTree<Integer>();
+    }
     @Test
 	void testAddElement() {
         boolean isAdded = false; 
@@ -31,8 +35,9 @@ public class BinarySearchTreeTest {
 	void testRemoveElement() {
         boolean isRemoved = false; 
         int heh = 6; 
+        user.addElement(heh);
         user.removeElement(heh);
-        if(user.search(heh) == true) {
+        if(user.search(heh) == false) {
             isRemoved = true;  
         }
         assertTrue(isRemoved);
@@ -42,6 +47,7 @@ public class BinarySearchTreeTest {
     void testsearch() {
         boolean searchfor = false; 
         int heh = 7; 
+        user.addElement(heh);
         user.search(heh);
         if(user.search(heh) == true) {
             searchfor = true; 
