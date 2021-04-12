@@ -22,7 +22,7 @@ class CrimeListTest{
     @Test
     public void testAddHairSample(){
         boolean isAdded;
-        Crime temp = new HairSample(); //this is wrong
+        HairSample temp = new HairSample(null, null, null, null, 10, 10); //this is wrong
         crimes.add(temp);
         for(int i=0; i< crimes.size(); i++) {
             if(crimes.get(i) == temp) {
@@ -51,7 +51,7 @@ class CrimeListTest{
     @Test
     public void testRemoveCrimeInvalid(){
         boolean isRemoved;
-        Crime tempCrime = new Crime(); //yeah
+        Crime tempCrime = new Crime(null, "a crime has occurred", false, new ArrayList<TypeOfCrime>(), new ArrayList<Person>(), "Blossom and 21", "February 30 2020", new ArrayList<Evidence>(), new ArrayList<LawEnforcementUser>(), "A crime occurred at a time and place!");
         isRemoved = crime.removeCrime(tempCrime);
         assertFalse(isRemoved);
     }
@@ -74,8 +74,8 @@ class CrimeListTest{
 
     @Test
     public void testEditCrimeInvalidOld() {
-        Crime old = new Crime();
-        Crime newCrime = new Crime();
+        Crime old = new Crime(null, "a crime has occurred", false, new ArrayList<TypeOfCrime>(), new ArrayList<Person>(), "Blossom and 21", "February 30 2020", new ArrayList<Evidence>(), new ArrayList<LawEnforcementUser>(), "A crime occurred at a time and place!");
+        Crime newCrime = new Crime(null, "a crime has occurred", false, new ArrayList<TypeOfCrime>(), new ArrayList<Person>(), "Blossom and 21", "February 30 2020", new ArrayList<Evidence>(), new ArrayList<LawEnforcementUser>(), "A crime occurred at a time and place!");
         Crime ret = crime.editCrime(old, newCrime);
         assertEquals(ret, null);
     }
@@ -102,7 +102,7 @@ class CrimeListTest{
     @Test
     public void testSearchCrimeByIDInvalid() {
         UUID id = UUID.randomUUID();
-        Crime ret = crimes.searchCrime(id);
+        Crime ret = crime.searchCrime(id);
         assertEquals(ret, null);
     }
 
@@ -151,13 +151,13 @@ class CrimeListTest{
          ArrayList<Crime> crimes= new ArrayList<>();
          Crime temp = crimes.get(3);
          crimes.add(temp);
-         String gender = temp.getGender(); //idk what to replace for these
-         String skinColor = temp.getSkinColor();
-         paramChoices.add("4");
-         searchParams.add(gender);
-         paramChoices.add("11");
-         searchParams.add(skinColor);
-         ArrayList <Crime> ret = crimes.searchCrime(paramChoices, searchParams);
+         String id = temp.getcasenumber().toString();
+         String title = temp.getTitle();
+         paramChoices.add("1");
+         searchParams.add(id);
+         paramChoices.add("2");
+         searchParams.add(title);
+         ArrayList <Crime> ret = crime.searchCrime(paramChoices, searchParams);
          assertEquals(crimes, ret);
      }
  
@@ -167,14 +167,14 @@ class CrimeListTest{
          ArrayList<String> paramChoices = new ArrayList<>();
          ArrayList<String> searchParams = new ArrayList<>();
          ArrayList<Crime> crimes = new ArrayList<>();
-         Person temp = people.get(3);
+         Crime temp = crimes.get(3);
          String weight = temp.getWeight() + "";
          String lName = "Not real last name";
          paramChoices.add("10");
          searchParams.add(weight);
          paramChoices.add("2");
          searchParams.add(lName);
-         ArrayList <Crime> ret = crimes.searchCrime(paramChoices, searchParams);
+         ArrayList<Crime> ret = crimes.searchCrime(paramChoices, searchParams);
          assertEquals(crimes, ret);
      }
  
