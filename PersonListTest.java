@@ -23,8 +23,8 @@ class PersonListTest {
 
     @Test
     public void testAddPersonSuspect() {
-        boolean isAdded;
-        Person temp = new Suspect("Mike", "Smith", 35, "Male", "Caucasian", null, "123 Main", null, null, 10.2, 213.2, null, null, null, null, true, null, 10.5, true, null, null, null, null, true);
+        boolean isAdded = false;
+        Person temp = new Suspect("Mike", "Smith", 35, "Male", "Caucasian", null, "123 Main", null, 10.2, 213.2, null, null, null, null, true, null, 10.5, true, null, null, null, null, true);
         people.add(temp);
         for(int i=0; i<people.size(); i++) {
             if(people.get(i) == temp) {
@@ -37,7 +37,7 @@ class PersonListTest {
 
     @Test
     public void testAddPersonCriminal() {
-        boolean isAdded;
+        boolean isAdded = false;
         Person temp = new Criminal("Nate", "Samuel", 20, null, null, null, null, null, 6.0, 250.0, null, null, null, null, false, null, 9.5, true, null, true, false, null, null, null);
         people.add(temp);
         for(int i=0; i<people.size(); i++) {
