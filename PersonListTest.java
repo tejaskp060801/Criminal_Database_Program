@@ -150,7 +150,7 @@ class PersonListTest {
         ArrayList<String> paramChoices = new ArrayList<>();
         ArrayList<String> searchParams = new ArrayList<>();
         ArrayList<Person> persons= new ArrayList<>();
-        Person temp = people.get(2);
+        Person temp = people.get(3);
         persons.add(temp);
         String gender = temp.getGender();
         String skinColor = temp.getSkinColor();
@@ -200,9 +200,8 @@ class PersonListTest {
     public void testSearchPersonByParamsNoParams() {
         ArrayList<String> paramChoices = new ArrayList<>();
         ArrayList<String> searchParams = new ArrayList<>();
-        ArrayList<Person> persons= new ArrayList<>();
         ArrayList<Person> ret = p.searchPerson(paramChoices, searchParams);
-        assertEquals(persons, ret);
+        assertEquals(people, ret);
     }
 
     //would be valid but search param does not correspond with paramchocies
